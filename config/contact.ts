@@ -2,7 +2,9 @@ export enum ContactType {
   github = 'github',
   linkedin = 'linkedin',
   twitter = 'twitter',
+  youtube = 'youtube',
   email = 'email',
+  buymeacoffee = 'buymeacoffee',
 }
 
 export interface Contact {
@@ -20,6 +22,8 @@ export const contact: Contact = {
     github: 'https://github.com/KiarashS',
     linkedin: 'https://linkedin.com/in/thekiarash',
     twitter: 'https://twitter.com/ItIsKiarash',
+    youtube: 'https://www.youtube.com/c/KiarashS',
     email: 'mailto:kiarash.s@hotmail.com',
+    buymeacoffee: 'https://www.buymeacoffee.com/_kiarash_',
   },
 };
