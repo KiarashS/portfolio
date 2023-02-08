@@ -29,6 +29,9 @@ export const Colors = {
   webpack: '#8DD6F9',
   babel: '#F5DB53',
   redux: '#764ABC',
+  scikit: '#F89A36',
+  pytorch: '#E74A2B',
+  tensorflow: '#FF8200',
 
   // Mobile
   reactnative: '#2D2D2D',
@@ -46,6 +49,7 @@ export const Colors = {
   gcp: '#4285F4',
   docker: '#0DB7Ed',
   kubernetes: '#326CE5',
+  jenkins: '#314D5E',
   terraform: '#7B42BC',
   azure: '#0084CD',
 
