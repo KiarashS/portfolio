@@ -4,6 +4,16 @@ export const Colors = {
   python: '#4B8BBE',
   typescript: '#234A84',
   javascript: '#F7DF1E',
+  java: '#F89820',
+  csharp: '#953DAC',
+  cpp: '#659BD3',
+  sql: '#D10A15',
+  bash: '#3E474A',
+  powershell: '#207BCD',
+  matlab: '#FE5F08',
+  latex: '#008181',
+  r: '#2167BA',
+  vbnet: '#004E8C',
 
   // Frontend
   web: '#2D2D2D',
@@ -37,6 +47,7 @@ export const Colors = {
   docker: '#0DB7Ed',
   kubernetes: '#326CE5',
   terraform: '#7B42BC',
+  azure: '#0084CD',
 
   // Messaging
   nats: '#199bfc',
