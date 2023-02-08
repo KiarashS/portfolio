@@ -4,7 +4,7 @@ shortname: Kiarash
 avatar: /static/avatar.jpg
 occupation: An AI/ML Enthusiast
 company: Freelancer
-resume: /static/Kiarash_Resume.pdf
+resume: /static/Kiarash_CV.pdf
 email: kiarash.s@hotmail.com
 twitter: https://twitter.com/ItIsKiarash
 linkedin: https://www.linkedin.com/in/thekiarash
