@@ -20,7 +20,7 @@ function Banner(props: BannerProps): React.ReactElement {
       <p className='my-2 text-lg lg:my-4 lg:text-2xl'>
         {frontMatter.occupation}
       </p>
-      <p className='font-light lg:text-xl'>
+      <p className='font-light mb-1 lg:text-xl'>
         Technical articles in my professional life, my
         <Link className='ml-2 mr-2 font-normal text-black' href='/blog'>
           <RoughNotation
