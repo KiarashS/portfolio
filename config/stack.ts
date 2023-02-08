@@ -68,6 +68,7 @@ export const WorkStack = [
   Stack.latex,
   Stack.typescript,
   Stack.javascript,
+  Stack.go,
   Stack.react,
   Stack.reactnative,
   Stack.aws,
@@ -92,7 +93,6 @@ export const WorkStack = [
   Stack.scikit,
   Stack.node,
   Stack.django,
-  Stack.go,
 ];
 
 type StackInfoMap = {
@@ -148,6 +148,10 @@ export const StackInfo: Record<Stack, StackInfoMap> = {
   [Stack.javascript]: {
     value: 'JavaScript',
     color: Colors.javascript,
+  },
+  [Stack.go]: {
+    value: 'Go',
+    color: Colors.go,
   },
   [Stack.react]: {
     value: 'React',
