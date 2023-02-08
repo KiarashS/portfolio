@@ -7,7 +7,7 @@ export const Colors = {
   java: '#F89820',
   csharp: '#953DAC',
   cpp: '#659BD3',
-  sql: '#D10A15',
+  mssql: '#D10A15',
   bash: '#3E474A',
   powershell: '#207BCD',
   matlab: '#FE5F08',
