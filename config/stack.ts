@@ -14,7 +14,8 @@ export enum Stack {
   vbnet,
   matlab,
   latex,
-
+  go,
+  
   // Frontend
   react,
   reactnative,
@@ -91,7 +92,6 @@ export const WorkStack = [
   Stack.scikit,
   Stack.node,
   Stack.django,
-  Stack.go,
 ];
 
 type StackInfoMap = {
