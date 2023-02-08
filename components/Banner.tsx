@@ -10,7 +10,7 @@ interface BannerProps {
 
 function Banner(props: BannerProps): React.ReactElement {
   const { frontMatter } = props;
-  const [aboutColor, contactColor] = useRandomColorPair();
+  const [blogColor, profileColor, aboutColor, contactColor] = useRandomColorPair();
 
   return (
     <div className='fade-in banner flex flex-1 flex-col justify-center px-6 py-10 dark:text-white lg:px-10'>
@@ -21,7 +21,33 @@ function Banner(props: BannerProps): React.ReactElement {
         {frontMatter.occupation}
       </p>
       <p className='font-light lg:text-xl'>
+        Technical articles in my professional life, my
+        <Link className='ml-2 mr-2 font-normal text-black' href='/blog'>
+          <RoughNotation
+            show
+            type='highlight'
+            animationDelay={250}
+            animationDuration={2000}
+            color={blogColor}
+          >
+            blog
+          </RoughNotation>
+        </Link>
+      </p>
+      <p className='font-light lg:text-xl'>
         Read more
+        <Link className='ml-2 mr-2 font-normal text-black' href='https://www.kiarashs.ir'>
+          <RoughNotation
+            show
+            type='highlight'
+            animationDelay={250}
+            animationDuration={2000}
+            color={profileColor}
+          >
+            my profile
+          </RoughNotation>
+        </Link>
+        ,
         <Link className='ml-2 mr-2 font-normal text-black' href='/about'>
           <RoughNotation
             show
