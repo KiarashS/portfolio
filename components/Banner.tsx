@@ -10,7 +10,7 @@ interface BannerProps {
 
 function Banner(props: BannerProps): React.ReactElement {
   const { frontMatter } = props;
-  const [blogColor, profileColor, aboutColor, contactColor] = useRandomColorPair();
+  const [blogColor, profileColor, cvColor, aboutColor, contactColor] = useRandomColorPair();
 
   return (
     <div className='fade-in banner flex flex-1 flex-col justify-center px-6 py-10 dark:text-white lg:px-10'>
