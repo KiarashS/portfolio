@@ -90,7 +90,8 @@ export const WorkStack = [
   Stack.pytorch,
   Stack.scikit,
   Stack.node,
-  Stach.django,
+  Stack.django,
+  Stack.go,
 ];
 
 type StackInfoMap = {
