@@ -59,13 +59,24 @@ const MobileNav = () => {
         <nav className='fixed mt-8 h-full'>
           {headerNavLinks.map(link => (
             <div key={link.title} className='px-12 py-4'>
-              <Link
-                href={link.href}
-                className='text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100'
-                onClick={onToggleNav}
-              >
-                {link.title}
-              </Link>
+              if (link.openTab) {
+                <Link
+                  href={link.href}
+                  target='_blank'
+                  className='text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100'
+                  onClick={onToggleNav}
+                >
+                  {link.title}
+                </Link>
+              } else {
+                <Link
+                  href={link.href}
+                  className='text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100'
+                  onClick={onToggleNav}
+                >
+                  {link.title}
+                </Link>
+              }
             </div>
           ))}
         </nav>
