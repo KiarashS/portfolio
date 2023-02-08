@@ -17,10 +17,10 @@ function Banner(props: BannerProps): React.ReactElement {
       <h1 className='text-3xl font-bold dark:text-white lg:text-5xl'>
         Hi, I am {frontMatter.shortname}
       </h1>
-      <p className='my-2 text-lg lg:my-4 lg:text-2xl'>
+      <p className='mt-2 mb-3 text-lg lg:my-4 lg:text-2xl'>
         {frontMatter.occupation}
       </p>
-      <p className='font-light mb-1 lg:text-xl'>
+      <p className='font-light mb-2 lg:text-xl'>
         Technical articles in my professional life, my
         <Link className='ml-2 mr-2 font-normal text-black' href='/blog'>
           <RoughNotation
