@@ -34,7 +34,7 @@ function Banner(props: BannerProps): React.ReactElement {
           </RoughNotation>
         </Link>
       </p>
-      <p className='font-light lg:text-xl'>
+      <p className='font-light mb-2 lg:text-xl'>
         Read more
         <Link className='ml-2 mr-2 font-normal text-black' href='https://www.kiarashs.ir'>
           <RoughNotation
@@ -69,6 +69,20 @@ function Banner(props: BannerProps): React.ReactElement {
             color={contactColor}
           >
             contact me
+          </RoughNotation>
+        </Link>
+      </p>
+      <p className='font-light lg:text-xl'>
+        Download
+        <Link className='ml-2 mr-2 font-normal text-black' href='https://drive.google.com/uc?export=download&id=16tzJJoNP3vkURX1Oj5wmRCTIemtQ7Ksl'>
+          <RoughNotation
+            show
+            type='highlight'
+            animationDelay={250}
+            animationDuration={2000}
+            color={cvColor}
+          >
+            CV
           </RoughNotation>
         </Link>
       </p>
