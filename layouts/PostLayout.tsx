@@ -133,8 +133,7 @@ export default function PostLayout({
               {banner && (
                 <img
                   src={banner}
-                  className='object-cover object-center'
-                  style='margin: 0 auto !important;'
+                  className='object-cover object-center mx-auto'
                   alt='banner'
                 />
               )}
