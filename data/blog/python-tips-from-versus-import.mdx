@@ -1,0 +1,21 @@
+---
+title: "Python Tip: from versus import"
+date: '2023-02-02 20:12:18 +0330'
+tags: [python, tips, python-tips]
+draft: false
+summary: 'from or import, which one?'
+images: ['/static/blogs/python-tips-from-versus-import.png']
+authors: ['default']
+---
+
+## from vs import
+
+The `import` statement is often a better choice than the `from` statement. Think of the `from` statement, particularly `from M import *`, as a convenience meant only for occasional use in interactive Python sessions. When you always access module `M` with the statement `import M` and always access `M`’s attributes with explicit syntax `M.A`, your code is slightly less concise but far clearer and more readable. One good use of `from` is to import specific modules from a package. But, in most other cases, `import` is better than `from`.
+
+Moreover, to reload a module, in v3, you pass the module object (*not* the module name) as the only argument to the function `reload` from the `importlib` module (in v2, call the built-in function `reload` instead, to the same effect). `importlib.reload(M)` ensures the reloaded version of `M` is used by client code that relies on `import M` and accesses attributes with the syntax `M.A`. However, `importlib.reload(M)` has no effect on other existing references bound to previous values of `M`’s attributes (e.g., with a `from` statement). In other words, already-bound variables remain bound as they were, unaffected by `reload`. `reload`’s inability to rebind such variables is a further incentive to use `import` rather than `from`.
+
+However, using `from P import M` to import a specific module `M` from package `P` is a perfectly acceptable, indeed highly recommended practice: the `from` statement is specifically okay in this case. `from P import M as V` is also just fine, and perfectly equivalent to `import P.M as V`.
+
+### A side note
+
+`reload` is not recursive: when you reload module `M`, this does not imply that other modules imported by `M` get reloaded in turn. You must arrange to reload, by explicit calls to the `reload` function, each and every module you have modified.
