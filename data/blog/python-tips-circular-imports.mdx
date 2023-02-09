@@ -1,0 +1,23 @@
+---
+title: "Python Tip: Circular Imports"
+date: '2023-02-02 19:31:36 +0330'
+tags: [python, tips, python-tips]
+draft: false
+summary: 'Understand how Python interprets circular imports'
+images: ['/static/blogs/python-circular-imports.jpg']
+authors: ['default']
+---
+
+Python lets you specify circular imports. For example, you can write a module `a.py` that contains `import b`, while module `b.py` contains `import a`.
+
+If you decide to use a circular import for some reason, you need to understand how circular imports work in order to avoid errors in your code.
+
+**Avoid circular imports:** In practice, you are nearly always better off avoiding circular imports, since circular dependencies are fragile and hard to manage.
+
+## Circular Imports
+
+Say that the main script executes `import a`. As you know, this `import` statement creates a new empty module object as `sys.modules['a']` and then the body of module `a` start executing. When `a` executes `import b`, this creates a new empty module object as `sys.modules['b']`, and then the body of module `b` starts executing. The execution of `a`’s module body cannot proceed until `b`’s module body finishes.
+
+Now, when `b` executes `import a`, the `import` statement finds `sys.modules['a']` already bound, and therefore binds global variable `a` in module `b` to the module object for module `a`. Since the execution of `a`’s module body is currently blocked, module `a` is usually only partly populated at this time. Should the code in `b`’s module body immediately try to access some attribute of module `a` that is not yet bound, an error result.
+
+If you insist on keeping a circular import, you must carefully manage the order in which each module binds its own globals, imports other modules, and accesses globals of other modules. You can have greater control on the sequence in which things happen by grouping your statements into functions, and calling those functions in a controlled order, rather than just relying on sequential execution of top-level statements in module bodies. Usually, removing circular dependencies is easier than ensuring bomb-proof ordering with circular dependencies.
