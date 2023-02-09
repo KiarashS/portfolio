@@ -119,6 +119,7 @@ export default function CourseLayout({
                 <img
                   src={banner}
                   className='object-cover object-center'
+                  style='margin: 0 auto !important;'
                   alt='banner'
                 />
               )}
