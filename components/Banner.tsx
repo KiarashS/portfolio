@@ -21,7 +21,7 @@ function Banner(props: BannerProps): React.ReactElement {
         {frontMatter.occupation}
       </p>
       <p className='font-light mb-2 lg:text-xl'>
-        Technical articles in my professional life, my
+        Technical articles in my professional life,
         <Link className='ml-2 mr-2 font-normal text-black' href='/blog'>
           <RoughNotation
             show
@@ -30,7 +30,7 @@ function Banner(props: BannerProps): React.ReactElement {
             animationDuration={2000}
             color={blogColor}
           >
-            blog
+            my blog
           </RoughNotation>
         </Link>
       </p>
@@ -82,7 +82,7 @@ function Banner(props: BannerProps): React.ReactElement {
             animationDuration={2000}
             color={cvColor}
           >
-            CV
+            my CV
           </RoughNotation>
         </Link>
       </p>
