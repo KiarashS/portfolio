@@ -52,9 +52,9 @@ function resolveIcon(entry: Tuple<string>): React.ReactNode {
       icon = <GithubIcon {...props} />;
       break;
 
-    case ContactType.youtube:
+    /*case ContactType.youtube:
       icon = <YoutubeIcon {...props} />;
-      break;
+      break;*/
 
     case ContactType.email:
       icon = <MailIcon {...props} />;
