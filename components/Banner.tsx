@@ -36,7 +36,7 @@ function Banner(props: BannerProps): React.ReactElement {
       </p>
       <p className='font-light mb-2 lg:text-xl'>
         Read more
-        <Link className='ml-2 mr-2 font-normal text-black' href='https://www.kiarashs.ir'>
+        <Link className='ml-2 mr-2 font-normal text-black' href='https://profile.kiarashs.ir'>
           <RoughNotation
             show
             type='highlight'
