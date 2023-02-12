@@ -1,4 +1,5 @@
 export enum ContactType {
+  googlescholar = 'googlescholar', 
   github = 'github',
   linkedin = 'linkedin',
   twitter = 'twitter',
@@ -19,6 +20,7 @@ export const contact: Contact = {
   site: 'blog.kiarashs.ir',
   calendly: 'https://calendly.com/_kiarash_',
   links: {
+    googlescholar: 'https://scholar.google.com/citations?hl=en&user=PlzgVJMAAAAJ',
     github: 'https://github.com/KiarashS',
     linkedin: 'https://linkedin.com/in/thekiarash',
     twitter: 'https://twitter.com/ItIsKiarash',
