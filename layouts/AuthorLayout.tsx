@@ -14,8 +14,8 @@ interface Props {
 }
 
 export default function AuthorLayout({ children, frontMatter }: Props) {
-  const { name, avatar, occupation, company, resume } = frontMatter;
-  const [resumeColor] = useRandomColorPair();
+  const { name, avatar, occupation, company, resume, googlescholar} = frontMatter;
+  const [resumeColor, googleScholarColor] = useRandomColorPair();
 
   return (
     <>
@@ -58,6 +58,23 @@ export default function AuthorLayout({ children, frontMatter }: Props) {
                   color={resumeColor}
                 >
                   CV (Curriculum Vitae)
+                </RoughNotation>
+              </a>
+              <a
+                className='!font-normal !text-black !no-underline dark:!text-white'
+                href={googlescholar}
+                target='_blank'
+                rel='noreferrer'
+              >
+                <RoughNotation
+                  show
+                  type='box'
+                  animationDelay={250}
+                  animationDuration={2000}
+                  strokeWidth={2}
+                  color={googleScholarColor}
+                >
+                  Google Scholar
                 </RoughNotation>
               </a>
               <h2 className='mt-8 mb-4 text-2xl font-semibold dark:text-white'>
