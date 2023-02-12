@@ -61,7 +61,7 @@ export default function AuthorLayout({ children, frontMatter }: Props) {
                 </RoughNotation>
               </a>
               <a
-                className='!font-normal !text-black !no-underline dark:!text-white ml-4'
+                className='!font-normal !text-black !no-underline dark:!text-white block mt-2'
                 href={googlescholar}
                 target='_blank'
                 rel='noreferrer'
