@@ -2,7 +2,7 @@
 name: Kiarash Soleimanzadeh
 shortname: Kiarash
 avatar: https://avatars.githubusercontent.com/u/1054134?v=4
-occupation: An AI/ML Enthusiast
+occupation: AI/ML Enthusiast
 company: Senior Software Engineer
 resume: https://drive.google.com/uc?export=download&id=16tzJJoNP3vkURX1Oj5wmRCTIemtQ7Ksl
 email: kiarash.s@hotmail.com
