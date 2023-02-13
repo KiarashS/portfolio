@@ -44,7 +44,7 @@ export default function AuthorLayout({ children, frontMatter }: Props) {
             {children}
             <p className='mt-8'>
               <a
-                className='!font-normal !text-black !no-underline dark:!text-white'
+                className='!font-normal !text-black !no-underline dark:!text-white mr-2'
                 href={resume}
                 target='_blank'
                 rel='noreferrer'
