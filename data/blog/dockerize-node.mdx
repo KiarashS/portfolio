@@ -8,7 +8,7 @@ images: ['/static/blogs/dockerize-node.png']
 authors: ['default']
 ---
 
-Hey, welcome back. This article is part of the Dockerize series, make sure to checkout the [Introduction](https://karanpratapsingh.com/blog/introduction-dockerize-series) where I go over some concepts we are going to use.
+Hey, welcome back. This article is part of the Dockerize series, make sure to checkout the [Introduction](https://kiarashs.ir/blog/introduction-dockerize-series) where I go over some concepts we are going to use.
 
 Today we'll dockerize our Node application, very similar to how we dockerized our React app in the last part by taking advantage of builder pattern with multi stage builds!
 
@@ -58,7 +58,7 @@ I've also setup [esbuild](https://esbuild.github.io/) to bundle our project.
 "build": "esbuild --bundle src/index.js --outfile=build/app.js --minify --platform=node"
 ```
 
-For more details, you can checkout my previous article _[Blazing fast TypeScript with Webpack and ESBuild](https://karanpratapsingh.com/blog/blazing-fast-typescript-with-webpack-and-esbuild-4mhh)_.
+For more details, you can checkout my previous article _[Blazing fast TypeScript with Webpack and ESBuild](https://kiarashs.ir/blog/blazing-fast-typescript-with-webpack-and-esbuild-4mhh)_.
 
 ### For development
 
@@ -177,4 +177,4 @@ docker run -p 80:4000 --name node-app app-prod
 
 With that, we should be able to take advantage of docker in our workflow and deploy our production images faster to any platform of our choice.
 
-Feel free to reach out to me on [Twitter](https://twitter.com/karan_6864) if you face any issues.
+Feel free to reach out to me on [Twitter](https://twitter.com/ItIsKiarash) if you face any issues.
