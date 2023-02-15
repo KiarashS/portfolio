@@ -38,9 +38,9 @@ Here's a basic example with AQL
 ```sql
 -- Inserting a document
 INSERT {
-    "name": "Karan",
+    "name": "Kiarash",
     "role": "Full Stack Developer",
-    "age": 21
+    "age": 32
 } INTO Users
 
 -- Reading documents
@@ -49,7 +49,7 @@ FOR user IN Users
 
 -- Reading documents with filter
 FOR user IN Users
-    FILTER user.name == "Karan"
+    FILTER user.name == "Kiarash"
     RETURN user
 
 -- Reading specific document
