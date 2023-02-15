@@ -69,7 +69,7 @@ func main() {
 
 	fmt.Println("Person 1:", p1)
 
-	var p2 = Person{FirstName: "Karan", LastName: "Pratap Singh", Age: 22}
+	var p2 = Person{FirstName: "Kiarash", LastName: "Soleimanzadeh", Age: 32}
 
 	fmt.Println("Person 2:", p2)
 }
@@ -79,16 +79,16 @@ For readability, we can separate by new line but this will also require a traili
 
 ```go
 	var p2 = Person{
-		FirstName: "Karan",
-		LastName:  "Pratap Singh",
-		Age:       22,
+		FirstName: "Kiarash",
+		LastName:  "Soleimanzadeh",
+		Age:       32,
 	}
 ```
 
 ```bash
 $ go run main.go
 Person 1: {  0}
-Person 2: {Karan Pratap Singh 22}
+Person 2: {Kiarash Soleimanzadeh 32}
 ```
 
 We can also initialize only a subset of fields.
@@ -100,9 +100,9 @@ func main() {
 	fmt.Println("Person 1:", p1)
 
 	var p2 = Person{
-		FirstName: "Karan",
-		LastName:  "Pratap Singh",
-		Age:       22,
+		FirstName: "Kiarash",
+		LastName:  "Soleimanzadeh",
+		Age:       32,
 	}
 
 	fmt.Println("Person 2:", p2)
@@ -119,7 +119,7 @@ func main() {
 ```bash
 $ go run main.go
 Person 1: {  0}
-Person 2: {Karan Pratap Singh 22}
+Person 2: {Kiarash Soleimanzadeh 32}
 Person 3: {Tony Stark 0}
 ```
 
@@ -136,9 +136,9 @@ func main() {
 	fmt.Println("Person 1:", p1)
 
 	var p2 = Person{
-		FirstName: "Karan",
-		LastName:  "Pratap Singh",
-		Age:       22,
+		FirstName: "Kiarash",
+		LastName:  "Soleimanzadeh",
+		Age:       32,
 	}
 
 	fmt.Println("Person 2:", p2)
@@ -179,9 +179,9 @@ func main() {
 	fmt.Println("Person 1:", p1)
 
 	var p2 = Person{
-		FirstName: "Karan",
-		LastName:  "Pratap Singh",
-		Age:       22,
+		FirstName: "Kiarash",
+		LastName:  "Soleimanzadeh",
+		Age:       32,
 	}
 
 	fmt.Println("Person 2:", p2)
@@ -212,9 +212,9 @@ Let's clean up our example a bit and see how we can access individual fields.
 ```go
 func main() {
 	var p = Person{
-		FirstName: "Karan",
-		LastName:  "Pratap Singh",
-		Age:       22,
+		FirstName: "Kiarash",
+		LastName:  "Soleimanzadeh",
+		Age:       32,
 	}
 
 	fmt.Println("FirstName", p.FirstName)
@@ -226,9 +226,9 @@ We can also create a pointer to structs as well.
 ```go
 func main() {
 	var p = Person{
-		FirstName: "Karan",
-		LastName:  "Pratap Singh",
-		Age:       22,
+		FirstName: "Kiarash",
+		LastName:  "Soleimanzadeh",
+		Age:       32,
 	}
 
 	ptr := &p
@@ -244,9 +244,9 @@ Both statements are equal as in Go we don't need to explicitly dereference the p
 func main() {
 	p := new(Person)
 
-	p.FirstName = "Karan"
-	p.LastName = "Pratap Singh"
-	p.Age = 22
+	p.FirstName = "Kiarash"
+	p.LastName = "Soleimanzadeh"
+	p.Age = 32
 
 	fmt.Println("Person", p)
 }
@@ -254,7 +254,7 @@ func main() {
 
 ```bash
 $ go run main.go
-Person &{Karan Pratap Singh 22}
+Person &{Kiarash Soleimanzadeh 32}
 ```
 
 As a side note, two structs are equal if all their corresponding fields are equal as well.
