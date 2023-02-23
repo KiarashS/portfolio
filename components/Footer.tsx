@@ -10,6 +10,7 @@ function Footer(): React.ReactElement {
       <span className='mt-4 text-xs font-light lg:mt-8'>
         &copy; {year} Kiarash Soleimanzadeh
       </span>
+      <div className="text-xs font-light mt-2 underline"><a href="https://resource.kiarashs.ir" target="_blank">Resources</a></div>
     </div>
   );
 }
