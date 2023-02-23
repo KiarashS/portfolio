@@ -1,5 +1,6 @@
 import SocialIcons from '@/components/SocialIcons';
 import { memo } from 'react';
+import Link from './Link';
 
 function Footer(): React.ReactElement {
   const year: number = new Date().getFullYear();
@@ -10,7 +11,7 @@ function Footer(): React.ReactElement {
       <span className='mt-4 text-xs font-light lg:mt-8'>
         &copy; {year} Kiarash Soleimanzadeh
       </span>
-      <div className="text-xs font-light mt-2 underline"><a href="https://resource.kiarashs.ir" rel="noopener noreferrer">Resources</a></div>
+      <div className="text-xs font-light mt-2 underline"><Link target={"_blank"} to="https://resource.kiarashs.ir">Resources</Link></div>
     </div>
   );
 }
