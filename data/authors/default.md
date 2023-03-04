@@ -12,7 +12,7 @@ github: https://github.com/KiarashS
 googlescholar: https://scholar.google.com/citations?hl=en&user=PlzgVJMAAAAJ
 ---
 
-My name is Kiarash Soleimanzadeh, an ML/AI enthusiast and senior software engineer who values learning and growing with people, teams, and technologies. I have over 15 years of experience specializing in the software industry as a senior software engineer, software architect and consultant, backend developer, DevOps engineer, and frontend developer. I have a solid background in my journey in the world of technology.
+My name is <span class="gradient-one">Kiarash Soleimanzadeh</span>, an ML/AI enthusiast and senior software engineer who values learning and growing with people, teams, and technologies. I have over 15 years of experience specializing in the software industry as a senior software engineer, software architect and consultant, backend developer, DevOps engineer, and frontend developer. I have a solid background in my journey in the world of technology.
 
 I am a big supporter of open-source software. However, I have been involved with some closed-source projects on a stable software development methodology and technology for both large-scale and regular-size applications.
 
