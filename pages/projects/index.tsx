@@ -12,7 +12,8 @@ export default function Projects() {
         description={siteMetadata.description}
       />
       <div className='fade-in divide-y-2 divide-gray-100 dark:divide-gray-800'>
-        <Header title='Projects' />
+        <Header title='Projects' subtitle='Here are some of open source projects
+        that I have done' />
         <div className='container py-12'>
           <div className='-m-4 flex flex-wrap'>
             {config.projects.map(({ slug, title, description, banner }) => (
