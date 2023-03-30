@@ -29,7 +29,7 @@ export default function Tags({
           <h1 className='text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:border-r-2 md:px-6 md:text-6xl md:leading-14'>
             Tags
           </h1>
-          <div className='pt-4 xl:pt-8 text-center block sm:hidden'>
+          <div className='space-x-0 pt-4 xl:pt-8 block sm:hidden'>
             <Link
               href='/blog'
               className='text-primary-500 hover:text-primary-600 dark:hover:text-primary-400'
