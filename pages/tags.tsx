@@ -31,7 +31,6 @@ export default function Tags({
           </h1>
           <div className='pt-4 xl:pt-8 text-center'>
             <Link
-              href='##'
               className='text-primary-500 hover:text-primary-600 dark:hover:text-primary-400'
               onClick={() => history.go(-1)}
             >
