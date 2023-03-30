@@ -30,12 +30,12 @@ export default function Tags({
             Tags
           </h1>
           <div className='pt-4 xl:pt-8 text-center block sm:hidden'>
-            <button
+            <Link
+              href='/blog'
               className='text-primary-500 hover:text-primary-600 dark:hover:text-primary-400'
-              onClick={() => history.go(-1)}
             >
               &larr; Back to the blog
-            </button>
+            </Link>
           </div>
         </div>
         <div className='flex max-w-lg flex-wrap'>
