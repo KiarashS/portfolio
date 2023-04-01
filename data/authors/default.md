@@ -12,11 +12,11 @@ github: https://github.com/KiarashS
 googlescholar: https://scholar.google.com/citations?hl=en&user=PlzgVJMAAAAJ
 ---
 
-My name is Kiarash Soleimanzadeh, an ML/AI enthusiast and senior software engineer who values learning and growing with people, teams, and technologies. I have over 16 years of experience specializing in the software industry as a senior software engineer, software architect and consultant, backend developer, DevOps engineer, and frontend developer. I have a solid background in my journey in the world of technology.
+My name is Kiarash Soleimanzadeh, an ML/AI enthusiast and software engineer who values learning and growing with people, teams, and technologies. I have over 16 years of experience specializing in the software industry as a software engineer, software architect and consultant, backend developer, DevOps engineer, and frontend developer. I have a solid background in my journey in the world of technology.
 
 I am a big supporter of open-source software. However, I have been involved with some closed-source projects on a stable software development methodology and technology for both large-scale and regular-size applications.
 
-I am not only a highly self-motivated, self-taught, creative, hard-working, and problem-solver student but also a leader and senior software engineer. I am incredibly interested in Artificial Intelligence/Machine Learning. If I am not developing codes, I am somewhere else, thinking about Artificial Intelligence. Also, my free time is dedicated to hiking, camping, cycling, reading, swimming, and listening to music. These works are my daily schedules, so feel free to ask for anything related.
+I am not only a highly self-motivated, self-taught, creative, hard-working, and problem-solver student but also a leader and software engineer. I am incredibly interested in Artificial Intelligence/Machine Learning. If I am not developing codes, I am somewhere else, thinking about Artificial Intelligence. Also, my free time is dedicated to hiking, camping, cycling, reading, swimming, and listening to music. These works are my daily schedules, so feel free to ask for anything related.
 
 I'm interested in machine learning, computer vision, image processing, NLP, IoT, and big data. Much of my research and interest are about the applications of the AI in medicine, healthcare, smart health, and intelligent environment.
 
