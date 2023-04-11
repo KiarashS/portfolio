@@ -1,5 +1,5 @@
 const siteMetadata = {
-  title: 'Kiarash Soleimanzadeh\'s Personal Homepage',
+  title: 'Kiarash Soleimanzadeh',
   author: 'Kiarash Soleimanzadeh',
   headerTitle: 'Kiarash Soleimanzadeh',
   description:
