@@ -1,12 +1,12 @@
 const siteMetadata = {
-  title: 'Kiarash Soleimanzadeh',
+  title: 'Kiarash Soleimanzadeh\'s Personal Homepage',
   author: 'Kiarash Soleimanzadeh',
   headerTitle: 'Kiarash Soleimanzadeh',
   description:
     'An ML/AI ehthusiast who values learning and growing with people, teams, and technologies.',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://blog.kiarashs.ir',
+  siteUrl: 'https://kiarashs.ir',
   siteRepo: 'https://github.com/KiarashS/portfolio',
   siteLogo: '/static/images/logo.png',
   image: '/static/avatar.jpg',

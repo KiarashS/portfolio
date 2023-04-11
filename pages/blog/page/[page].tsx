@@ -55,7 +55,7 @@ export default function PostPage({
   return (
     <>
       <PageSEO
-        title={siteMetadata.title}
+        title={`Blog - ${siteMetadata.title}`}
         description={siteMetadata.description}
       />
       <ListLayout
