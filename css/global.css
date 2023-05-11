@@ -109,7 +109,7 @@
   }
   
   
-  html.dark * {
+  /* html.dark * {
     scrollbar-width: auto;
     scrollbar-color: #676767 #171717;
   }
@@ -126,4 +126,8 @@
     background-color: #676767;
     border-radius: 10px;
     border: 3px solid #171717;
+  } */
+
+  html.dark {
+    color-scheme: dark;
   }
