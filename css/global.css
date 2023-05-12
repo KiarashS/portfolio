@@ -118,7 +118,7 @@
 
 /* Chrome, Edge, and Safari */
 .dark *::-webkit-scrollbar {
-  width: 16px;
+  width: 14px;
 }
 
 .dark *::-webkit-scrollbar-track {
