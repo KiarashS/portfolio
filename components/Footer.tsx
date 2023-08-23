@@ -12,7 +12,7 @@ function Footer(): React.ReactElement {
         &copy; {year} Kiarash Soleimanzadeh
       </span>
       <div className="text-xs font-light mt-2 underline">
-        <Link href='https://resource.kiarashs.ir'>Resources</Link>
+        <Link href='https://directory.kiarashs.ir'>My Directory</Link>
       </div>
     </div>
   );
