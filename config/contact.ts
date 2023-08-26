@@ -6,6 +6,7 @@ export enum ContactType {
   youtube = 'youtube',
   email = 'email',
   buymeacoffee = 'buymeacoffee',
+  googlescholar = 'googlescholar',
 }
 
 export interface Contact {

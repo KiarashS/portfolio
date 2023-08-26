@@ -68,6 +68,9 @@ function resolveIcon(entry: Tuple<string>): React.ReactNode {
     case ContactType.buymeacoffee:
       icon = <BuymeacoffeeIcon {...props} />;
       break;
+    case ContactType.googlescholar:
+      icon = <Googlescholar {...props} />;
+      break;
     default:
       break;
   }
