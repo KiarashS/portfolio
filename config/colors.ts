@@ -66,7 +66,6 @@ export const Colors = {
   buymeacoffee: '#FFDD00',
   reddit: '#ff4500',
   facebook: '#1877f2',
-  googlescholar: '#4285f4',
 
   // Misc.
   git: '#F1502F',

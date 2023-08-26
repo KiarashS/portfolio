@@ -1,5 +1,4 @@
 export enum ContactType {
-  googlescholar = 'googlescholar', 
   github = 'github',
   linkedin = 'linkedin',
   twitter = 'twitter',
