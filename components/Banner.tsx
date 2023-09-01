@@ -22,7 +22,7 @@ function Banner(props: BannerProps): React.ReactElement {
       </p>
       <p className='font-light mb-2 lg:text-xl'>
         Technical articles in my professional life,
-        <Link className='ml-2 mr-2 font-normal text-black' href='/blog'>
+        <Link className='ml-2 mr-2 font-normal text-black inline-grid ml-0' href='/blog'>
           <RoughNotation
             show
             type='highlight'
@@ -36,7 +36,7 @@ function Banner(props: BannerProps): React.ReactElement {
       </p>
       <p className='font-light mb-2 lg:text-xl'>
         Read more
-        <Link className='ml-2 mr-2 font-normal text-black' href='https://profile.kiarashs.ir'>
+        <Link className='ml-2 mr-2 font-normal text-black inline-grid ml-0' href='https://profile.kiarashs.ir'>
           <RoughNotation
             show
             type='highlight'
@@ -48,7 +48,7 @@ function Banner(props: BannerProps): React.ReactElement {
           </RoughNotation>
         </Link>
         ,
-        <Link className='ml-2 mr-2 font-normal text-black' href='/about'>
+        <Link className='ml-2 mr-2 font-normal text-black inline-grid ml-0' href='/about'>
           <RoughNotation
             show
             type='highlight'
@@ -60,7 +60,7 @@ function Banner(props: BannerProps): React.ReactElement {
           </RoughNotation>
         </Link>
         or
-        <Link className='ml-2 font-normal text-black' href='/contact'>
+        <Link className='ml-2 font-normal text-black inline-grid ml-0' href='/contact'>
           <RoughNotation
             show
             type='highlight'
@@ -74,7 +74,7 @@ function Banner(props: BannerProps): React.ReactElement {
       </p>
       <p className='font-light lg:text-xl'>
         Download
-        <Link className='ml-2 mr-2 font-normal text-black' href='https://drive.google.com/uc?export=download&id=16tzJJoNP3vkURX1Oj5wmRCTIemtQ7Ksl'>
+        <Link className='ml-2 mr-2 font-normal text-black inline-grid ml-0' href='https://drive.google.com/uc?export=download&id=16tzJJoNP3vkURX1Oj5wmRCTIemtQ7Ksl'>
           <RoughNotation
             show
             type='highlight'
