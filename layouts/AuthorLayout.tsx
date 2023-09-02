@@ -56,6 +56,7 @@ export default function AuthorLayout({ children, frontMatter }: Props) {
                   animationDuration={2000}
                   strokeWidth={2}
                   color={resumeColor}
+                  multiline={true}
                 >
                   CV (Curriculum Vitae)
                 </RoughNotation>
@@ -73,6 +74,7 @@ export default function AuthorLayout({ children, frontMatter }: Props) {
                   animationDuration={2000}
                   strokeWidth={2}
                   color={googleScholarColor}
+                  multiline={true}
                 >
                   Google Scholar
                 </RoughNotation>

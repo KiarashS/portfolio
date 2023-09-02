@@ -47,6 +47,7 @@ function Contact(): React.ReactElement {
                 animationDelay={250}
                 animationDuration={2000}
                 color={randomColor}
+                multiline={true}
               >
                 schedule a meeting
               </RoughNotation>
