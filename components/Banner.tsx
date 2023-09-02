@@ -1,4 +1,4 @@
-Pimport Link from '@/components/Link';
+import Link from '@/components/Link';
 import { useRandomColorPair } from '@/lib/hooks/useRandomColorPair';
 import { memo } from 'react';
 import { RoughNotation } from 'react-rough-notation';
@@ -22,12 +22,13 @@ function Banner(props: BannerProps): React.ReactElement {
       </p>
       <p className='font-light mb-2 lg:text-xl'>
         Technical articles in my professional life,
-        <Link className='ml-2 mr-2 font-normal text-black inline-grid' href='/blog'>
+        <Link className='ml-2 mr-2 font-normal text-black' href='/blog'>
           <RoughNotation
             show
             type='highlight'
             animationDelay={250}
             animationDuration={2000}
+            multiline={true}
             color={blogColor}
           >
             my blog
