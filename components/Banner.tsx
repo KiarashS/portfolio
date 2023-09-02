@@ -28,8 +28,8 @@ function Banner(props: BannerProps): React.ReactElement {
             type='highlight'
             animationDelay={250}
             animationDuration={2000}
-            multiline={true}
             color={blogColor}
+            multiline={true}
           >
             my blog
           </RoughNotation>
@@ -37,37 +37,40 @@ function Banner(props: BannerProps): React.ReactElement {
       </p>
       <p className='font-light mb-2 lg:text-xl'>
         Read more
-        <Link className='ml-2 mr-2 font-normal text-black inline-grid' href='https://profile.kiarashs.ir'>
+        <Link className='ml-2 mr-2 font-normal text-black' href='https://profile.kiarashs.ir'>
           <RoughNotation
             show
             type='highlight'
             animationDelay={250}
             animationDuration={2000}
             color={profileColor}
+            multiline={true}
           >
             my profile
           </RoughNotation>
         </Link>
         ,
-        <Link className='ml-2 mr-2 font-normal text-black inline-grid' href='/about'>
+        <Link className='ml-2 mr-2 font-normal text-black' href='/about'>
           <RoughNotation
             show
             type='highlight'
             animationDelay={250}
             animationDuration={2000}
             color={aboutColor}
+            multiline={true}
           >
             about me
           </RoughNotation>
         </Link>
         or
-        <Link className='ml-2 font-normal text-black inline-grid' href='/contact'>
+        <Link className='ml-2 font-normal text-black' href='/contact'>
           <RoughNotation
             show
             type='highlight'
             animationDelay={250}
             animationDuration={2000}
             color={contactColor}
+            multiline={true}
           >
             contact me
           </RoughNotation>
@@ -75,13 +78,14 @@ function Banner(props: BannerProps): React.ReactElement {
       </p>
       <p className='font-light lg:text-xl'>
         Download
-        <Link className='ml-2 mr-2 font-normal text-black inline-grid' href='https://drive.google.com/uc?export=download&id=16tzJJoNP3vkURX1Oj5wmRCTIemtQ7Ksl'>
+        <Link className='ml-2 mr-2 font-normal text-black' href='https://drive.google.com/uc?export=download&id=16tzJJoNP3vkURX1Oj5wmRCTIemtQ7Ksl'>
           <RoughNotation
             show
             type='highlight'
             animationDelay={250}
             animationDuration={2000}
             color={cvColor}
+            multiline={true}
           >
             my CV
           </RoughNotation>
