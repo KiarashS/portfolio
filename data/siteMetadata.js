@@ -3,7 +3,7 @@ const siteMetadata = {
   author: 'Kiarash Soleimanzadeh',
   headerTitle: 'Kiarash Soleimanzadeh',
   description:
-    'A software engineer who aims to evolve, innovate, and inspire through technology.',
+    'An ML/AI ehthusiast who aims to evolve, innovate, and inspire through technology.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://kiarashs.ir',
