@@ -78,7 +78,7 @@ function Banner(props: BannerProps): React.ReactElement {
       </p>
       <p className='font-light lg:text-xl'>
         Download
-        <Link className='ml-2 mr-2 font-normal text-black' href='https://drive.google.com/uc?export=download&id=16tzJJoNP3vkURX1Oj5wmRCTIemtQ7Ksl'>
+        <Link className='ml-2 mr-2 font-normal text-black' href='https://go.kiarashs.ir/cv'>
           <RoughNotation
             show
             type='highlight'
