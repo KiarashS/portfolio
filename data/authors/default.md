@@ -9,7 +9,7 @@ email: kiarash.s@hotmail.com
 twitter: https://go.kiarashs.ir/twitter
 linkedin: https://go.kiarashs.ir/linkedin
 github: https://go.kiarashs.ir/github
-googlescholar: https://go.kiarashs.ir/citations
+googlescholar: https://go.kiarashs.ir/scholar
 ---
 
 My name is Kiarash Soleimanzadeh, an ML/AI enthusiast, teaching assistant, researcher, and software engineer who aims to evolve, innovate, and inspire through technology. I have over 16 years of experience specializing in the software industry as a software engineer, software architect and consultant, backend developer, DevOps engineer, and frontend developer. I have a solid background in my journey in the world of technology.
