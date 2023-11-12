@@ -6,9 +6,9 @@ occupation: ML/AI Enthusiast
 company: Software Engineer
 resume: https://go.kiarashs.ir/cv
 email: kiarash.s@hotmail.com
-twitter: https://twitter.com/ItIsKiarash
-linkedin: https://www.linkedin.com/in/thekiarash
-github: https://github.com/KiarashS
+twitter: https://go.kiarashs.ir/twitter
+linkedin: https://go.kiarashs.ir/linkedin
+github: https://go.kiarashs.ir/github
 googlescholar: https://go.kiarashs.ir/citations
 ---
 
