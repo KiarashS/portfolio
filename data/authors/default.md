@@ -4,12 +4,12 @@ shortname: Kiarash
 avatar: https://avatars.githubusercontent.com/u/1054134?v=4
 occupation: ML/AI Enthusiast
 company: Software Engineer
-resume: https://drive.google.com/uc?export=download&id=16tzJJoNP3vkURX1Oj5wmRCTIemtQ7Ksl
+resume: https://go.kiarashs.ir/cv
 email: kiarash.s@hotmail.com
 twitter: https://twitter.com/ItIsKiarash
 linkedin: https://www.linkedin.com/in/thekiarash
 github: https://github.com/KiarashS
-googlescholar: https://scholar.google.com/citations?hl=en&user=PlzgVJMAAAAJ
+googlescholar: https://go.kiarashs.ir/citations
 ---
 
 My name is Kiarash Soleimanzadeh, an ML/AI enthusiast, teaching assistant, researcher, and software engineer who aims to evolve, innovate, and inspire through technology. I have over 16 years of experience specializing in the software industry as a software engineer, software architect and consultant, backend developer, DevOps engineer, and frontend developer. I have a solid background in my journey in the world of technology.
