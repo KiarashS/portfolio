@@ -38,10 +38,10 @@ export default function AuthorLayout({ children, frontMatter }: Props) {
               {occupation}
             </div>
             <div className='text-gray-500 dark:text-gray-400'>{company}</div>
-            <div>
+            {/* <div>
               <img src="/static/avatar.jpg" className='hidden dark:block'/>
               <img src="/static/signature-light.png" className='block dark:hidden'/>
-            </div>
+            </div> */}
           </div>
 
           <div className='prose max-w-none pt-8 pb-8 dark:prose-dark xl:col-span-2'>
