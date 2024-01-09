@@ -46,7 +46,7 @@ export default function AuthorLayout({ children, frontMatter }: Props) {
 
           <div className='prose max-w-none pt-8 pb-8 dark:prose-dark xl:col-span-2'>
             {children}
-            <p className='mt-8'>
+            <p className='mt-8 mb-4'>
               <a
                 className='!font-normal !text-black !no-underline dark:!text-white mr-2'
                 href={resume}
@@ -83,10 +83,10 @@ export default function AuthorLayout({ children, frontMatter }: Props) {
                   Google Scholar
                 </RoughNotation>
               </a>
-              <h2 className='mt-8 mb-4 text-2xl font-semibold dark:text-white'>
+              {/* <h2 className='mt-8 mb-4 text-2xl font-semibold dark:text-white'>
                 Skills
               </h2>
-              <StackList stack={WorkStack} />
+              <StackList stack={WorkStack} /> */}
             </p>
           </div>
         </div>
