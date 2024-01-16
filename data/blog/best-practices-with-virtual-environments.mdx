@@ -1,7 +1,7 @@
 ---
 title: 'Best Practices with virtualenvs (Virtual Environments)'
 date: '2023-02-03 02:16:46 +0330'
-tags: ['python', 'best-practice']
+tags: ['python', 'best-practices']
 draft: false
 summary: "Best Practices with python's virtual environments to boost your productivity"
 images: ['/static/blogs/best-practices-with-virtual-environments.png']
@@ -44,11 +44,11 @@ If you are so inclined, you can create virtual environments based on debug build
 
 ### Tip #8
 
-Developing your virtual environment itself requires change control, and their ease of creation helps here too. Suppose that you recently released version 4.3 of a module, and you want to test your code with new versions of two of its dependencies. You *could*, with sufficient skill, persuade **pip** to replace the existing copies of dependencies in your existing virtualenv.
+Developing your virtual environment itself requires change control, and their ease of creation helps here too. Suppose that you recently released version 4.3 of a module, and you want to test your code with new versions of two of its dependencies. You _could_, with sufficient skill, persuade **pip** to replace the existing copies of dependencies in your existing virtualenv.
 
 ### Tip #9
 
-It’s much easier, though, to branch your project, update the requirements, and create an entirely new virtual environment based on the updated requirements. You still have the original virtualenv intact, and you can switch between virtualenvs to investigate specific aspects of any migration issues that might arise. Once you have adjusted your code so that all tests pass with the updated dependencies, you check in your code *and* requirement changes, and merge into version 4.4 to complete the update, advising your colleagues that your code is now ready for the updated versions of the dependencies.
+It’s much easier, though, to branch your project, update the requirements, and create an entirely new virtual environment based on the updated requirements. You still have the original virtualenv intact, and you can switch between virtualenvs to investigate specific aspects of any migration issues that might arise. Once you have adjusted your code so that all tests pass with the updated dependencies, you check in your code _and_ requirement changes, and merge into version 4.4 to complete the update, advising your colleagues that your code is now ready for the updated versions of the dependencies.
 
 ### Tip #10
 
