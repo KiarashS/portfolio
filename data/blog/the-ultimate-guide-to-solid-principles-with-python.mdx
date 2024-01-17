@@ -24,9 +24,20 @@ These principles can help you write code that is more maintainable, flexible, an
 
 ## Single Responsibility Principle (SRP)
 
-> _There should never be more than one reason for a class to change._
->
-> > SRP: The Single Responsibility Principle - Robert C. Martin
+<figure class="text-sm italic font-semibold text-gray-900 dark:text-white">
+    <svg class="w-10 h-10 mb-3 text-gray-400 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
+        <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"/>
+    </svg>
+    <blockquote>
+        <p class="text-base italic font-medium text-gray-900 dark:text-white">There should never be more than one reason for a class to change.</p>
+    </blockquote>
+    <figcaption class="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
+        <div class="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700">
+            <cite class="pe-3 font-medium text-gray-900 dark:text-white" style="margin-right: 0.6rem;">SRP: The Single Responsibility Principle</cite>
+            <cite class="ps-3 text-sm text-gray-500 dark:text-gray-400" style="padding-left: 0.6rem;">Robert C. Martin</cite>
+        </div>
+    </figcaption>
+</figure>
 
 The Single Responsibility Principle (SRP) states that a class should have only one responsibility and only one reason to change. This means that a class should not perform multiple tasks or handle multiple concerns. Instead, it should focus on one thing and do it well.
 
@@ -117,9 +128,20 @@ By applying the SRP, you have reduced the complexity and increased the readabili
 
 ## Open-Closed Principle (OCP)
 
-> _Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification._
->
-> > The Open Closed Principle - Robert C. Martin
+<figure class="text-sm italic font-semibold text-gray-900 dark:text-white">
+    <svg class="w-10 h-10 mb-3 text-gray-400 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
+        <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"/>
+    </svg>
+    <blockquote>
+        <p class="text-base italic font-medium text-gray-900 dark:text-white">Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification.</p>
+    </blockquote>
+    <figcaption class="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
+        <div class="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700">
+            <cite class="pe-3 font-medium text-gray-900 dark:text-white" style="margin-right: 0.6rem;">The Open Closed Principle</cite>
+            <cite class="ps-3 text-sm text-gray-500 dark:text-gray-400" style="padding-left: 0.6rem;">Robert C. Martin</cite>
+        </div>
+    </figcaption>
+</figure>
 
 The Open-Closed Principle (OCP) states that software entities (classes, functions, modules) should be open for extension, but closed for modification. This means that you should be able to add new features or behaviors to your code without changing the existing code.
 
@@ -195,9 +217,20 @@ By applying the OCP, you have made your code more flexible and extensible. You c
 
 ## Liskov Substitution Principle (LSP)
 
-> _Subtype Requirement: Let `φ(x)` be a property provable about objects `x` of type `T`. Then `φ(y)` should be true for objects `y` of type `S` where `S` is a subtype of `T`._
->
-> > A behavioral notion of subtyping - Barbara Liskov and Jeanette Wing
+<figure class="text-sm italic font-semibold text-gray-900 dark:text-white">
+    <svg class="w-10 h-10 mb-3 text-gray-400 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
+        <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"/>
+    </svg>
+    <blockquote>
+        <p class="text-base italic font-medium text-gray-900 dark:text-white">Subtype Requirement: Let `φ(x)` be a property provable about objects `x` of type `T`. Then `φ(y)` should be true for objects `y` of type `S` where `S` is a subtype of `T`.</p>
+    </blockquote>
+    <figcaption class="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
+        <div class="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700">
+            <cite class="pe-3 font-medium text-gray-900 dark:text-white" style="margin-right: 0.6rem;">A behavioral notion of subtyping</cite>
+            <cite class="ps-3 text-sm text-gray-500 dark:text-gray-400" style="padding-left: 0.6rem;">Barbara Liskov and Jeanette Wing</cite>
+        </div>
+    </figcaption>
+</figure>
 
 The Liskov Substitution Principle (LSP) states that subtypes should be substitutable for their base types without altering the correctness of the program. This means that you should be able to use an instance of a subclass wherever you can use an instance of its superclass, without breaking the expected behavior or causing errors.
 
@@ -236,9 +269,20 @@ In the above example, the `Square` class is a subtype of the `Shape` class, and 
 
 ## Interface Segregation Principle (ISP)
 
-> _Clients should not be forced to depend upon interfaces that they do not use._
->
-> > The Interface Segregation Principle - Robert C. Martin
+<figure class="text-sm italic font-semibold text-gray-900 dark:text-white">
+    <svg class="w-10 h-10 mb-3 text-gray-400 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
+        <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"/>
+    </svg>
+    <blockquote>
+        <p class="text-base italic font-medium text-gray-900 dark:text-white">Clients should not be forced to depend upon interfaces that they do not use.</p>
+    </blockquote>
+    <figcaption class="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
+        <div class="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700">
+            <cite class="pe-3 font-medium text-gray-900 dark:text-white" style="margin-right: 0.6rem;">The Interface Segregation Principle</cite>
+            <cite class="ps-3 text-sm text-gray-500 dark:text-gray-400" style="padding-left: 0.6rem;">Robert C. Martin</cite>
+        </div>
+    </figcaption>
+</figure>
 
 The Interface Segregation Principle (ISP) is one of the five SOLID principles of object-oriented programming. It states that no client should be forced to depend on methods it does not use. In other words, an interface should be designed to be as small and cohesive as possible, and a class should not have to implement methods that it does not need or use.
 
@@ -279,18 +323,18 @@ In the above example, the `Car` class is a client-specific interface that only i
 
 ## Dependency Inversion Principle (DIP)
 
-<figure class="max-w-screen-md mx-auto text-center">
-    <svg class="w-10 h-10 mx-auto mb-3 text-gray-400 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
+<figure class="text-sm italic font-semibold text-gray-900 dark:text-white">
+    <svg class="w-10 h-10 mb-3 text-gray-400 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
         <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"/>
     </svg>
     <blockquote>
-        <p class="text-2xl italic font-medium text-gray-900 dark:text-white">"A: High level modules should not depend upon low level Modules. Both should depend upon abstractions."</p>
-        <p class="text-2xl italic font-medium text-gray-900 dark:text-white">"B: Abstractions should not depend upon details. Details should depend upon abstractions."</p>
+        <p class="text-base italic font-medium text-gray-900 dark:text-white">A: High level modules should not depend upon low level Modules. Both should depend upon abstractions.</p>
+        <p class="text-base italic font-medium text-gray-900 dark:text-white">B: Abstractions should not depend upon details. Details should depend upon abstractions.</p>
     </blockquote>
     <figcaption class="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
         <div class="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700">
-            <cite class="pe-3 font-medium text-gray-900 dark:text-white">The Dependency Inversion Principle</cite>
-            <cite class="ps-3 text-sm text-gray-500 dark:text-gray-400">Robert C. Martin</cite>
+            <cite class="pe-3 font-medium text-gray-900 dark:text-white" style="margin-right: 0.6rem;">The Dependency Inversion Principle</cite>
+            <cite class="ps-3 text-sm text-gray-500 dark:text-gray-400" style="padding-left: 0.6rem;">Robert C. Martin</cite>
         </div>
     </figcaption>
 </figure>
