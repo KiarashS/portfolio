@@ -16,9 +16,9 @@ My name is Kiarash Soleimanzadeh, a teaching assistant, researcher, and software
 
 I have been involved with projects on a stable software development methodology and technology for both large-scale and regular-size applications.
 
-I am not only a highly self-motivated, self-taught, creative, hard-working, and problem-solver student but also a teaching assistant, researcher, and software engineer. I am incredibly interested in applications of artificial intelligence in Medicine and Healthcare and Natural Language Processing. If I am not developing codes, I am somewhere else, thinking about Artificial Intelligence. Also, my free time is dedicated to hiking, camping, cycling, reading, swimming, and listening to music. These works are my daily schedules, so feel free to ask for anything related.
+I am not only a highly self-motivated, self-taught, creative, hard-working, and problem-solver student but also a teaching assistant, researcher, and software engineer. I am incredibly interested in applications of artificial intelligence in Medicine and Healthcare and Natural Language Processing. If I am not developing codes, I am somewhere else, thinking about novel research ideas. Also, my free time is dedicated to hiking, camping, cycling, reading, swimming, and listening to music. These works are my daily schedules, so feel free to ask for anything related.
 
-I'm interested in AI in Medicine and Healthcare, Natural Language Processing, and Smart Health. Much of my research and interests are about applications of artificial intelligence to improve quality of life.
+I'm interested in AI in Medicine and Healthcare, Natural Language Processing, and Smart Health.
 
 Martin Fowler said, “Any fool can write code that a computer can understand. Good programmers write code that humans can understand.” Code is clean if it can be understood easily by everyone on the team. Clean code can be read and enhanced by a developer other than its original author. With understandability comes readability, changeability, extensibility, and maintainability. I've prepared a summary of the *Clean Code book by Robert Cecil Martin* for you, please check out [go.kiarashs.ir/cc](https://go.kiarashs.ir/cc "Clean Code").
 
