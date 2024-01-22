@@ -76,7 +76,7 @@ function Banner(props: BannerProps): React.ReactElement {
           </RoughNotation>
         </Link>
       </p>
-      <p className='font-light lg:text-xl'>
+      {/* <p className='font-light lg:text-xl'>
         Download
         <Link className='ml-2 mr-2 font-normal text-black' href='https://go.kiarashs.ir/cv'>
           <RoughNotation
@@ -90,7 +90,7 @@ function Banner(props: BannerProps): React.ReactElement {
             my CV
           </RoughNotation>
         </Link>
-      </p>
+      </p> */}
     </div>
   );
 }

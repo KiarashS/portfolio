@@ -47,7 +47,7 @@ export default function AuthorLayout({ children, frontMatter }: Props) {
           <div className='prose max-w-none pt-8 pb-8 dark:prose-dark xl:col-span-2'>
             {children}
             <p className='mt-8 mb-4'>
-              <a
+              {/* <a
                 className='!font-normal !text-black !no-underline dark:!text-white mr-2'
                 href={resume}
                 target='_blank'
@@ -64,7 +64,7 @@ export default function AuthorLayout({ children, frontMatter }: Props) {
                 >
                   CV (Curriculum Vitae)
                 </RoughNotation>
-              </a>
+              </a> */}
               <a
                 className='!font-normal !text-black !no-underline dark:!text-white ml-4'
                 href={googlescholar}
