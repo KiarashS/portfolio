@@ -17,7 +17,7 @@ function Presentations(): React.ReactElement {
         <Header title='Presentations' />
         <div className='container py-12'>
           <p>
-            Some of the informative presentations' slides:
+            Some of my informative presentations' slides:
             <ul>
               <li>Clean Code</li>
               <li>Regular Expressions</li>
