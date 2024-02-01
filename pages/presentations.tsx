@@ -16,7 +16,7 @@ function Presentations(): React.ReactElement {
       <div className='fade-in divide-y-2 divide-gray-100 dark:divide-gray-800'>
         <Header title='Presentations'
                 subtitle="Some of my presentations and talks" />
-        <div className='container py-12'>
+        <div className='container py-12 px-6'>
           {/* <p> */}
           <ul className="list-disc">
             <li>Clean Code [Comming soon...]</li>
