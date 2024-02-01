@@ -19,8 +19,8 @@ function Presentations(): React.ReactElement {
         <div className='container py-12'>
           {/* <p> */}
           <ul className="list-disc">
-            <li>Clean Code [View]</li>
-            <li>Regular Expressions for data scientists [View]</li>
+            <li>Clean Code [Comming soon...]</li>
+            <li>Regular Expressions for data scientists [Comming soon...]</li>
           </ul>
             {/* <span
               className='ml-2 cursor-pointer !font-normal !text-black !no-underline dark:!text-white'
