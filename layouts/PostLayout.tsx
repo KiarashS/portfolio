@@ -13,7 +13,6 @@ import { ReactNode } from 'react';
 import { AuthorFrontMatter } from 'types/AuthorFrontMatter';
 import { PostFrontMatter } from 'types/PostFrontMatter';
 import { Toc } from 'types/Toc';
-import Script from "next/script";
 
 const editUrl = fileName =>
   `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`;
@@ -208,18 +207,6 @@ export default function PostLayout({
           </div>
         </div>
       </article>
-      <Script
-      id="mermaid-script"
-      type="module"
-      strategy="afterInteractive"
-      dangerouslySetInnerHTML={{
-        __html: `
-        import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs";
-        mermaid.initialize({startOnLoad: true});
-        mermaid.contentLoaded();
-`,
-      }}
-    />
     </SectionContainer>
   );
 }
