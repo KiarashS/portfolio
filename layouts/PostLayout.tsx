@@ -209,6 +209,7 @@ export default function PostLayout({
         </div>
       </article>
       <Script
+      id="mermaid-script"
       type="module"
       strategy="afterInteractive"
       dangerouslySetInnerHTML={{
