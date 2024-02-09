@@ -10,11 +10,13 @@ authors: ['default']
 
 
 <pre class="mermaid bg-white flex justify-center">
+%%{init: {"flowchart": {"htmlLabels": false}} }%%
 flowchart LR
-    A:::foo & B:::bar --> C:::foobar
-    classDef foo stroke:#f00
-    classDef bar stroke:#0f0
-    classDef foobar stroke:#00f
+    markdown["`This **is** _Markdown_`"]
+    newLines["`Line1
+    Line 2
+    Line 3`"]
+    markdown --> newLines
 </pre>
 
 
