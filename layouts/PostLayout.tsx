@@ -217,7 +217,7 @@ export default function PostLayout({
         import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.esm.min.mjs";
         mermaid.initialize({startOnLoad: true});
         mermaid.contentLoaded();
-`,
+        `,
       }}
     />
     </SectionContainer>
