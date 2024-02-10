@@ -15,6 +15,7 @@ import remarkCodeTitles from './remark-code-title';
 import remarkExtractFrontmatter from './remark-extract-frontmatter';
 import remarkImgToJsx from './remark-img-to-jsx';
 import remarkTocHeadings from './remark-toc-headings';
+import remarkRehype from 'remark-rehype';
 // Rehype packages
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeCitation from 'rehype-citation';
@@ -22,6 +23,7 @@ import rehypeKatex from 'rehype-katex';
 import rehypePresetMinify from 'rehype-preset-minify';
 import rehypePrismPlus from 'rehype-prism-plus';
 import rehypeSlug from 'rehype-slug';
+import rehypeRaw from "rehype-raw";
 
 const root = process.cwd();
 
@@ -91,6 +93,7 @@ export async function getFileBySlug<T>(
         [remarkFootnotes, { inlineNotes: true }],
         remarkMath,
         remarkImgToJsx,
+        [remarkRehype, {allowDangerousHtml: true}],
       ];
       options.rehypePlugins = [
         ...(options.rehypePlugins ?? []),
@@ -100,6 +103,7 @@ export async function getFileBySlug<T>(
         [rehypeCitation, { path: path.join(root, 'data') }],
         [rehypePrismPlus, { ignoreMissing: true }],
         rehypePresetMinify,
+        rehypeRaw,
       ];
       return options;
     },
