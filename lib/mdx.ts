@@ -1,5 +1,5 @@
-//@ts-ignore
-//@ts-nocheck
+// //@ts-ignore
+// //@ts-nocheck
 import fs from 'fs';
 import matter from 'gray-matter';
 import { bundleMDX } from 'mdx-bundler';
@@ -17,7 +17,7 @@ import remarkCodeTitles from './remark-code-title';
 import remarkExtractFrontmatter from './remark-extract-frontmatter';
 import remarkImgToJsx from './remark-img-to-jsx';
 import remarkTocHeadings from './remark-toc-headings';
-import remarkRehype from 'remark-rehype';
+// import remarkRehype from 'remark-rehype';
 // Rehype packages
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeCitation from 'rehype-citation';
@@ -25,8 +25,8 @@ import rehypeKatex from 'rehype-katex';
 import rehypePresetMinify from 'rehype-preset-minify';
 import rehypePrismPlus from 'rehype-prism-plus';
 import rehypeSlug from 'rehype-slug';
-import rehypeRaw from "rehype-raw";
-import rehypeMermaid from 'rehype-mermaid'
+// import rehypeRaw from "rehype-raw";
+// import rehypeMermaid from 'rehype-mermaid'
 
 const root = process.cwd();
 
@@ -106,7 +106,7 @@ export async function getFileBySlug<T>(
         [rehypeCitation, { path: path.join(root, 'data') }],
         [rehypePrismPlus, { ignoreMissing: true }],
         rehypePresetMinify,
-        rehypeMermaid,
+        // rehypeMermaid,
         // rehypeRaw,
       ];
       return options;
