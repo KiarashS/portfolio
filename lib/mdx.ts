@@ -96,7 +96,7 @@ export async function getFileBySlug<T>(
         [remarkFootnotes, { inlineNotes: true }],
         remarkMath,
         remarkImgToJsx,
-        [remarkRehype, {allowDangerousHtml: true}],
+        // [remarkRehype, {allowDangerousHtml: true}],
       ];
       options.rehypePlugins = [
         ...(options.rehypePlugins ?? []),
@@ -106,8 +106,8 @@ export async function getFileBySlug<T>(
         [rehypeCitation, { path: path.join(root, 'data') }],
         [rehypePrismPlus, { ignoreMissing: true }],
         rehypePresetMinify,
-        // rehypeMermaid,
-        rehypeRaw,
+        rehypeMermaid,
+        // rehypeRaw,
       ];
       return options;
     },
