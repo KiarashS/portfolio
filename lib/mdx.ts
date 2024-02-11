@@ -1,3 +1,5 @@
+//@ts-ignore
+//@ts-nocheck
 import fs from 'fs';
 import matter from 'gray-matter';
 import { bundleMDX } from 'mdx-bundler';
@@ -24,6 +26,7 @@ import rehypePresetMinify from 'rehype-preset-minify';
 import rehypePrismPlus from 'rehype-prism-plus';
 import rehypeSlug from 'rehype-slug';
 import rehypeRaw from "rehype-raw";
+import rehypeMermaid from 'rehype-mermaid'
 
 const root = process.cwd();
 
@@ -103,6 +106,7 @@ export async function getFileBySlug<T>(
         [rehypeCitation, { path: path.join(root, 'data') }],
         [rehypePrismPlus, { ignoreMissing: true }],
         rehypePresetMinify,
+        // rehypeMermaid,
         rehypeRaw,
       ];
       return options;
