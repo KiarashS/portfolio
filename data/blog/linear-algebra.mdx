@@ -308,7 +308,7 @@ import numpy as np
 import pandas as pd
 import altair as alt
 alt.themes.enable('dark')
-ThemeRegistry.enable('dark')
+# ThemeRegistry.enable('dark')
 ```
 
 # Vectors
@@ -421,24 +421,20 @@ We can inspect the vector shape by:
 
 ```python
 x.shape # (3 dimensions, 1 element on each)
+# (3, 1)
 ```
-
-
-
-
-    (3, 1)
-
-
-
 
 ```python
 print(f'A 3-dimensional vector:\n{x}')
-```
-
+"""
     A 3-dimensional vector:
     [[1]
      [2]
      [3]]
+"""
+```
+
+
 
 
 ## Zero vector, unit vector, and sparse vector
@@ -576,30 +572,21 @@ x = y = np.array([[1],
 
 ```python
 x + y
-```
-
-
-
-
+"""
     array([[2],
            [4],
            [6]])
-
-
-
+"""           
+```
 
 ```python
 np.add(x,y)
-```
-
-
-
-
+"""
     array([[2],
            [4],
            [6]])
-
-
+"""
+```
 
 ### Vector-scalar multiplication
 
@@ -650,16 +637,12 @@ x = np.array([[1],
 
 ```python
 alpha * x
-```
-
-
-
-
+"""
     array([[2],
            [4],
            [6]])
-
-
+"""
+```
 
 ### Linear combinations of vectors
 
@@ -730,15 +713,11 @@ x , y = np.array([[2],[3]]), np.array([[4], [5]])
 
 ```python
 a*x + b*y
-```
-
-
-
-
+"""
     array([[16],
            [21]])
-
-
+"""
+```
 
 ### Vector-vector multiplication: dot product
 
@@ -798,12 +777,13 @@ x, y = np.array([[-2],[2]]), np.array([[4],[-3]])
 
 ```python
 x.T @ y
+# array([[-14]])
 ```
 
 
 
 
-    array([[-14]])
+
 
 
 
@@ -959,14 +939,8 @@ In `NumPy`, we can compute the $L_2$ norm as:
 x = np.array([[3],[4]])
 
 np.linalg.norm(x, 2)
+# 5.0
 ```
-
-
-
-
-    5.0
-
-
 
 If you remember the first "Pythagorean triple", you can confirm that the norm is correct.
 
@@ -987,14 +961,8 @@ In `NumPy` we compute the $L_1$ norm as
 x = np.array([[3],[-4]])
 
 np.linalg.norm(x, 1)
+# 7.0
 ```
-
-
-
-
-    7.0
-
-
 
 Is easy to confirm that the sum of the absolute values of $3$ and $-4$ is $7$.
 
@@ -1015,14 +983,8 @@ In `NumPy` we compute the $L_\infty$ norm as:
 x = np.array([[3],[-4]])
 
 np.linalg.norm(x, np.inf)
+# 4.0
 ```
-
-
-
-
-    4.0
-
-
 
 ## Vector inner product, length, and distance.
 
@@ -1072,14 +1034,8 @@ In machine learning, unless made explicit, we can safely assume that an inner pr
 ```python
 x, y = np.array([[-2],[2]]), np.array([[4],[-3]])
 x.T @ y 
+# array([[-14]])
 ```
-
-
-
-
-    array([[-14]])
-
-
 
 As with the inner product, usually, we can safely assume that **distance** stands for the Euclidean distance or $L_2$ norm unless otherwise noted. To compute the $L_2$ distance between a pair of vectors:
 
@@ -1087,10 +1043,8 @@ As with the inner product, usually, we can safely assume that **distance** stand
 ```python
 distance = np.linalg.norm(x-y, 2)
 print(f'L_2 distance : {distance}')
+# L_2 distance : 7.810249675906656
 ```
-
-    L_2 distance : 7.810249675906656
-
 
 ## Vector angles and orthogonality
 
@@ -1145,10 +1099,8 @@ x, y = np.array([[1], [2]]), np.array([[5], [7]])
 # here we translate the cos(theta) definition
 cos_theta = (x.T @ y) / (np.linalg.norm(x,2) * np.linalg.norm(y,2))
 print(f'cos of the angle = {np.round(cos_theta, 3)}')
+# cos of the angle = [[0.988]]
 ```
-
-    cos of the angle = [[0.988]]
-
 
 We get that $\cos \theta \approx 0.988$. Finally, to know the exact value of $\theta$ we need to take the trigonometric inverse of the cosine function as:
 
@@ -1156,10 +1108,8 @@ We get that $\cos \theta \approx 0.988$. Finally, to know the exact value of $\t
 ```python
 cos_inverse = np.arccos(cos_theta)
 print(f'angle in radiants = {np.round(cos_inverse, 3)}')
+# angle in radiants = [[0.157]]
 ```
-
-    angle in radiants = [[0.157]]
-
 
 We obtain $\theta \approx 0.157 $. To fo from radiants to degrees we can use the following formula:
 
@@ -1167,10 +1117,8 @@ We obtain $\theta \approx 0.157 $. To fo from radiants to degrees we can use the
 ```python
 degrees = cos_inverse * ((180)/np.pi)
 print(f'angle in degrees = {np.round(degrees, 3)}')
+# angle in degrees = [[8.973]]
 ```
-
-    angle in degrees = [[8.973]]
-
 
 We obtain $\theta \approx 8.973^{\circ}$
 
@@ -1193,10 +1141,8 @@ y = np.array([[0], [2]])
 
 cos_theta = (x.T @ y) / (np.linalg.norm(x,2) * np.linalg.norm(y,2))
 print(f'cos of the angle = {np.round(cos_theta, 3)}')
+# cos of the angle = [[0.]]
 ```
-
-    cos of the angle = [[0.]]
-
 
 We see that this vectors are **orthogonal** as $\cos \theta=0$. This is equal to  $\approx 1.57$ radiants and $\theta = 90^{\circ}$
 
@@ -1205,11 +1151,11 @@ We see that this vectors are **orthogonal** as $\cos \theta=0$. This is equal to
 cos_inverse = np.arccos(cos_theta)
 degrees = cos_inverse * ((180)/np.pi)
 print(f'angle in radiants = {np.round(cos_inverse, 3)}\nangle in degrees ={np.round(degrees, 3)} ')
-```
-
+"""
     angle in radiants = [[1.571]]
     angle in degrees =[[90.]] 
-
+"""
+```
 
 ## Systems of linear equations
 
@@ -1276,11 +1222,14 @@ A = np.array([[0,2],  # 1st row
               [1,4]]) # 2nd row
 
 print(f'a 2x2 Matrix:\n{A}')
-```
-
+"""
     a 2x2 Matrix:
     [[0 2]
      [1 4]]
+"""
+```
+
+
 
 
 ## Basic Matrix operations
@@ -1331,31 +1280,21 @@ B = np.array([[3,1],
               [-3,2]])
 ```
 
-
 ```python
 A + B
-```
-
-
-
-
+"""
     array([[ 3,  3],
            [-2,  6]])
-
-
-
+"""
+```
 
 ```python
 np.add(A, B)
-```
-
-
-
-
+"""
     array([[ 3,  3],
            [-2,  6]])
-
-
+"""
+```
 
 ### Matrix-scalar multiplication
 
@@ -1396,28 +1335,19 @@ A = np.array([[1,2],
 
 ```python
 alpha * A
-```
-
-
-
-
+"""
     array([[2, 4],
            [6, 8]])
-
-
-
+"""
+```
 
 ```python
 np.multiply(alpha, A)
-```
-
-
-
-
+"""
     array([[2, 4],
            [6, 8]])
-
-
+"""
+```
 
 ### Matrix-vector multiplication: dot product
 
@@ -1505,28 +1435,19 @@ x = np.array([[1],
 
 ```python
 A @ x
-```
-
-
-
-
+"""
     array([[4],
            [9]])
-
-
-
+"""
+```
 
 ```python
 np.dot(A, x)
-```
-
-
-
-
+"""
     array([[4],
            [9]])
-
-
+"""
+```
 
 ### Matrix-matrix multiplication
 
@@ -1603,28 +1524,19 @@ B = np.array([[1,3],
 
 ```python
 A @ B
-```
-
-
-
-
+"""
     array([[4, 2],
            [9, 7]])
-
-
-
+"""
+```
 
 ```python
 np.dot(A, B)
-```
-
-
-
-
+"""
     array([[4, 2],
            [9, 7]])
-
-
+"""
+```
 
 ### Matrix identity
 
@@ -1708,13 +1620,13 @@ A = np.array([[1, 2, 1],
 ```python
 A_i = np.linalg.inv(A)
 print(f'A inverse:\n{A_i}')
-```
-
+"""
     A inverse:
     [[-7. -7.  6.]
      [ 2.  1. -1.]
      [ 4.  5. -4.]]
-
+"""
+```
 
 We can check the $\textit{A}^{-1}$ is correct by multiplying. If so, we should obtain the identity $\textit{I}_3$
 
@@ -1722,13 +1634,13 @@ We can check the $\textit{A}^{-1}$ is correct by multiplying. If so, we should o
 ```python
 I = np.round(A_i @ A)
 print(f'A_i times A resulsts in I_3:\n{I}')
-```
-
+"""
     A_i times A resulsts in I_3:
     [[ 1.  0.  0.]
      [ 0.  1. -0.]
      [ 0. -0.  1.]]
-
+"""
+```
 
 ### Matrix transpose 
 
@@ -1765,15 +1677,11 @@ A = np.array([[1, 2],
 
 ```python
 A.T
-```
-
-
-
-
+"""
     array([[1, 3, 5],
            [2, 4, 6]])
-
-
+"""
+```
 
 ### Hadamard product
 
@@ -1816,28 +1724,19 @@ B = np.array([[1,3],
 
 ```python
 A * B
-```
-
-
-
-
+"""
     array([[0, 6],
            [2, 4]])
-
-
-
+"""
+```
 
 ```python
 np.multiply(A, B)
-```
-
-
-
-
+"""
     array([[0, 6],
            [2, 4]])
-
-
+"""
+```
 
 ## Special matrices
 
@@ -2269,16 +2168,12 @@ y = np.array([[-1],
 
 ```python
 np.linalg.solve(A, y)
-```
-
-
-
-
+"""
     array([[-2.],
            [ 2.],
            [-1.]])
-
-
+"""
+```
 
 Which confirms our solution is correct.
 
@@ -2453,10 +2348,8 @@ A_rref, A_pivots = A.rref()
 
 ```python
 print('Reduced row echelon form of A:')
+# Reduced row echelon form of A:
 ```
-
-    Reduced row echelon form of A:
-
 
 $$
 \begin{bmatrix}
@@ -2468,11 +2361,8 @@ $$
 
 ```python
 print(f'Column pivots of A: {A_pivots}')
+# Column pivots of A: (0, 1)
 ```
-
-    Column pivots of A: (0, 1)
-
-
 
 ```python
 B_rref, B_pivots = B.rref()
@@ -2481,10 +2371,8 @@ B_rref, B_pivots = B.rref()
 
 ```python
 print('Reduced row echelon form of B:')
+# Reduced row echelon form of B:
 ```
-
-    Reduced row echelon form of B:
-
 
 $$
 \begin{bmatrix}
@@ -2499,10 +2387,8 @@ $$
 
 ```python
 print(f'Column pivots of A: {B_pivots}')
+# Column pivots of A: (0, 1, 3)
 ```
-
-    Column pivots of A: (0, 1, 3)
-
 
 For $\textit{A}$, we found that the first and second column vectors are the *basis*, whereas for $\textit{B}$ is the first, second, and fourth.
 
@@ -2541,14 +2427,8 @@ A = np.array([[1, 2, 3],
 
 ```python
 np.linalg.norm(A, 'fro')
+# 16.881943016134134
 ```
-
-
-
-
-    16.881943016134134
-
-
 
 ### Max norm
 
@@ -2572,14 +2452,8 @@ A = np.array([[1, 2, 3],
 
 ```python
 np.linalg.norm(A, np.inf)
+# 24.0
 ```
-
-
-
-
-    24.0
-
-
 
 In this case, is easy to see that the third row has the largest absolute value.
 
@@ -2607,14 +2481,8 @@ A = np.array([[1, 2, 3],
 
 ```python
 np.linalg.norm(A, 2)
+# 16.84810335261421
 ```
-
-
-
-
-    16.84810335261421
-
-
 
 # Linear and affine mappings
 
@@ -2625,7 +2493,7 @@ import numpy as np
 import pandas as pd
 import altair as alt
 alt.themes.enable('dark')
-ThemeRegistry.enable('dark')
+# ThemeRegistry.enable('dark')
 ```
 
 ## Linear mappings
@@ -2701,8 +2569,7 @@ left_side_1 = T @ (x+y)
 right_side_1 = (T @ x) + (T @ y)
 print(f"Left side of the equation:\n{left_side_1}")
 print(f"Right side of the equation:\n{right_side_1}")
-```
-
+"""
     Left side of the equation:
     [[ 4]
      [ 0]
@@ -2711,6 +2578,10 @@ print(f"Right side of the equation:\n{right_side_1}")
     [[ 4]
      [ 0]
      [-3]]
+"""
+```
+
+
 
 
 Hence, we confirm we get the same results.
@@ -2724,8 +2595,7 @@ left_side_2 = T @ (alpha * x)
 right_side_2 = alpha * (T @ x)
 print(f"Left side of the equation:\n{left_side_2}")
 print(f"Right side of the equation:\n{right_side_2}")
-```
-
+"""
     Left side of the equation:
     [[ 2]
      [ 0]
@@ -2734,7 +2604,8 @@ print(f"Right side of the equation:\n{right_side_2}")
     [[ 2]
      [ 0]
      [-2]]
-
+"""
+```
 
 Again, we confirm we get the same results for both sides of the equation
 
@@ -2780,8 +2651,7 @@ print(f"x before reversal:\n{x}\nx after reversal \n{x_reversal}")
 print(f"y before reversal:\n{y}\ny after reversal \n{y_reversal}")
 print(f"Left side of the equation (add reversed vectors):\n{left_side_1}")
 print(f"Right side of the equation (add reversed vectors):\n{right_side_1}")
-```
-
+"""
     x before reversal:
     [[-1]
      [ 0]
@@ -2806,7 +2676,8 @@ print(f"Right side of the equation (add reversed vectors):\n{right_side_1}")
     [[ 3]
      [ 0]
      [-4]]
-
+"""
+```
 
 This works fine. Let's check the second property $\text{T}(\alpha \bf{x}) = \alpha\textit{T} (\bf{x}) \text{, } \forall \alpha$
 
@@ -2817,8 +2688,7 @@ left_side_2 = T @ (alpha * x)
 right_side_2 = alpha * (T @ x)
 print(f"Left side of the equation:\n{left_side_2}")
 print(f"Right side of the equation:\n{right_side_2}")
-```
-
+"""
     Left side of the equation:
     [[ 2]
      [ 0]
@@ -2827,7 +2697,8 @@ print(f"Right side of the equation:\n{right_side_2}")
     [[ 2]
      [ 0]
      [-2]]
-
+"""
+```
 
 ## Examples of nonlinear mappings
 
@@ -3063,61 +2934,12 @@ df = pd.DataFrame({'dim-1': z[0], 'dim-2':z[1], 'type': ['tran', 'tran', 'base',
 df
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>dim-1</th>
-      <th>dim-2</th>
-      <th>type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>tran</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>4.0</td>
-      <td>8.0</td>
-      <td>tran</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>base</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2.0</td>
-      <td>4.0</td>
-      <td>base</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
+|       | dim-1 | dim-2 | type |
+|-------|-------|------ |------|
+| 0     | 0.0   | 0.0   | tran |
+| 1     | 4.0   | 8.0   | tran |
+| 2     | 0.0   | 0.0   | base |
+| 3     | 2.0   | 4.0   | base |
 
 
 We see that the resulting scaled vector ('tran') is indeed two times the original vector ('base'). Now let's plot. The light blue line solid line represents the original vector, whereas the dashed orange line represents the scaled vector. 
@@ -3237,96 +3059,18 @@ df
 ```
 
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>dim-1</th>
-      <th>dim-2</th>
-      <th>reflection</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>original</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2.0</td>
-      <td>4.0</td>
-      <td>original</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0-degrees</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2.0</td>
-      <td>-4.0</td>
-      <td>0-degrees</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>90-degrees</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>-2.0</td>
-      <td>4.0</td>
-      <td>90-degrees</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>45-degrees</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>4.0</td>
-      <td>2.0</td>
-      <td>45-degrees</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>neg-45-degrees</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>-4.0</td>
-      <td>-2.0</td>
-      <td>neg-45-degrees</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
+|       | dim-1 | dim-2      | reflection     |
+|-------|-------|------------|----------------|
+| 0     | 0.0   | 0.0        | original       |
+| 1     | 2.0   | 4.0        | original       |
+| 2     | 0.0   | 0.0        | 0-degrees      |
+| 3     | 2.0   | -4.0       | 0-degrees      |
+| 4     | 0.0   | 0.0        | 90-degrees     |
+| 5     | -2.0  | 4.0        | 90-degrees     |
+| 6     | 0.0   | 0.0        | 45-degrees     |
+| 7     | 4.0   | 2.0        | 45-degrees     |
+| 8     | 0.0   | 0.0        | neg-45-degrees |
+| 9     | -4.0  | -2.0       | neg-45-degrees |
 
 
 
@@ -3512,85 +3256,16 @@ df
 ```
 
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>dim-1</th>
-      <th>dim-2</th>
-      <th>rotation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>original</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2.0</td>
-      <td>4.0</td>
-      <td>original</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>90-degrees</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>-4.0</td>
-      <td>2.0</td>
-      <td>90-degrees</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>180-degrees</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>-2.0</td>
-      <td>-4.0</td>
-      <td>180-degrees</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>270-degrees</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>4.0</td>
-      <td>-2.0</td>
-      <td>270-degrees</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
+|       | dim-1 | dim-2    | rotation    |
+|-------|-------|----------|-------------|
+| 0     | 0.0   | 0.0      | original    |
+| 1     | 2.0   | 4.0      | original    |
+| 2     | 0.0   | 0.0      | 90-degrees  |
+| 3     | -4.0  | 2.0      | 90-degrees  |
+| 4     | 0.0   | 0.0      | 180-degrees |
+| 5     | -2.0  | -4.0     | 180-degrees |
+| 6     | 0.0   | 0.0      | 270-degrees |
+| 7     | 4.0   | -2.0     | 270-degrees |
 
 
 ```python
@@ -3690,12 +3365,12 @@ P = (y @ y.T)/(y.T @ y)
 
 ```python
 print(f'Projection matrix for y:\n{P}')
-```
-
+"""
     Projection matrix for y:
     [[0.69230769 0.46153846]
      [0.46153846 0.30769231]]
-
+"""
+```
 
 
 ```python
@@ -3705,12 +3380,12 @@ z = P @ x
 
 ```python
 print(f'Projection from x onto y:\n{z}')
-```
-
+"""
     Projection from x onto y:
     [[2.07692308]
      [1.38461538]]
-
+"""
+```
 
 Let's plot the vectors to make things clearer
 
@@ -3738,95 +3413,16 @@ df = pd.DataFrame({'dim-1': v[0], 'dim-2':v[1],
 df
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>dim-1</th>
-      <th>dim-2</th>
-      <th>vector</th>
-      <th>size-line</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>x-vector</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1.000000</td>
-      <td>3.000000</td>
-      <td>x-vector</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>y-base-vector</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3.000000</td>
-      <td>2.000000</td>
-      <td>y-base-vector</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>z-projection</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2.076923</td>
-      <td>1.384615</td>
-      <td>z-projection</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>1.000000</td>
-      <td>3.000000</td>
-      <td>orthogonal-vector</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>2.076923</td>
-      <td>1.384615</td>
-      <td>orthogonal-vector</td>
-      <td>2</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
+|       | dim-1    | dim-2    | vector            | size-line |
+|-------|----------|----------|-------------------|-----------|
+| 0     | 0.000000 | 0.000000 | x-vector          | 2         |
+| 1     | 1.000000 | 3.000000 | x-vector          | 2         |
+| 2     | 0.000000 | 0.000000 | y-base-vector     | 2         |
+| 3     | 3.000000 | 2.000000 | y-base-vector     | 2         |
+| 4     | 0.000000 | 0.000000 | z-projection      | 4         |
+| 5     | 2.076923 | 1.384615 | z-projection      | 4         |
+| 6     | 1.000000 | 3.000000 | orthogonal-vector | 2         |
+| 7     | 2.076923 | 1.384615 | orthogonal-vector | 2         |
 
 
 ```python
@@ -4117,16 +3713,12 @@ l1 = np.array([[1, 0, 0],
 
 ```python
 l1 @ A
-```
-
-
-
-
+"""
     array([[  1,   3,   5],
            [  0,  -4, -11],
            [  1,   3,   2]])
-
-
+"""
+```
 
 As you can see, the result is exactly what we obtained before by $R_2 - 2R_1$. But, we are not done. We still need to get rid of the $1$ and $3$ in the third row. For this, we would normally do $R_3 - R_1$ to obtain:
 
@@ -4174,16 +3766,12 @@ l2 = np.array([[1, 0, 0],
 
 ```python
 l2 @ A
-```
-
-
-
-
+"""
     array([[  1,   3,   5],
            [  0,  -4, -11],
            [  0,   0,  -3]])
-
-
+"""
+```
 
 Indeed, the result is correct. At this point, we have reduced $\textit{A}$ to its **row echelon form**. We will call $\textit{U}$ to the resulting matrix from $\textit{l} \textit{A}$, as it is an *upper triangular matrix*. Hence, we arrived to the identity:
 
@@ -4225,16 +3813,12 @@ U = np.array([[1, 3, 5],
 
 ```python
 L @ U 
-```
-
-
-
-
+"""
     array([[ 1,  3,  5],
            [ 2,  2, -1],
            [ 1,  3,  2]])
-
-
+""""
+```
 
 Indeed, we recover $\textit{A}$ by multiplying $\textit{L}\textit{U}$.
 
@@ -4308,15 +3892,11 @@ A = np.array([[0, 1],
 
 ```python
 P @ A
-```
-
-
-
-
+"""
     array([[1, 1],
            [0, 1]])
-
-
+"""
+```
 
 It works. Now we can put all the pieces together and decompose $\textit{A}$ by using the following expression:
 
@@ -4350,38 +3930,36 @@ P, L, U = lu(A)
 
 ```python
 print(f'Pivot matrix:\n{P}')
-```
-
+"""
     Pivot matrix:
     [[0. 0. 0. 1.]
      [0. 0. 1. 0.]
      [1. 0. 0. 0.]
      [0. 1. 0. 0.]]
-
-
+"""
+```
 
 ```python
 print(f'Lower triangular matrix:\n{np.round(L, 2)}')
-```
-
+"""
     Lower triangular matrix:
     [[ 1.    0.    0.    0.  ]
      [ 0.75  1.    0.    0.  ]
      [ 0.5  -0.29  1.    0.  ]
      [ 0.25 -0.43  0.33  1.  ]]
-
-
+"""
+```
 
 ```python
 print(f'Upper triangular matrix:\n{np.round(U, 2)}')
-```
-
+"""
     Upper triangular matrix:
     [[ 8.    7.    9.    5.  ]
      [ 0.    1.75  2.25  4.25]
      [ 0.    0.   -0.86 -0.29]
      [ 0.    0.    0.    0.67]]
-
+"""
+```
 
 We can confirm the decomposition is correct by multiplying the obtained matrices
 
@@ -4389,14 +3967,14 @@ We can confirm the decomposition is correct by multiplying the obtained matrices
 ```python
 A_recover = np.round(P @ L @ U, 1)
 print(f'PLU multiplicatin:\n{A_recover.astype(int)}')
-```
-
+"""
     PLU multiplicatin:
     [[2 1 1 0]
      [4 3 3 1]
      [8 7 9 5]
      [6 7 9 8]]
-
+"""
+```
 
 We recover $\textit{A}$ perfectly.
 
@@ -4475,8 +4053,7 @@ print(f'Euclidean norm of y:\n{y_norm}\n')
 
 print(f'Normalized x:\n{x_unit}\n')
 print(f'Normalized y:\n{y_unit}')
-```
-
+"""
     Euclidean norm of x:
     5.0
     
@@ -4492,7 +4069,8 @@ print(f'Normalized y:\n{y_unit}')
     [[-0.74278135]
      [ 0.55708601]
      [ 0.37139068]]
-
+"""
+```
 
 We can confirm that the Euclidean norm of the normalized versions of $\hat{\textbf{x}}$ and $\hat{\textbf{y}}$ equals $1$ by:
 
@@ -4500,13 +4078,16 @@ We can confirm that the Euclidean norm of the normalized versions of $\hat{\text
 ```python
 print(f'Euclidean norm of normalized x:\n{np.round(np.linalg.norm(x_unit, 2),1)}\n')
 print(f'Euclidean norm of normalized y:\n{np.round(np.linalg.norm(y_unit, 2),1)}')
-```
-
+"""
     Euclidean norm of normalized x:
     1.0
     
     Euclidean norm of normalized y:
     1.0
+"""
+```
+
+
 
 
 Taking $\hat{\textbf{x}}$ and $\hat{\textbf{y}}$ as a set, we can confirm the conditions for the definition of orthonormal vectors are correct. 
@@ -4516,8 +4097,7 @@ Taking $\hat{\textbf{x}}$ and $\hat{\textbf{y}}$ as a set, we can confirm the co
 print(f'Inner product normalized vectors:\n{np.round(x_unit.T @ y_unit,1)}\n')
 print(f'Inner product normalized x with itself:\n{np.round(x_unit.T @ x_unit,1)}\n') 
 print(f'Inner product normalized y with itself:\n{np.round(y_unit.T @ y_unit,1)}') 
-```
-
+"""
     Inner product normalized vectors:
     [[-0.]]
     
@@ -4526,7 +4106,8 @@ print(f'Inner product normalized y with itself:\n{np.round(y_unit.T @ y_unit,1)}
     
     Inner product normalized y with itself:
     [[1.]]
-
+"""
+```
 
 Sets of vectors can be represented as matrices. **We denote as $\textit{Q}$ the special case of a matrix composed of orthonormal vectors**. The same properties we defined for sets of vectors hold when represented in matrix form. 
 
@@ -4544,28 +4125,24 @@ This is true even when $\textit{Q}$ is not square. Let's see this with the $\tex
 ```python
 Q = np.column_stack((x_unit, y_unit))
 print(f'Orthonormal matrix Q:\n{Q}')
-```
-
+"""
     Orthonormal matrix Q:
     [[ 0.6        -0.74278135]
      [ 0.8         0.55708601]
      [ 0.          0.37139068]]
-
+"""
+```
 
 Now we confirm $\textit{Q}^T \textit{Q}= \textit{I}$
 
 
 ```python
 np.round(Q.T @ Q,1)
-```
-
-
-
-
+"""
     array([[ 1., -0.],
            [-0.,  1.]])
-
-
+"""
+```
 
 This property will be useful for several applications. For instance, the *coupling matrix* or *correlation matrix* of a matrix $\textit{A}$ equals $\textit{A}^T \textit{A}$. If we are able to transform the vectors of $\textit{A}$ into orthonormal vectors, such expressions reduces to $\textit{Q}^T \textit{Q}= \textit{I}$. Other applications are the Fourier series and Least Square problems (as we will see later).
 
@@ -4603,16 +4180,12 @@ A simple way to check the columns of $\textit{A}$ are not orthonormal is to comp
 
 ```python
 A.T @ A
-```
-
-
-
-
+"""
     array([[ 62, -34,   6],
            [-34,  35, -10],
            [  6, -10,   6]])
-
-
+"""
+```
 
 To build our orthogonal set, we begin by denoting $\textbf{a}_1$ as $\textbf{q}_1$.
 
@@ -4652,14 +4225,8 @@ Let's check that $\textbf{q}_1$ and $\textbf{q}_2$ are actually orthogonal. If s
 
 ```python
 np.round(q1 @ q2, 2)
+# -0.0
 ```
-
-
-
-
-    -0.0
-
-
 
 Next, we need to generate $\textbf{q}_3$ from $\textbf{a}_3$. This time, we want $\textbf{q}_3$ to be orthogonal to both $\textbf{q}_1$ and $\textbf{q}_2$. Therefore, we need to subtract its projection along $\textbf{q}_1$ and $\textbf{q}_2$, which yields:
 
@@ -4681,14 +4248,14 @@ Verify orthogonality
 ```python
 print(f'Dot product q1 and q3:\n{np.round(q1 @ q3, 1)}\n')
 print(f'Dot product q2 and q3:\n{np.round(q2 @ q3, 1)}')
-```
-
+"""
     Dot product q1 and q3:
     -0.0
     
     Dot product q2 and q3:
     0.0
-
+"""
+```
 
 We can put $\textbf{q}_1, \textbf{q}_2, \textbf{q}_3$ into $\textit{Q}'$:
 
@@ -4696,13 +4263,13 @@ We can put $\textbf{q}_1, \textbf{q}_2, \textbf{q}_3$ into $\textit{Q}'$:
 ```python
 Q_prime = np.column_stack((q1, q2, q3))
 print(f'Orthogonal matrix Q:\n{Q_prime}')
-```
-
+"""
     Orthogonal matrix Q:
     [[ 2.          2.09677419 -1.33333333]
      [ 7.          0.83870968  0.66666667]
      [-3.          3.35483871  0.66666667]]
-
+"""
+```
 
 The reason we call this matrix $\textit{Q}'$ is that although vectors are orthogonal, they are not normal. 
 
@@ -4710,11 +4277,11 @@ The reason we call this matrix $\textit{Q}'$ is that although vectors are orthog
 ```python
 Q_norms = np.linalg.norm(Q_prime, 2, axis=0)
 print(f'Norms of vectors in Q-prime:\n{Q_norms}')
-```
-
+"""
     Norms of vectors in Q-prime:
     [7.87400787 4.04411161 1.63299316]
-
+"""
+```
 
 We rename $\textit{Q}'$ to $\textit{Q}$ by normalizing its vectors.
 
@@ -4722,30 +4289,20 @@ We rename $\textit{Q}'$ to $\textit{Q}$ by normalizing its vectors.
 ```python
 Q = Q_prime / Q_norms
 np.linalg.norm(Q , 2, axis=0)
+# array([1., 1., 1.])
 ```
-
-
-
-
-    array([1., 1., 1.])
-
-
 
 To confirm we did this right, let's evaluate $\textit{Q}^T \textit{Q}$, that should return the identity:
 
 
 ```python
 np.round(Q.T @ Q, 1)
-```
-
-
-
-
+"""
     array([[ 1., -0., -0.],
            [-0.,  1.,  0.],
            [-0.,  0.,  1.]])
-
-
+"""
+```
 
 There you go: we performed Gram-Schmidt orthogonalization of $\textit{A}$
 
@@ -4779,10 +4336,8 @@ a2 = A[:, 1]
 alpha = (a1.T @ a2)/(a1.T @ a1)
 
 print(f'alpha factor:{np.round(alpha, 2)}')
+# alpha factor:-0.55
 ```
-
-    alpha factor:-0.55
-
 
 Now we need to subtract $\alpha = -0.55$ times $\textbf{a}_1$ from $\textbf{a}_2$. We can represent this operation with an **elementary matrix**, by doing applying the same operations the identity:
 
@@ -4805,11 +4360,11 @@ gamma = (a2.T @ a3)/(a2.T @ a2)
 
 print(f'beta factor:{np.round(beta, 2)}')
 print(f'gamma factor:{np.round(gamma, 2)}')
-```
-
+"""
     beta factor:0.1
     gamma factor:-0.29
-
+"""
+```
 
 We can add this operations to our elementary matrix by subtracting $0.1$ times the first column from the third, and $-0.29$ times the second from the third:
     
@@ -4845,13 +4400,13 @@ As the matrix product of $\textit{Q}'$ and $\textit{l}$
 
 ```python
 print(f'Q-prime and l product:\n{np.round(Q_prime @ l)}')
-```
-
+"""
     Q-prime and l product:
     [[ 2.  1. -2.]
      [ 7. -3.  1.]
      [-3.  5. -1.]]
-
+"""
+```
 
 It works! Now, to recover $\textit{Q}$ will be difficult because of numerical stability and approximation issues in how we have computed things. Actually, if you remove the rounding from `np.round(Q_prime @ l)` you will obtain different numbers. Fortunately, there is no need to compute $\textit{Q}$ and $\textit{R}$ by hand. We follow the previous steps merely for pedagogical purposes. In `NumPy`, we can compute the QR decomposition as: 
 
@@ -4866,8 +4421,7 @@ Let's compare our $\textit{Q}$ with $\textit{Q}_1$
 ```python
 print(f'Q:\n{Q}\n')
 print(f'Q:\n{Q_1}')
-```
-
+"""
     Q:
     [[ 0.25400025  0.51847585 -0.81649658]
      [ 0.88900089  0.20739034  0.40824829]
@@ -4877,7 +4431,8 @@ print(f'Q:\n{Q_1}')
     [[-0.25400025  0.51847585 -0.81649658]
      [-0.88900089  0.20739034  0.40824829]
      [ 0.38100038  0.82956136  0.40824829]]
-
+"""
+```
 
 The numbers are the same, but some signs are flipped. This stability and approximation issues is why you probably always want to use `NumPy` functions (when available). 
 
@@ -5108,14 +4663,8 @@ x = np.array([1,1])
 
 ```python
 A @ x.T
+# array([4, 3])
 ```
-
-
-
-
-    array([4, 3])
-
-
 
 Meaning that the vertical axis was scaled by $4$ and the horizontal axis by $3$, hence, the new parallelogram has area $4 \times 3 = 12$. Since the new area has increased by a factor of $12$, the determinant $\vert \textit{A} \vert =  12$. Although we exemplified this with the basis vectors in $\textit{x}$, the determinant of $\textit{A}$ for mappings of the entire vector space. The figure below visually illustrates this idea. 
 
@@ -5189,12 +4738,12 @@ A = np.array([[1, 0],
               [0,1]])
 
 print(f"x, y vectors in x', y' coordinates:\n{T_i @ A}")
-```
-
+"""
     x, y vectors in x', y' coordinates:
     [[ 0.25  0.25]
      [-0.25  0.25]]
-
+"""
+```
 
 That is our answer: $\textbf{x, y}$ equals to $\begin{bmatrix}0.25 \\ -0.25 \end{bmatrix}$ and $\begin{bmatrix}0.25 \\ 0.25 \end{bmatrix}$ in $\textbf{x', y'}$ coordinate space. **Fig. 19** illustrate this as well.
 
@@ -5205,12 +4754,12 @@ This may become clearer by mapping $\textbf{c}=\begin{bmatrix}-3 \\ -1 \end{bmat
 # vector to map
 a = np.array([[-3],[-1]])
 print(f'Vector a=[1,3] in x\' and y\' basis:\n{T_i@a}')
-```
-
+"""
     Vector a=[1,3] in x' and y' basis:
     [[-1. ]
      [ 0.5]]
-
+"""
+```
 
 In **Fig. 19**, we can confirm the mapping by simply visual inspection.
 
@@ -5447,15 +4996,15 @@ values, vectors = np.linalg.eig(A)
 ```python
 print(f'Eigenvalues of A:\n{values}\n')
 print(f'Eigenvectors of A:\n{np.round(vectors,3)}')
-```
-
+"""
     Eigenvalues of A:
     [5. 2.]
     
     Eigenvectors of A:
     [[ 0.894 -0.707]
      [ 0.447  0.707]]
-
+"""
+```
 
 The eigenvalues are effectively $5$ and $2$. The eigenvectors (aside rounding error), match exactly what we found. For $\lambda=5$, $2\textbf{x}_1 = \textbf{x}_1$, and for $\lambda=2$ that $\textbf{x}_1 = - \textbf{x}_2$.
 
@@ -5482,16 +5031,15 @@ values, vectors = np.linalg.eig(B)
 ```python
 print(f'B Eigenvalues:\n{values}\n')
 print(f'B Eigenvectors:\n{vectors}\n')
-```
-
+"""
     B Eigenvalues:
     [0.+1.j 0.-1.j]
     
     B Eigenvectors:
     [[0.70710678+0.j         0.70710678-0.j        ]
      [0.        -0.70710678j 0.        +0.70710678j]]
-    
-
+"""
+```
 
 The ***+0.j*** indicates the solution yield imaginary numbers, meaning that there are not eigenvectors or eigenvalues for the matrix $\textit{B} \in \mathbb{R}$
 
@@ -5553,8 +5101,7 @@ eigenvalues, eigenvectors = np.linalg.eig(A)
 
 print(f'B Eigenvalues:\n{eigenvalues}\n')
 print(f'B Eigenvectors:\n{eigenvectors}\n')
-```
-
+"""
     B Eigenvalues:
     [2. 8. 3.]
     
@@ -5562,8 +5109,8 @@ print(f'B Eigenvectors:\n{eigenvectors}\n')
     [[ 0.          0.6882472   0.18291323]
      [ 0.          0.6882472  -0.12194215]
      [ 1.          0.22941573  0.97553722]]
-    
-
+"""
+```
 
 We obtained a vector of eigenvalues and a 
 Now, we know that the following identity must be true for scalar-matrix multiplication:
@@ -5591,8 +5138,7 @@ L = I * eigenvalues
 ```python
 print(f'Left-side of the equation AX:\n{A @ X}\n')
 print(f'Right-side of the equation XL:\n{X @ L}\n')
-```
-
+"""
     Left-side of the equation AX:
     [[ 0.          5.50597761  0.54873968]
      [ 0.          5.50597761 -0.36582646]
@@ -5602,34 +5148,28 @@ print(f'Right-side of the equation XL:\n{X @ L}\n')
     [[ 0.          5.50597761  0.54873968]
      [ 0.          5.50597761 -0.36582646]
      [ 2.          1.83532587  2.92661165]]
-    
-
+"""
+```
 
 Verify equality
 
 
 ```python
 print(f'Entry-wise comparison: {np.allclose(A @ X, X @ L)}')
+# Entry-wise comparison: True
 ```
-
-    Entry-wise comparison: True
-
 
 A a side note, it is not a good idea to compare `NumPy` arrays with the equality operator, as rounding error and the finite internal bit representation may yield `False` when values are technically equal. For instance: 
 
 
 ```python
 (A @ X == X @ L)
-```
-
-
-
-
+"""
     array([[ True,  True, False],
            [ True,  True, False],
            [ True,  True,  True]])
-
-
+"""
+```
 
 We still have one issue to address to complete the Eigendecomposition of $\textit{A}$: to get rid of $\textit{X}$ on the left side of the equation. A first thought is simply to multiply by the $\textit{X}^{-1}$ to cancel $\textit{X}$ on both sides. This won't work because on the left side of the equation, $\textit{X}$ is multiplying from the right of $\textit{A}$, whereas on the right side of the equation, $\textit{X}$ is multiplying from the left of $\Lambda$. Yet, we still can get take the inverse to eliminate only from the left side of the equation and obtain:
 
@@ -5647,8 +5187,7 @@ X_inv = np.linalg.inv(X)
 
 print(f'Original matrix A:\n{A}\n')
 print(f'Reconstruction of A with Eigen Decomposition of A:\n{X @ L @ X_inv}')
-```
-
+"""
     Original matrix A:
     [[ 5  3  0]
      [ 2  6  0]
@@ -5658,7 +5197,8 @@ print(f'Reconstruction of A with Eigen Decomposition of A:\n{X @ L @ X_inv}')
     [[ 5.  3.  0.]
      [ 2.  6.  0.]
      [ 4. -2.  2.]]
-
+"""
+```
 
 ### Eigenbasis are a good basis
 
@@ -5867,8 +5407,7 @@ U3, S3, V_T3 = np.linalg.svd(A_square)
 print(f'Left orthogonal matrix wide A:\n{np.round(U1, 2)}\n')
 print(f'Singular values diagonal matrix wide A:\n{np.round(S1, 2)}\n')
 print(f'Right orthogonal matrix wide A:\n{np.round(V_T1, 2)}')
-```
-
+"""
     Left orthogonal matrix wide A:
     [[-0.55  0.83]
      [ 0.83  0.55]]
@@ -5880,7 +5419,8 @@ print(f'Right orthogonal matrix wide A:\n{np.round(V_T1, 2)}')
     [[-0.96 -0.15  0.22]
      [-0.    0.83  0.55]
      [ 0.27 -0.53  0.8 ]]
-
+"""
+```
 
 As expected, we obtain a $n \times n$ orthogonal matrix on the left, and a $m \times m$ orthogonal matrix on the right. `NumPy` only returns the singular values along the diagonal instead of the $2 \times 3$ matrix, yet it makes no difference regarding the values of the SVD.   
 
@@ -5889,8 +5429,7 @@ As expected, we obtain a $n \times n$ orthogonal matrix on the left, and a $m \t
 print(f'Left orthogonal matrix for tall A:\n{np.round(U2, 2)}\n')
 print(f'Singular values diagonal matrix for tall A:\n{np.round(S2, 2)}\n')
 print(f'Right orthogonal matrix for tall A:\n{np.round(V_T2, 2)}')
-```
-
+"""
     Left orthogonal matrix for tall A:
     [[-0.59 -0.24 -0.77]
      [ 0.8  -0.32 -0.51]
@@ -5902,7 +5441,8 @@ print(f'Right orthogonal matrix for tall A:\n{np.round(V_T2, 2)}')
     Right orthogonal matrix for tall A:
     [[-0.97 -0.23]
      [ 0.23 -0.97]]
-
+"""
+```
 
 As expected, we obtain a $m \times m$ orthogonal matrix on the left and a $n \times n$ orthogonal matrix on the right. Notice that `NumPy` returns the singular values in descending order of magnitude. This is a convention you'll find in the literature frequently. 
 
@@ -5911,8 +5451,7 @@ As expected, we obtain a $m \times m$ orthogonal matrix on the left and a $n \ti
 print(f'Left orthogonal matrix for square A:\n{np.round(U3, 2)}\n')
 print(f'Singular values diagonal matrix for square A:\n{np.round(S3, 2)}\n')
 print(f'Right orthogonal matrix for square A:\n{np.round(V_T3, 2)}')
-```
-
+"""
     Left orthogonal matrix for square A:
     [[-0.54 -0.2  -0.82]
      [ 0.79 -0.46 -0.41]
@@ -5925,7 +5464,8 @@ print(f'Right orthogonal matrix for square A:\n{np.round(V_T3, 2)}')
     [[-0.44 -0.13 -0.89]
      [ 0.06 -0.99  0.12]
      [ 0.89  0.   -0.45]]
-
+"""
+```
 
 Although column three is just two times column one (i.e., linearly dependent), we obtain the SVD for $\textit{A}$. Notice that the third singular value equals $0$, which is a reflection of the fact that the third column just contains redundant information.
 
@@ -6019,13 +5559,16 @@ SVD10 = TruncatedSVD(n_components=10, n_iter=7, random_state=1)
 SVD1.fit(A)
 SVD5.fit(A)
 SVD10.fit(A)
+"""
+    TruncatedSVD(algorithm='randomized', n_components=10, n_iter=7, random_state=1,
+                 tol=0.0)
+"""
 ```
 
 
 
 
-    TruncatedSVD(algorithm='randomized', n_components=10, n_iter=7, random_state=1,
-                 tol=0.0)
+
 
 
 
@@ -6035,8 +5578,7 @@ print('Explained variance by component:\n')
 print(f'SVD approximation with 1 component:\n{np.round(SVD1.explained_variance_ratio_, 2)}\n')
 print(f'SVD approximation with 5 components:\n{np.round(SVD5.explained_variance_ratio_, 2)}\n')
 print(f'SVD approximation with 10 component:\n{np.round(SVD10.explained_variance_ratio_,2)}')
-```
-
+"""
     Explained variance by component:
     
     SVD approximation with 1 component:
@@ -6047,16 +5589,15 @@ print(f'SVD approximation with 10 component:\n{np.round(SVD10.explained_variance
     
     SVD approximation with 10 component:
     [0.01 0.04 0.03 0.03 0.03 0.03 0.03 0.03 0.03 0.03]
-
-
+"""
+```
 
 ```python
 print('Singular values for each approximation:\n')
 print(f'SVD approximation with 1 component:\n{np.round(SVD1.singular_values_, 2)}\n')
 print(f'SVD approximation with 5 components:\n{np.round(SVD5.singular_values_, 2)}\n')
 print(f'SVD approximation with 10 component:\n{np.round(SVD10.singular_values_,2)}')
-```
-
+"""
     Singular values for each approximation:
     
     SVD approximation with 1 component:
@@ -6067,8 +5608,8 @@ print(f'SVD approximation with 10 component:\n{np.round(SVD10.singular_values_,2
     
     SVD approximation with 10 component:
     [50.42  5.47  5.26  5.16  5.08  5.06  4.99  4.88  4.72  4.63]
-
-
+"""
+```
 
 ```python
 print('Total explained variance by each approximation:\n')
@@ -6076,8 +5617,7 @@ print('Singular values for each approximation:\n')
 print(f'SVD approximation with 1 component:\n{np.round(SVD1.explained_variance_ratio_.sum(), 2)}\n')
 print(f'SVD approximation with 5 components:\n{np.round(SVD5.explained_variance_ratio_.sum(), 2)}\n')
 print(f'SVD approximation with 10 component:\n{np.round(SVD10.explained_variance_ratio_.sum(),2)}')
-```
-
+"""
     Total explained variance by each approximation:
     
     Singular values for each approximation:
@@ -6090,7 +5630,8 @@ print(f'SVD approximation with 10 component:\n{np.round(SVD10.explained_variance
     
     SVD approximation with 10 component:
     0.29
-
+"""
+```
 
 As expected, the more components (i.e., the highest the rank of the approximation), the highest the explained variance. 
 
@@ -6107,11 +5648,11 @@ A5 = (U * S) @ V_T
 
 ```python
 print(f"Norm of the difference between A and rank 5 approximation:\n{np.round(np.linalg.norm(A - A5, 'fro'), 2)}")
-```
-
+"""
     Norm of the difference between A and rank 5 approximation:
     26.32
-
+"""
+```
 
 This number is not very informative in itself, so we usually utilize the explained variance as an indication of how good is the low-rank approximation.
 
