@@ -327,8 +327,7 @@ Vectors come in three flavors: (1) **geometric vectors**, (2) **polynomials**, (
 
 **Fig. 2: Geometric vectors**
 
-
-<img src="/static/blogs/content-images/linear-algebra/b-geometric-vectors.svg" />
+![Geometric vectors](/static/blogs/content-images/linear-algebra/b-geometric-vectors.svg "Geometric vectors")
 
 
 ### Polynomials
@@ -5658,13 +5657,13 @@ This number is not very informative in itself, so we usually utilize the explain
 
 # Some notes
 
-## Notation
+### Notation
 
 - $x \preceq y$ - these are vectors and x is less than y elementwise
 - $X \preceq Y$ - matrices, $Y-X$ is PSD
   - $v^TXv \leq v^TYv \:\: \forall v$
 
-## Linearity
+### Linearity
 - inner product $<X, Y> = tr(X^TY) = \sum_i \sum_j X_{ij} Y_{ij}$
   - like inner product if we collapsed into big vector
   - linear
@@ -5684,7 +5683,7 @@ This number is not very informative in itself, so we usually utilize the explain
 - *cauchy-schwartz inequality*: $|x^T y| \leq ||x||_2 ||y|||_2$
   - implies *triangle inequality*: $||x+y||^2 \leq (||x|| + ||y||)^2$
 
-## Matrix properties
+### Matrix properties
 
 - $x^TAx = tr(xx^TA)$
 - *nonsingular* = invertible = nonzero determinant = null space of zero
@@ -5719,7 +5718,8 @@ This number is not very informative in itself, so we usually utilize the explain
    - $M/A = D-CA^{-1}B$
    - $X \succeq 0 \iff M/D \succeq 0$
 
-# Matrix calc
+
+## Matrix calc
 
 - overview: imagine derivative $f(x + \Delta)$
 - function f: $\text{anything} \to \mathbb{R}^m$ 
@@ -5741,7 +5741,7 @@ This number is not very informative in itself, so we usually utilize the explain
     - $\implies \frac{\partial}{\partial A} x^TAx = \frac{\partial}{\partial A} tr[xx^TA] = [xx^T]^T = xx^T$
     - useful result: $\frac{\partial}{\partial A} log|A| = A^{-T}$
 
-# Norms
+## Norms
 
 - def
   1. nonnegative
@@ -5751,7 +5751,7 @@ This number is not very informative in itself, so we usually utilize the explain
 - properties
   - convex
 
-## Vector norms
+### Vector norms
 
 - **$L_p-$norms**: $||x||_p = (\sum_{i=1}^n |x_i|^p)^{1/p}$
   - $L_0$ norm - number of nonzero elements (this is not actually a norm!)
@@ -5767,7 +5767,7 @@ This number is not very informative in itself, so we usually utilize the explain
   - dual of $l_1$ is $l_\infty$
   - dual of spectral norm is some of the singular values
 
-## Matrix norms
+### Matrix norms
 
 - schatten p-norms: $||X||_p = (\sum \sigma^p_i(A) )^{1/p}$ - note this is nice for organization but this p is never really mentioned
   - p=1: **nuclear norm** = **trace norm**: $||X||_* = \sum_i \sigma_i$
@@ -5786,9 +5786,9 @@ This number is not very informative in itself, so we usually utilize the explain
      - represents the maximum stretching that X does to a vector u
   - if using p-norms, can get Frobenius and some others
 
-# Eigenstuff
+## Eigenstuff
 
-## Eigenvalues intro - strang 5.1
+### Eigenvalues intro - strang 5.1
 
 - [nice viz](http://setosa.io/ev/eigenvectors-and-eigenvalues/)
 - elimination changes eigenvalues
@@ -5822,7 +5822,7 @@ This number is not very informative in itself, so we usually utilize the explain
     - $S^n_+$ - set of PSD matrices
     - $S^n_{++}$ - set of PD matrices
 
-## Strang 5.2 - diagonalization
+### Strang 5.2 - diagonalization
 
 - *diagonalization* = *eigenvalue decomposition* = *spectral decomposition*
 - assume A (nxn) is symmetric
@@ -5845,7 +5845,7 @@ This number is not very informative in itself, so we usually utilize the explain
 - *generalized eigenvalue decomposition* - for 2 symmetric matrices
   - $A = V \Lambda V^T$, $B=VV^T$
 
-## Strang 6.3 - singular value decomposition
+### Strang 6.3 - singular value decomposition
 
 - SVD for any nxp matrix: $X=U \Sigma V^T$
   - U columns (nxn) are eigenvectors of $XX^T$
@@ -5864,7 +5864,7 @@ This number is not very informative in itself, so we usually utilize the explain
     - we can throw away columns corresponding to small $\sigma_i$
   - pseudoinverse $A^+ = V \Sigma^+ U^T$
 
-##  Strang 5.3 - difference eqs and power $A^k$
+### Strang 5.3 - difference eqs and power $A^k$
 
 - compound interest
 - solving for fibonacci numbers
