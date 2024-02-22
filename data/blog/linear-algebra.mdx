@@ -1,6 +1,6 @@
 ---
 title: 'Linear Algebra'
-date: '2024-02-16'
+date: '2024-02-22'
 tags: ['math']
 draft: false
 summary: 'Linear algebra basics'
@@ -173,7 +173,7 @@ If you find any mistake in notes feel free to reach me, so I can correct the iss
 - [Matrix Approximation](#matrix-approximation):
     - [Best rank-k approximation with SVD](#best-rank-k-approximation-with-svd)
     - [Best low-rank approximation as a minimization problem](#best-low-rank-approximation-as-a-minimization-problem)
-- [Some notes](some-notes)
+- [Some notes](#some-notes)
     
 **[Epilogue](#epilogue)**
 
@@ -293,7 +293,7 @@ The simples way to see the effect of this definition of a function is with a cha
 <div class="flex justify-center items-center">
   <figure>
     <img src="/static/blogs/content-images/linear-algebra/b-function.svg" alt="Functions" />
-    <figcaption>Fig. 1: Functions</figcaption>
+    <figcaption class="text-center">Fig. 1: Functions</figcaption>
   </figure>
 </div>
 
@@ -330,7 +330,7 @@ Vectors come in three flavors: (1) **geometric vectors**, (2) **polynomials**, (
 <div class="flex justify-center items-center">
   <figure>
     <img src="/static/blogs/content-images/linear-algebra/b-geometric-vectors.svg" alt="Geometric vectors" />
-    <figcaption>Fig. 2: Geometric vectors</figcaption>
+    <figcaption class="text-center">Fig. 2: Geometric vectors</figcaption>
   </figure>
 </div>
 
@@ -350,11 +350,12 @@ $$
 5 \times f(x)
 $$
 
-**Fig. 3: Polynomials**
-
-
-<img src="/static/blogs/content-images/linear-algebra/b-polynomials-vectors.svg" />
-
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/b-polynomials-vectors.svg" alt="Polynomials" />
+    <figcaption class="text-center">Fig. 3: Polynomials</figcaption>
+  </figure>
+</div>
 
 ### Elements of R
 
@@ -499,11 +500,12 @@ $$\bf{x} = \begin{bmatrix} 3 \\ 2 \\ 1 \end{bmatrix} \in \mathbb{R}^3$$
 
 we are saying: starting from the origin, move 3 units in the 1st perpendicular axis, 2 units in the 2nd perpendicular axis, and 1 unit in the 3rd perpendicular axis. We will see later that when we have a set of perpendicular axes we obtain the basis of a vector space.
 
-**Fig. 4: Coordinate systems**
-
-
-<img src="/static/blogs/content-images/linear-algebra/b-coordinate-system.svg" />
-
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/b-coordinate-system.svg" alt="Coordinate systems" />
+    <figcaption class="text-center">Fig. 4: Coordinate systems</figcaption>
+  </figure>
+</div>
 
 ## Basic vector operations
 
@@ -811,11 +813,12 @@ In my experience remembering  these properties is not really important, but it's
 
 Consider the vectors $\bf{x}$ and $\bf{y}$ and the scalars $\alpha$ and $\beta$. If we take *all* possible linear combinations of $\alpha \bf{x} + \beta \bf{y}$ we would obtain the **span** of such vectors. This is easier to grasp when you think about geometric vectors. If our vectors $\bf{x}$ and $\bf{y}$ point into **different directions** in the 2-dimensional space, we get that the $span(x,y)$ is equal to **the entire 2-dimensional plane**, as shown in the middle-pane in **Fig. 5**. Just imagine having an unlimited number of two types of sticks: one pointing vertically, and one pointing horizontally. Now, you can reach any point in the 2-dimensional space by simply combining the necessary number of vertical and horizontal sticks (including taking fractions of sticks). 
 
-**Fig. 5: Vector Span**
-
-
-<img src="/static/blogs/content-images/linear-algebra/b-vector-span.svg" />
-
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/b-vector-span.svg" alt="Vector Span" />
+    <figcaption class="text-center">Fig. 5: Vector Span</figcaption>
+  </figure>
+</div>
 
 What would happen if the vectors point in the same direction? Now, if you combine them, you just can **span a line**, as shown in the left-pane in **Fig. 5**. If you have ever heard of the term "multicollinearity", it's closely related to this issue: when two variables are "colinear" they are pointing in the same direction, hence they provide redundant information, so can drop one without information loss.
 
@@ -833,11 +836,12 @@ A **vector subspace (or linear subspace) is a vector space that lies within a la
 
 Intuitively, you can think in closure as being unable to "jump out" from space into another. A pair of vectors laying flat in the 2-dimensional space, can't, by either addition or multiplication, "jump out" into the 3-dimensional space. 
 
-**Fig. 6: Vector subspaces**
-
-
-<img src="/static/blogs/content-images/linear-algebra/b-vector-subspace.svg" />
-
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/b-vector-subspace.svg" alt="Vector subspaces" />
+    <figcaption class="text-center">Fig. 6: Vector subspaces</figcaption>
+  </figure>
+</div>
 
 Consider the following questions: Is $\bf{x}=\begin{bmatrix} 1 \\ 1 \end{bmatrix}$ a valid subspace of $\mathbb{R^2}$? Let's evaluate $\bf{x}$ on the three conditions:
 
@@ -864,11 +868,12 @@ $$
 
 The left-pane shows a triplet of **linearly dependent** vectors, whereas the right-pane shows a triplet of **linearly independent** vectors.
 
-**Fig. 7: Linear dependence and independence**
-
-
-<img src="/static/blogs/content-images/linear-algebra/b-linear-independence.svg" />
-
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/b-linear-independence.svg" alt="Linear dependence and independence" />
+    <figcaption class="text-center">Fig. 7: Linear dependence and independence</figcaption>
+  </figure>
+</div>
 
 A set of vectors is **linearly dependent** if at least one vector can be obtained as a linear combination of other vectors in the set. As you can see in the left pane, we can combine vectors $x$ and $y$ to obtain $z$. 
 
@@ -882,11 +887,12 @@ The importance of the concepts of linear dependence and independence will become
 
 Now that we know what subspaces and linear dependent vectors are, we can introduce the idea of the **null space**. Intuitively, the null space of a set of vectors are **all linear combinations that "map" into the zero vector**. Consider a set of geometric vectors $\bf{w}$, $\bf{x}$, $\bf{y}$, and $\bf{z}$ as in **Fig. 8**. By inspection, we can see that vectors $\bf{x}$ and $\bf{z}$ are parallel to each other, hence, independent. On the contrary, vectors $\bf{w}$ and $\bf{y}$ can be obtained as linear combinations of $\bf{x}$ and $\bf{z}$, therefore, dependent. 
 
-**Fig. 8: Vector null space**
-
-
-<img src="/static/blogs/content-images/linear-algebra/b-vector-null-space.svg" />
-
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/b-vector-null-space.svg" alt="Vector null space" />
+    <figcaption class="text-center">Fig. 8: Vector null space</figcaption>
+  </figure>
+</div>
 
 As result, with this four vectors, we can form the following two combinations that will "map" into the origin of the coordinate system, this is, the zero vector $(0,0)$:
 
@@ -911,11 +917,12 @@ Norms "map" vectors to non-negative values. In this sense are functions that ass
 
 Grasping the meaning of these three properties may be difficult at this point, but they probably become clearer as you improve your understanding of linear algebra.
 
-**Fig. 9: Vector norms**
-
-
-<img src="/static/blogs/content-images/linear-algebra/b-l2-norm.svg" />
-
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/b-l2-norm.svg" alt="Vector norms" />
+    <figcaption class="text-center">Fig. 9: Vector norms</figcaption>
+  </figure>
+</div>
 
 ### Euclidean norm
 
@@ -1067,11 +1074,12 @@ $$
 c^2 = a^2 + b^2 - 2ab \cos \theta
 $$
 
-**Fig. 10: Law of cosines and Angle between vectors**
-
-
-<img src="/static/blogs/content-images/linear-algebra/b-vector-angle.svg" />
-
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/b-vector-angle.svg" alt="Law of cosines and Angle between vectors" />
+    <figcaption class="text-center">Fig. 10: Law of cosines and Angle between vectors</figcaption>
+  </figure>
+</div>
 
 We can replace this expression with vectors lengths as: 
 
@@ -1131,11 +1139,12 @@ We say that a pair of vectors $\bf{x}$ and $\bf{y}$ are **orthogonal** if their 
 
 Here is an example of orthogonal vectors
 
-**Fig. 11: Orthogonal vectors**
-
-
-<img src="/static/blogs/content-images/linear-algebra/b-orthogonal-vectors.svg" />
-
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/b-orthogonal-vectors.svg" alt="Orthogonal vectors" />
+    <figcaption class="text-center">Fig. 11: Orthogonal vectors</figcaption>
+  </figure>
+</div>
 
 
 ```python
@@ -1189,8 +1198,11 @@ equation2 = alt.Chart(df).mark_line(color="red").encode(x="x2", y="y2")
 equation1 + equation2
 ```
 
-<img src="/static/blogs/content-images/linear-algebra/fig1.png" />
-
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/fig1.png" />
+  </figure>
+</div>
 
 # Matrices
 
@@ -1932,11 +1944,12 @@ $$
 
 Geometrically, the solution for this representation equals to plot a **set of planes in 3-dimensional space**, one for each equation, and to find the segment where the planes intersect.
 
-**Fig. 12: Visualiation system of equations as planes**
-
-
-<img src="/static/blogs/content-images/linear-algebra/b-planes-intersection.svg" />
-
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/b-planes-intersection.svg" alt="Visualiation system of equations as planes" />
+    <figcaption class="text-center">Fig. 12: Visualiation system of equations as planes</figcaption>
+  </figure>
+</div>
 
 An alternative way, which I personally prefer to use, is to represent the system as a **linear combination of the column vectors times a scaling term**:
 
@@ -1968,11 +1981,12 @@ $$
 
 Geometrically, the solution for this representation equals to plot a set of **vectors in 3-dimensional** space, one for each column vector, then scale them by $w_i$ and add them up, tip to tail, to find the resulting vector $y$.
 
-**Fig. 13: System of equations as linear combination of vectors**
-
-
-<img src="/static/blogs/content-images/linear-algebra/b-vectors-combination.svg" />
-
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/b-vectors-combination.svg" alt="System of equations as linear combination of vectors" />
+    <figcaption class="text-center">Fig. 13: System of equations as linear combination of vectors</figcaption>
+  </figure>
+</div>
 
 ## The four fundamental matrix subsapces
 
@@ -2792,11 +2806,12 @@ If you are familiar with linear regression, you would notice that the above expr
 
 From a geometrical perspective, affine mappings displace spaces (lines or hyperplanes) from the origin of the coordinate space. Consequently, affine mappings do not operate over *vector spaces* as the zero vector condition $\bf{0} \in S$ does not hold anymore. Affine mappings act onto *affine subspaces*, that I'll define later in this section.
 
-**Fig. 14: Affine mapping**
-
-
-<img src="/static/blogs/content-images/linear-algebra/b-affine-mapping.svg" />
-
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/b-affine-mapping.svg" alt="Affine mapping" />
+    <figcaption class="text-center">Fig. 14: Affine mapping</figcaption>
+  </figure>
+</div>
 
 ## Affine combination of vectors
 
@@ -2815,11 +2830,12 @@ $$
 
 In words, we constrain the sum of the weights $\beta$ to $1$. In practice, this defines a *weighted average of the vectors*. This restriction has a palpable effect which is easier to grasp from a geometric perspective.
 
-**Fig. 15: Affine combinations**
-
-
-<img src="/static/blogs/content-images/linear-algebra/b-affine-combination.svg" />
-
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/b-affine-combination.svg" alt="Affine combinations" />
+    <figcaption class="text-center">Fig. 15: Affine combinations</figcaption>
+  </figure>
+</div>
 
 **Fig. 15** shows two affine combinations. The first combination with weights $\beta_1 = \frac{1}{2}$ and $\beta_2 = \frac{1}{2}$, which yields the midpoint between vectors $\bf{x}$ and $\bf{y}$. The second combination with weights $\beta_1 = 3$ and $\beta_2 =-1$ (add up to $1$), which yield a point over the vector $\bf{z}$. In both cases, we have that the resulting vector lies on the same line. This is a general consequence of constraining the sum of the weights to $1$: *every affine combination of the same set of vectors will map onto the same space*. 
 
@@ -2958,7 +2974,11 @@ chart = alt.Chart(df).mark_line(opacity=0.8).encode(
 chart
 ```
 
-<img src="/static/blogs/content-images/linear-algebra/fig2.png" />
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/fig2.png" />
+  </figure>
+</div>
 
 ### Reflection
 
@@ -3103,7 +3123,11 @@ chart = alt.Chart(df).mark_line().encode(
 base_coor(-5.0, 5.0) + chart
 ```
 
-<img src="/static/blogs/content-images/linear-algebra/fig3.png" />
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/fig3.png" />
+  </figure>
+</div>
 
 ### Shear
 
@@ -3172,7 +3196,11 @@ chart = alt.Chart(df).mark_line().encode(
 base_coor(-5.0, 10.0) + chart
 ```
 
-<img src="/static/blogs/content-images/linear-algebra/fig4.png" />
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/fig4.png" />
+  </figure>
+</div>
 
 ### Rotation
 
@@ -3280,7 +3308,11 @@ chart = alt.Chart(df).mark_line().encode(
 base_coor(-5.0, 5.0) + chart
 ```
 
-<img src="/static/blogs/content-images/linear-algebra/fig5.png" />
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/fig5.png" />
+  </figure>
+</div>
 
 ## Projections
 
@@ -3439,7 +3471,11 @@ chart = alt.Chart(df).mark_line().encode(
 base_coor(-1.0, 4.0) + chart
 ```
 
-<img src="/static/blogs/content-images/linear-algebra/fig6.png" />
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/fig6.png" />
+  </figure>
+</div>
 
 ### Projections onto general subspaces
 
@@ -4208,11 +4244,12 @@ As we will see, $\alpha$ is a scalar, so effectively we are substracting an scal
 
 Keep these ideas in mind as it will be important later for QR decomposition.
 
-**Fig. 16: Orthogonalization**
-
-
-<img src="/static/blogs/content-images/linear-algebra/b-gram-schmidt.svg" />
-
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/b-gram-schmidt.svg" alt="Orthogonalization" />
+    <figcaption class="text-center">Fig. 16: Orthogonalization</figcaption>
+  </figure>
+</div>
 
 Let's compute $\textbf{q}_2$ now:
 
@@ -4477,11 +4514,12 @@ Again, the elements of the *first column*, indicate the *first vector* of the ma
 
 The figure below exemplifies what I just said.
 
-**Fig. 17: Vector orientation**
-
-
-<img src="/static/blogs/content-images/linear-algebra/b-determinant-orientation.svg" />
-
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/b-determinant-orientation.svg" alt="Vector orientation" />
+    <figcaption class="text-center">Fig. 17: Vector orientation</figcaption>
+  </figure>
+</div>
 
 The situation for the $\textit{sign}$ volume of the parallelepiped is no different: when the vectors are *counterclockwise* oriented, we say the vectors are *positively oriented* (i.e., positive volume); when the vectors are *clockwise* oriented, we say the vectors are *negatively oriented* (i.e., negative volume).
 
@@ -4671,11 +4709,12 @@ A @ x.T
 
 Meaning that the vertical axis was scaled by $4$ and the horizontal axis by $3$, hence, the new parallelogram has area $4 \times 3 = 12$. Since the new area has increased by a factor of $12$, the determinant $\vert \textit{A} \vert =  12$. Although we exemplified this with the basis vectors in $\textit{x}$, the determinant of $\textit{A}$ for mappings of the entire vector space. The figure below visually illustrates this idea. 
 
-**Fig. 18: Determinants**
-
-
-<img src="/static/blogs/content-images/linear-algebra/b-determinant-scaling.svg" />
-
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/b-determinant-scaling.svg" alt="Determinants" />
+    <figcaption class="text-center">Fig. 18: Determinants</figcaption>
+  </figure>
+</div>
 
 ### The importance of determinants
 
@@ -4701,11 +4740,12 @@ Can be described as scaling the unit vector $\textbf{x}=\begin{bmatrix} 1 \\ 0 \
 
 If you are like me, you have probably gotten use to the idea of describing any 2-dimensional space as $\textbf{x}$ and $\textbf{y}$ coordinates, with $\textbf{x}$ lying perfectly horizontal and $\textbf{y}$ perpendicular to it, as if this were the only natural way of thinking on coordinates in space. It turns out, there is nothing "natural" about it. You could literally draw a pair of orthogonal vectors on any orientation in space, define the first one as $\textbf{x'}=\begin{bmatrix} 1 \\ 0 \end{bmatrix}$, and the second one as $\textbf{y'}=\begin{bmatrix} 0 \\ 1 \end{bmatrix}$, and that would be perfectly fine. It may look different, but every single mathematical property we have studied so far about vectors would hold. For instance, in Fig 19. the **alternative coordinates** $\textbf{x'}$ and $\textbf{y'}$ are equivalent to the vectors $\textbf{a}=\begin{bmatrix} -2 \\ 2 \end{bmatrix}$ and $\textbf{b}=\begin{bmatrix} 2 \\ 2 \end{bmatrix}$, in the standard $\textbf{x}$ and $\textbf{y}$ coordinates.
 
-**Fig. 19: Change of basis**
-
-
-<img src="/static/blogs/content-images/linear-algebra/b-change-basis.svg" />
-
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/b-change-basis.svg" alt="Change of basis" />
+    <figcaption class="text-center">Fig. 19: Change of basis</figcaption>
+  </figure>
+</div>
 
 The question now is how to "move" from one set of basis vectors to the other. The answer is with **linear mappings**. We know already that $\textbf{x', y'}$ equals to $\textbf{a}=\begin{bmatrix} -2 \\ 2 \end{bmatrix}$ and $\textbf{b}=\begin{bmatrix} 2 \\ 2 \end{bmatrix}$ in $\textbf{x, y}$ coordinates. To find the values of $\textbf{x, y}$ in $\textbf{x', y'}$, we need to take the **inverse of $\textit{T}$**. Think about it in this way: we represented $\textbf{x'=a, y'=a}$ in $\textbf{x, y}$ by scaling its unit vectors by the transformation matrix $\textit{T}$ as:
 
@@ -4772,11 +4812,12 @@ In **Fig. 19**, we can confirm the mapping by simply visual inspection.
 
 Put simply, the **eigenvector of a matrix** is a non-zero vector that *only gets scaled* when multiplied by a transformation matrix $\textit{A}$. In other words, the vector does not rotate or change direction in any manner. It just gets larger or shorter. The **eigenvalue of a matrix** is the factor by which the eigenvector gets scaled. This is a bit of a stretch, but in terms of the personality analogy, we can think in the eigenvector as the personality trait that does not change even when an individual change of context: Lisa Simpson "pivotal" personality trait is *conscientiousness*, and no matter where she is, home, school, etc., their personality revolves around that. Following the analogy, the eigenvalue would represent the magnitude or intensity of such traits in Lisa. Fig 20. illustrate the geometrical representation of an eigenvector with a cube rotation.
 
-**Fig. 20: Eigenvector in a 3-dimensional rotation**
-
-
-<img src="/static/blogs/content-images/linear-algebra/b-eigenvector.svg" />
-
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/b-eigenvector.svg" alt="Eigenvector in a 3-dimensional rotation" />
+    <figcaption class="text-center">Fig. 20: Eigenvector in a 3-dimensional rotation</figcaption>
+  </figure>
+</div>
 
 More formally, we define eigenvectors and eigenvalues as:
 
@@ -5275,11 +5316,12 @@ We said that Eigenbasis is a good basis as it allows us to perform computations 
 
 Fig 21. illustrate the action of $\textit{X}^{-1}$, $\Lambda$, and $\textit{X}$ in a pair of vectors in the standard basis. 
 
-**Fig. 21: Eigendecomposition**
-
-
-<img src="/static/blogs/content-images/linear-algebra/b-eigendecomposition.svg" />
-
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/b-eigendecomposition.svg" alt="Eigendecomposition" />
+    <figcaption class="text-center">Fig. 21: Eigendecomposition</figcaption>
+  </figure>
+</div>
 
 ### The problem with Eigendecomposition
 
@@ -5484,11 +5526,12 @@ The key difference with Eigendecomposition is in $\textit{U}$: instead of going 
 
 Fig 22. illustrate the effect of $\textit{A}^{3 \times 2}$, i.e., $\textit{V}^T$, $\Sigma$, and $\textit{U}$, in a pair of vectors in the standard basis. The fact that the right orthogonal matrix has $3$ column vectors generates the third dimension which is orthogonal to the ellipse surface. 
 
-**Fig. 22: Singular Value Decomposition**
-
-
-<img src="/static/blogs/content-images/linear-algebra/b-svd.svg" />
-
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="/static/blogs/content-images/linear-algebra/b-svd.svg" alt="Singular Value Decomposition" />
+    <figcaption class="text-center">Fig. 22: Singular Value Decomposition</figcaption>
+  </figure>
+</div>
 
 ### Singular Value Decomposition vs Eigendecomposition
 
