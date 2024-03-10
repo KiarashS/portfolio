@@ -16,7 +16,7 @@ My name is Kiarash Soleimanzadeh, a teaching assistant, researcher, and software
 
 I have been involved with projects on a stable software development methodology and technology for both large-scale and regular-size applications.
 
-I am not only a highly self-motivated, self-taught, creative, hard-working, and problem-solver student but also a teaching assistant, researcher, and software engineer. I am incredibly interested in applications of artificial intelligence in Medicine and Healthcare and Natural Language Processing. If I am not developing codes, I am somewhere else, thinking about novel research ideas. Also, my free time is dedicated to hiking, camping, cycling, reading, swimming, and listening to music. These works are my daily schedules, so feel free to ask for anything related.
+I am not only a highly self-motivated, self-taught, creative, hard-working, and problem-solver student but also a teaching assistant, researcher, and software engineer. I am incredibly interested in applications of artificial intelligence in Medicine, Healthcare and Natural Language Processing. If I am not developing codes, I am somewhere else, thinking about novel research ideas. Also, my free time is dedicated to hiking, camping, cycling, reading, swimming, and listening to music. These works are my daily schedules, so feel free to ask for anything related.
 
 I'm interested in AI in Medicine and Healthcare, Natural Language Processing, and Smart Health.
 
