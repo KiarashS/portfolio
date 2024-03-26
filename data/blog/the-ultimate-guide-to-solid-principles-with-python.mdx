@@ -211,7 +211,7 @@ class SMS(Notification):
 
 if __name__ == '__main__':
     notification = SMS()
-    notification.notify('Hello', 'john@test.com')
+    notification.notify('Hello', 'kiarash@test.com')
 ```
 
 In this example:
@@ -248,9 +248,9 @@ class NotificationManager:
             raise Exception('The notification is not supported')
 
 if __name__ == '__main__':
-    contact = Contact('John Doe', 'john@test.com', '(408)-888-9999')
+    contact = Contact('Kiarash Sz', 'kiarash@test.com', '(408)-888-9999')
     notification_manager = NotificationManager(SMS(), contact)
-    notification_manager.send('Hello John')
+    notification_manager.send('Hello Kiarash')
 ```
 
 Now, the `NotificationManager` class accepts a notification object and correctly handles both email and SMS notifications. This adheres to the Liskov Substitution Principle, ensuring that subclasses can seamlessly replace their parent class without causing errors.
