@@ -35,14 +35,14 @@ Why is this important? Because having classes with multiple responsibilities can
 - Difficulty in testing and debugging
 - Difficulty in reusing and modifying
 
-To apply the SRP in Python, you should identify the core responsibility of each class and separate the unrelated or secondary concerns into different classes. For example, suppose you have a class that represents a bank account and performs the following tasks:
+To apply the SRP in Python, you should identify the `core` responsibility of each class and separate the unrelated or secondary concerns into different classes. For example, suppose you have a class that represents a bank account and performs the following tasks:
 
 - Stores the account number and balance
 - Validates the account number format
 - Connects to a database and saves the account data
 - Sends email notifications to the account holder
 
-This class clearly violates the SRP, as it has more than one responsibility and more than one reason to change. A better design would be to split this class into four classes, each with a single responsibility:
+This class clearly violates the SRP, as it has more than one responsibility and more than one reason to change. A better design would be to `split this class into four classes`, each with a single responsibility:
 
 - Account: Stores the account number and balance
 - AccountValidator: Validates the account number format
@@ -115,11 +115,11 @@ By applying the SRP, you have reduced the complexity and increased the readabili
 
 ## Open-Closed Principle (OCP)
 
-The Open-Closed Principle (OCP) states that software entities (classes, functions, modules) should be open for extension, but closed for modification. This means that you should be able to add new features or behaviors to your code without changing the existing code.
+The Open-Closed Principle (OCP) states that software entities (classes, functions, modules) should be open for extension, but closed for modification. This means that __you should be able to add new features or behaviors to your code without changing the existing code__.
 
-Why is this important? Because modifying existing code can introduce bugs, break existing functionality, and violate the expectations of the clients who use your code. By following the OCP, you can avoid these problems and create code that is more stable and robust.
+__Why is this important?__ Because modifying existing code can introduce bugs, break existing functionality, and violate the expectations of the clients who use your code. By following the OCP, you can avoid these problems and create code that is more stable and robust.
 
-To apply the OCP in Python, you should use abstraction and polymorphism to define interfaces that specify the expected behavior of your classes, and then implement those interfaces with concrete classes that provide the specific behavior. For example, suppose you have a class that calculates the area of different shapes:
+To apply the OCP in Python, you should use `abstraction` and `polymorphism` to define interfaces that specify the expected behavior of your classes, and then implement those interfaces with concrete classes that provide the specific behavior. For example, suppose you have a class that calculates the area of different shapes:
 
 ```python
 class AreaCalculator:
@@ -189,40 +189,71 @@ By applying the OCP, you have made your code more flexible and extensible. You c
 
 ## Liskov Substitution Principle (LSP)
 
-The Liskov Substitution Principle (LSP) states that subtypes should be substitutable for their base types without altering the correctness of the program. This means that you should be able to use an instance of a subclass wherever you can use an instance of its superclass, without breaking the expected behavior or causing errors.
+The __Liskov Substitution Principle (LSP)__ is one of the __five SOLID principles__ that guide object-oriented design. It emphasizes that objects of a __subclass should be replaceable with objects of their superclass__ without affecting the correctness of the program. In other words, a subclass should behave like a subtype of its superclass, and the program’s behavior should remain consistent whether we use the superclass or a subclass.
 
-Why is this important? Because violating the LSP can lead to unexpected results, logical errors, and runtime exceptions. By following the LSP, you can ensure that your inheritance hierarchy is consistent and coherent, and that your code adheres to the principle of least surprise.
-
-To apply the LSP in Python, you should follow some rules when designing your subclasses, such as:
-
-- Do not weaken the preconditions of the superclass methods. This means that the subclass methods should accept the same or more general input parameters than the superclass methods.
-- Do not strengthen the postconditions of the superclass methods. This means that the subclass methods should return the same or more specific output values than the superclass methods.
-- Do not violate the invariants of the superclass. This means that the subclass methods should not change the state or behavior of the superclass in a way that contradicts its intended functionality or assumptions.
-
-Here’s an example of how to implement LSP in Python. Consider a scenario where we have a `Shape` class with a `draw()` method. We also have two subclasses, `Rectangle` and `Square`, which inherit from the `Shape` class. The `Rectangle` class has a `set_width()` method, while the `Square` class has a `set_side()` method. If we create a `Square` object and pass it to a function that expects a `Shape` object, the function should work correctly without any issues.
+Let’s explore an example of how to apply the Liskov Substitution Principle in Python. Consider the following initial code snippet:
 
 ```python
-class Shape:
-    def draw(self):
+from abc import ABC, abstractmethod
+
+class Notification(ABC):
+    @abstractmethod
+    def notify(self, message, email):
         pass
 
-class Rectangle(Shape):
-    def set_width(self, width):
-        self.width = width
+class Email(Notification):
+    def notify(self, message, email):
+        print(f'Send {message} to {email}')
 
-class Square(Shape):
-    def set_side(self, side):
-        self.side = side
-
-def draw_shape(shape):
-    shape.draw()
+class SMS(Notification):
+    def notify(self, message, phone):
+        print(f'Send {message} to {phone}')
 
 if __name__ == '__main__':
-    square = Square()
-    draw_shape(square)
+    notification = SMS()
+    notification.notify('Hello', 'john@test.com')
 ```
 
-In the above example, the `Square` class is a subtype of the `Shape` class, and we can pass a `Square` object to the `draw_shape()` function without any issues. This is because the `Square` class has a `set_side()` method, which is equivalent to the `set_width()` method of the `Rectangle` class.
+In this example:
+
+* We have three classes: `Notification`, `Email`, and `SMS`.
+* Both `Email` and `SMS` inherit from the `Notification` class.
+* The `Notification` abstract class defines a `notify()` method that sends a message to an email address.
+* However, the `SMS` class uses a phone number instead of an email for sending messages.
+
+This violates the Liskov Substitution Principle because the `SMS` class does not fully substitute for the `Notification` class. To conform with the principle, we need to adjust the `notify()` method of the `SMS` class to accept a phone number instead of an email.
+
+Here’s an improved version that adheres to the Liskov Substitution Principle:
+
+So we must keep in mind that when we want to develop a class by derivation, the parts of the program where the parent class is used must be able to work with child classes without problems. That is, the child class should not change the characteristics and behavior of the parent class. For example, if the parent class has a method whose output is a number, the child class should not copy this method so that the output is an array.
+
+```python
+class Contact:
+    def __init__(self, name, email, phone):
+        self.name = name
+        self.email = email
+        self.phone = phone
+
+class NotificationManager:
+    def __init__(self, notification, contact):
+        self.contact = contact
+        self.notification = notification
+
+    def send(self, message):
+        if isinstance(self.notification, Email):
+            self.notification.notify(message, self.contact.email)
+        elif isinstance(self.notification, SMS):
+            self.notification.notify(message, self.contact.phone)
+        else:
+            raise Exception('The notification is not supported')
+
+if __name__ == '__main__':
+    contact = Contact('John Doe', 'john@test.com', '(408)-888-9999')
+    notification_manager = NotificationManager(SMS(), contact)
+    notification_manager.send('Hello John')
+```
+
+Now, the `NotificationManager` class accepts a notification object and correctly handles both email and SMS notifications. This adheres to the Liskov Substitution Principle, ensuring that subclasses can seamlessly replace their parent class without causing errors.
 
 ## Interface Segregation Principle (ISP)
 
