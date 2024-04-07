@@ -11,4 +11,5 @@ export type AuthorFrontMatter = {
   linkedin: string;
   github: string;
   googlescholar: string;
+  profile: string;
 };

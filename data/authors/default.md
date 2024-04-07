@@ -10,6 +10,7 @@ twitter: https://go.kiarashs.ir/twitter
 linkedin: https://go.kiarashs.ir/linkedin
 github: https://go.kiarashs.ir/github
 googlescholar: https://go.kiarashs.ir/scholar
+profile: https://profile.kiarashs.ir
 ---
 
 My name is Kiarash Soleimanzadeh, a teaching assistant, researcher, and software engineer who aims to evolve, innovate, and inspire through technology. I have over 16 years of experience specializing in the software industry as a software engineer, software architect and consultant, backend developer, DevOps engineer, and frontend developer. I have a solid background in my journey in the world of technology.
@@ -20,6 +21,6 @@ I am not only a highly self-motivated, self-taught, creative, hard-working, and 
 
 I'm interested in AI in Medicine and Healthcare, Natural Language Processing, and Smart Health.
 
-“Any fool can write code that a computer can understand. Good programmers write code that humans can understand.” Martin Fowler said. Code is clean if it can be understood easily by everyone on the team. Clean code can be read and enhanced by a developer other than its original author. With understandability comes readability, changeability, extensibility, and maintainability. I've prepared a summary of the *Clean Code book by Robert Cecil Martin* for you, please check out [go.kiarashs.ir/cc](https://go.kiarashs.ir/cc "Clean Code").
+<!-- “Any fool can write code that a computer can understand. Good programmers write code that humans can understand.” Martin Fowler said. Code is clean if it can be understood easily by everyone on the team. Clean code can be read and enhanced by a developer other than its original author. With understandability comes readability, changeability, extensibility, and maintainability. I've prepared a summary of the *Clean Code book by Robert Cecil Martin* for you, please check out [go.kiarashs.ir/cc](https://go.kiarashs.ir/cc "Clean Code"). -->
 
 To continue reading, please visit [profile.kiarashs.ir](https://profile.kiarashs.ir "Kiarash Soleimanzadeh").
