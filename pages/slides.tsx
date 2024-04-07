@@ -19,8 +19,8 @@ function Slides(): React.ReactElement {
         <div className='container py-12 px-6'>
           {/* <p> */}
           <ul className="list-disc">
-            <li>Regular Expressions for data scientists [Comming soon...]</li>
-            <li>Clean Code [Comming soon...]</li>
+            <li><a href='https://go.kiarashs.ir/regex' target='_blank'>Regular Expression (regex or regexp) for data scientists</a></li>
+            <li><a href='https://go.kiarashs.ir/cc' target='_blank'>Clean Code</a></li>
           </ul>
             {/* <span
               className='ml-2 cursor-pointer !font-normal !text-black !no-underline dark:!text-white'
