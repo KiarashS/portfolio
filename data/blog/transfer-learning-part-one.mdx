@@ -1,0 +1,175 @@
+---
+title: 'Transfer Learning - Part 1'
+date: '2024-04-24'
+tags: ['machine learning', 'deep learning', 'transfer-learning']
+draft: false
+summary: 'Introduction to transfer learning '
+images: ['https://file.kiarashs.ir/PicGo/transfer%20learning%202.png']
+authors: ['default']
+---
+
+
+
+> [!NOTE]
+>
+> Nowadays, using transfer learning in academia and industry is a state-of-the-art technique. Keep your head up and go ahead!
+
+Transfer learning is a new topic in the world of machine learning. Transfer learning, used in machine learning, is **the reuse of a pre-trained model on a new problem**. In transfer learning, a machine exploits the knowledge gained from a previous task to improve generalization about another.
+
+Let's explore it in this series of articles ;)
+
+
+
+# Introduction
+
+There is significant success in data mining (DM) and machine machine (ML) technologies in many knowledge engineering areas including classification, regression, and clustering. A __major assumption__ in many machine learning and data mining algorithms is **training and future data** must be in the **same feature space** and have the **same distribution**.
+
+In classical machine machine and data mining techniques:
+
+- Training and test data come from a `same task` and a `same domain`
+- Represented in `same feature` and `label spaces`
+- Follow a `same distribution`
+
+In many real-world applications, this assumption may not hold. For example, having a classification task in one domain of interest, but we only have sufficient training data in another domain of interest.
+
+When the **distribution changes**, most statistical models need to be **rebuilt from scratch** using **newly collected training data**. In many real-world applications, it is **expensive or impossible** to re-collect the needed training data and rebuild the models. In such cases, <u>Knowledge Transfer</u> or <u>Transfer Learning</u>, if done successfully, would greatly improve the performance of learning by **avoiding much expensive data labeling efforts**.
+
+
+
+# How to build systems on each domain of interest
+<u>The first scenario</u>: Build every system from scratch? It is **time consuming** and **expensive!** 
+
+<u>The second scenario</u>: Reuse common knowledge extracted from existing systems? **More practical!** This is where transfer learning comes into play.
+
+
+
+# Traditional machine learning vs. transfer learning
+
+As you can see in the below diagrams, in transfer learning, we move knowledge from an existing system to a new system to build a powerful model.
+
+
+
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="https://file.kiarashs.ir/PicGo/Traditional-ML-vs-TL.png" alt="Traditional ML vs. TL" />
+    <figcaption class="text-center">Fig. 1: Traditional ML vs. TL</figcaption>
+  </figure>
+</div>
+
+<div class="flex justify-center items-center">
+  <figure>
+    <img src="https://file.kiarashs.ir/PicGo/Traditional-ML-vs-TL-Langley.png" alt="Traditional ML vs. TL (P. Langley 06)" />
+    <figcaption class="text-center">Fig. 2: Traditional ML vs. TL (P. Langley 06)</figcaption>
+  </figure>
+</div>
+
+
+
+
+# Motivating examples
+
+### Example 1: Web document classification
+
+This is an example in knowledge engineering where transfer learning can truly be beneficial. **Web document classification**, where the goal is to classify a given Web document into several predefined categories:
+
+* Labeled examples may be the university Web pages that are associated with category information obtained through previous *manual-labeling efforts*.
+* For a classification task on a *newly created Web site* (e.g. online shop) where the *data features* or *data distributions* may be different, there may be a lack of labeled training data.
+* May *not be able to directly apply* the Web-page classifiers learned on the university Web site to the new Web site.
+* It would be helpful if we could transfer the classification knowledge into the new domain.
+
+
+
+### Example 2: Indoor Wi-Fi localization
+
+The need for transfer learning may arise **when the data can be easily outdated**. In this case, the labeled data obtained in one time period may not follow the same distribution in a later time period.
+
+* For example, in indoor Wi-Fi localization problems, which aim to *detect a user’s current location based on previously collected Wi-Fi data*, it is *very expensive to calibrate Wi-Fi data* for building localization models *in a large scale environment*, because a user needs to label a large collection of Wi-Fi signal data at each location.
+
+* <u>Idea</u>: adapt the localization model trained in:
+  * *One time period* (the source domain) *for a new time period* (the target domain), or
+  * *On a mobile device* (the source domain) *for a new mobile device* (the target domain).
+
+
+
+
+### Example 3: Sentiment classification
+
+We want to automatically **classify the reviews on a product**, such as a brand of camera, *into positive and negative views*. We need to first collect many reviews of the product and annotate them; then train a classifier on the reviews with their corresponding labels.
+
+<u>Problem</u>: The distribution of review data among different types of products can be very different.
+
+* We need to *collect a large amount of labeled data* in order to train the review classification models *for each product*.
+* The data labeling process can be *very expensive*.
+
+<u>Solution</u>:
+
+* It is better to *adapt a classification model* that is trained on some products to help learn classification models *for some other products*.
+* Transfer learning can *save a significant amount of labeling effort*.
+
+
+
+> [!TIP]
+>
+> It is obvious that the accuracy of a model may be reduced in the target system, and we should try to maximize the accuracy using transfer learning techniques.
+
+> [!TIP]
+>
+> Domains of source and target systems should NOT be completely separated.
+
+
+
+# A brief history of transfer learning
+
+Traditional data mining and machine learning algorithms make predictions on the future data using statistical models that are trained on previously collected labeled or unlabeled training data. Also, semi-supervised classification addresses the problem that the labeled data may be too few to build a good classifier by making use of a large amount of unlabeled data and a small amount of labeled data. 
+
+Transfer learning is motivated by the fact that people can intelligently apply knowledge learned previously to solve new problems faster or with better solutions. Many real-world examples:
+
+* May find that learning to recognize apples might help to recognize pears.
+* Learning to play the electronic organ may help facilitate learning the piano.
+
+
+
+The first and raw idea of transfer learning was introduced in NIPS-95 (1995) workshop on "Learning to Learn". Transfer learning is closely related to the *Multi-task Learning* framework, which tries to learn multiple tasks **simultaneously** even when they are different. In transfer learning, we want to reuse a pre-trained model on a new problem, anyway. In 2005, the Broad Agency Announcement (BAA) 05-29 of Defense Advanced Research Projects Agency (DARPA)’s Information Processing Technology Office (IPTO), gave a new mission of transfer learning: the ability of a system to recognize and apply knowledge and skills <u>learned in previous tasks</u> to <u>novel tasks</u>. In this definition, transfer learning aims to <u>extract the knowledge from one or more source tasks</u> and <u>applies the knowledge to a target task</u>. **In contrast to multi-task learning**, rather than learning all of the source and target tasks simultaneously, transfer learning cares most about the target task.
+
+
+
+# Transfer of learning
+
+Transfer of learning can also be used in other fields other than computational sciences. In psychology, in doing new work, people act based on their previous experiences in different fields. In [^1], explored how individuals would transfer experiences in one context to another context that <u>share similar characteristics</u>. For example:
+
+* The process of learning C++ language can accelerate the process of learning the next programming languages such as Java
+* The process of learning mathematics and physics can be useful in learning other related fields such as computer science and economics
+
+Therefore, the model of learning of people in a domain can be made based on their experiences in other domains.
+
+
+
+Transfer of learning, in the machine learning community, is the ability of a system to recognize and `apply knowledge and skills learned in previous domains/tasks` to `novel tasks/domains`, which `share some commonality`.
+
+
+
+# Why transfer learning?
+
+As you may know, in some domains, labeled data are in **short supply**, the calibration effort is **very expensive**, and the learning process is **time-consuming**. In such cases, transfer learning techniques may help!
+
+
+
+# Fields of transfer learning
+
+Two categories of transfer learning techniques have been proposed:
+
+1. Transfer learning for reinforcement learning [^2]
+2. Transfer learning for classification and regression problems [^3]
+
+
+
+Follow the other parts :)
+
+
+
+###### References:
+
+[^1]: Thorndike and Woodworth, in 1901
+[^2]: Taylor and Stone, Transfer Learning for Reinforcement Learning Domains: A Survey, JMLR 2009
+[^3]: Pan and Yang, A Survey on Transfer, IEEE TKDE 2009
+
