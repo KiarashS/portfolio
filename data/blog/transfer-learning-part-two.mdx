@@ -1,0 +1,29 @@
+---
+title: 'Transfer Learning - Part 2'
+date: '2024-05-02'
+tags: ['machine learning', 'deep learning', 'transfer-learning']
+draft: true
+summary: 'Introduction to transfer learning '
+images: ['https://file.kiarashs.ir/PicGo/transfer%20learning%202.png']
+authors: ['default']
+---
+
+In this article, I want to introduce some other basics of transfer learning, which are essential to use transfer learning techniques in your projects.
+
+
+
+
+# Notation
+
+At first, we will present the mathematical definition of the basic concepts related to transfer learning, as well as the symbols that are used to express these concepts, so that we can provide a precise mathematical definition of the transfer learning process based on them.
+
+
+
+## Domain
+
+Domain consists of two components, a **feature space** $\mathscr{X}$, and a **marginal probability distribution**:
+$$
+P(X), where\;X = \{x_1, x_2, ..., x_n\} \in{\mathscr{X}}
+$$
+
+For example, if our learning task is *document classification*, and each term is taken as a binary feature, then $\mathscr{X}$ is the space of all term vectors, $x_i$ is the $i^{th}$ term vector corresponding to some documents, and $X$ is a particular learning sample.
