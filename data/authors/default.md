@@ -13,7 +13,7 @@ googlescholar: https://go.kiarashs.ir/scholar
 profile: https://profile.kiarashs.ir
 ---
 
-My name is Kiarash Soleimanzadeh, a teaching assistant, researcher, and software engineer who aims to evolve, innovate, and inspire through technology. I have over 16 years of experience specializing in the software industry as a software engineer, software architect and consultant, backend developer, DevOps engineer, and frontend developer. I have a solid background in my journey in the world of technology.
+My name is Kiarash Soleimanzadeh, a teaching assistant, researcher, and software engineer who aims to evolve, innovate, and inspire through technology. I have some years of experience specializing in the software industry as a software engineer, software architect and consultant, backend developer, DevOps engineer, and frontend developer. I have a solid background in my journey in the world of technology.
 
 I have been involved with projects on a stable software development methodology and technology for both large-scale and regular-size applications.
 
