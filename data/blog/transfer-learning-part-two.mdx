@@ -30,7 +30,7 @@ $$
 
 For example, if our learning task is *document classification*, and each term is taken as a binary feature, then $\mathscr{X}$ is the space of all term vectors, $x_i$ is the $i^{th}$ term vector corresponding to some documents, and $X$ is a particular learning sample.
 
-In general, **if two domains are different**, then they may have different feature spaces or different marginal distributions.
+In general, **if two domains are different**, then they may have different feature spaces <u>or</u> different marginal distributions.
 
 
 
@@ -39,7 +39,7 @@ In general, **if two domains are different**, then they may have different featu
 Given a specific domain $D = \{\mathscr{X},\ P(X)\}$, a task consists of two parts:
 
 1. A label space $\mathcal{Y}$, for each $x_i$ in the domain, to predict its corresponding label $y_i, where\ y_i \in{\mathcal{Y}}$
-2. An objective predictive function $f(.)$ (denoted by $\mathcal{T}= \{\mathcal{Y}, f(.)\}$); $f(x)$ can be written as $P(y|x)$.
+2. An objective predictive function $f(.)$ (denoted by $\mathcal{T}= \{\mathcal{Y}, f(.)\}$); $f(x)$ can be written as $P(y|x)$ that shows a label based on different samples.
 
 **If two tasks are different**, then they may have different label spaces or different conditional distributions.
 
@@ -73,6 +73,5 @@ Given a source domain $D_S$ and learning task $T_S$, a target domain $𝒟_𝑇$
 
 * $D_S \neq D_T$ , or
 * $T_S \neq T_T$
-
 
 
