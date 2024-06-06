@@ -2,7 +2,7 @@
 name: Kiarash Soleimanzadeh
 shortname: Kiarash
 avatar: https://avatars.githubusercontent.com/u/1054134?v=4
-occupation: Software Engineer
+occupation: A smart-healthcare enthusiast
 company: A day without learning is a lost day.
 resume: https://go.kiarashs.ir/cv
 email: kiarash.s@hotmail.com
