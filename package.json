@@ -13,6 +13,7 @@
     "preview": "npm run build && npm run serve"
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^5.11.6",
     "@fontsource/fira-code": "^4.5.8",
     "@fontsource/open-sans": "4.5.8",
     "@geist-ui/core": "2.3.8",
