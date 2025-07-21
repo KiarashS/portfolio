@@ -37,7 +37,7 @@ Summary statistics gives you the tools you need to boil down massive datasets to
 ## What is statistics?
 **Descriptive and inferential statistics**
 Statistics can be used to answer lots of different types of questions, but being able to identify which type of statistics is needed is essential to drawing accurate conclusions. In this exercise, you'll sharpen your skills by identifying which type is needed to answer each question.
-</br>
+
 Identify which questions can be answered with descriptive statistics and which questions can be answered with inferential statistics.
 
 **Data type classification**
