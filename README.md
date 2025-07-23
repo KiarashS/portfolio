@@ -1,4 +1,9 @@
 <div align="center">
+  
+[![Deploy Next.js site to Pages](https://github.com/KiarashS/portfolio/actions/workflows/nextjs.yml/badge.svg)](https://github.com/KiarashS/portfolio/actions/workflows/nextjs.yml)
+  
+</div>
+<div align="center">
   <img alt="Logo" src="https://user-images.githubusercontent.com/29705703/128719328-ed17026c-09f8-4f7c-a435-02881dc49b96.png" width="100px" />
 </div>
 <h1 align="center">
