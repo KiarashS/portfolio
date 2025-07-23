@@ -2,7 +2,7 @@
 title: 'Introduction to Statistics in Python'
 date: '2025-07-21'
 tags: ['math', 'machine learning']
-draft: true
+draft: false
 summary: "Statistics is the study of how to collect, analyze, and draw conclusions from data. It's a hugely valuable tool that you can use to bring the future into focus and infer the answer to tons of questions."
 images: ['/static/blogs/linear-algebra.jpg']
 authors: ['default']
