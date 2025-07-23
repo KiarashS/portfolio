@@ -63,7 +63,7 @@ module.exports = withBundleAnalyzer({
   },
   images: {
     domains: ['firebasestorage.googleapis.com', 'avatars.githubusercontent.com', 'raw.githubusercontent.com'],
-    unoptimized: true
+    path: ''
   },
   async headers() {
     return [
