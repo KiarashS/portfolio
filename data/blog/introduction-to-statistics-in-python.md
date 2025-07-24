@@ -4,7 +4,7 @@ date: '2025-07-21'
 tags: ['math', 'machine learning']
 draft: false
 summary: "Statistics is the study of how to collect, analyze, and draw conclusions from data. It's a hugely valuable tool that you can use to bring the future into focus and infer the answer to tons of questions."
-images: ['https://blogfiles.kiarashs.ir/Images/07-24-2025-telegram-cloud-document-4-5769491854332532574.jpg']
+images: ['https://blogfiles.kiarashs.ir/Images/07-24-2025-IntroToStatistics.jpg']
 authors: ['default']
 ---
 
