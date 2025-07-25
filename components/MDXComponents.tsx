@@ -5,7 +5,7 @@ import Image from 'next/image';
 import CustomLink from './Link';
 import TOCInline from './TOCInline';
 import Pre from './Pre';
-import Mermaid from './Mermaid';
+// import Mermaid from './Mermaid';
 import { BlogNewsletterForm } from './NewsletterForm';
 
 const Wrapper: React.ComponentType<{ layout: string }> = ({
@@ -17,7 +17,7 @@ const Wrapper: React.ComponentType<{ layout: string }> = ({
 };
 
 export const MDXComponents: ComponentMap = {
-  mermaid: Mermaid,
+  //mermaid: Mermaid,
   Image,
   //@ts-ignore
   TOCInline,
