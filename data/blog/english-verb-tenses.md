@@ -9,11 +9,6 @@ authors: ['default']
 ---
 
 ```mermaid
----
-title: Future Tenses
-config:
-    theme: default
----
 mindmap
     Future
         Simple[Simple]
