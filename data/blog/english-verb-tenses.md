@@ -2,8 +2,17 @@
 title: 'English Verb Tenses'
 date: '2025-07-21'
 tags: ['english']
-draft: true
+draft: false
 summary: "Verb tenses in English indicate when an action takes place (past, present, or future) and can also convey additional information about the duration or completion of the action."
 images: ['https://blogfiles.kiarashs.ir/Images/07-24-2025-IntroToStatistics.jpg']
 authors: ['default']
 ---
+
+
+<mermaid>
+
+graph LR;
+  A --> B;
+  B --> C;
+
+</mermaid>
