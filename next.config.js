@@ -75,6 +75,7 @@ module.exports = withBundleAnalyzer({
     ];
   },
   webpack: (config, { dev, isServer }) => {
+    config.optimization.minimize = false;
     config.module.rules.push({
       test: /\.(png|jpe?g|gif|mp4)$/i,
       use: [
