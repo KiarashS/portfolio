@@ -19,7 +19,7 @@ function Slides(): React.ReactElement {
         <div className='container py-12 px-6'>
           {/* <p> */}
           <ul className="list-disc">
-            <li className='mb-2'><a href='https://go.kiarashs.ir/ai-med' target='_blank' rel='noreferrer' className='font-medium text-blue-600 dark:text-blue-500 hover:text-blue-800'>Ai in Medicine</a></li>
+            <li className='mb-2'><a href='https://go.kiarashs.ir/ai-med' target='_blank' rel='noreferrer' className='font-medium text-blue-600 dark:text-blue-500 hover:text-blue-800'>AI in Medicine</a></li>
             <li className='mb-2'><a href='https://go.kiarashs.ir/regex' target='_blank' rel='noreferrer' className='font-medium text-blue-600 dark:text-blue-500 hover:text-blue-800'>Regular Expression (regex or regexp)</a></li>
             <li className='mb-2'><a href='https://go.kiarashs.ir/cc' target='_blank' rel='noreferrer' className='font-medium text-blue-600 dark:text-blue-500 hover:text-blue-800'>Clean Code</a></li>
           </ul>
