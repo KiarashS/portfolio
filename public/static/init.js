@@ -1,4 +1,4 @@
 /* eslint-disable */
-window.addEventListener('load', function() {
-    mermaid.initialize({startOnLoad:true});
-});
+// window.addEventListener('load', function() {
+//     mermaid.initialize({startOnLoad:true});
+// });

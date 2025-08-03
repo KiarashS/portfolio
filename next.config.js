@@ -103,10 +103,10 @@ module.exports = withBundleAnalyzer({
         'react-dom': 'preact/compat',
       });
 
-      config.entry = {
-        myCustomScript1: 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js',
-        myCustomScript2: './static/init.js',
-      };
+      // config.entry = {
+      //   myCustomScript1: 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js',
+      //   myCustomScript2: './static/init.js',
+      // };
 
     }
 
