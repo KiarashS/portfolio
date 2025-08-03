@@ -134,39 +134,10 @@
 .name-gradient {
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
-    -webkit-animation: textShine 3s ease-in-out infinite alternate;
-    animation: textShine 3s ease-in-out infinite alternate;
+    -webkit-animation: _ngcontent-ng-c1466259159_textShine 3s ease-in-out infinite alternate;
+    animation: _ngcontent-ng-c1466259159_textShine 3s ease-in-out infinite alternate;
     background: -webkit-radial-gradient(circle,#7182ff 0,#3cff52 100%);
     background: radial-gradient(circle,#7182ff 0,#3cff52 100%);
     background-clip: text;
     background-size: 200%;
-}
-
-@-webkit-keyframes textShine {
-  0% {
-    background-position: 0 50%;
-  }
-  15% {
-    background-position: 0 50%;
-  }
-  85% {
-    background-position: 100% 100%;
-  }
-  to {
-    background-position: 100% 100%;
-  }
-}
-@keyframes textShine {
-  0% {
-    background-position: 0 50%;
-  }
-  15% {
-    background-position: 0 50%;
-  }
-  85% {
-    background-position: 100% 100%;
-  }
-  to {
-    background-position: 100% 100%;
-  }
 }
