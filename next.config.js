@@ -1,9 +1,9 @@
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
-  options: {
-    remarkPlugins: [require('mdx-mermaid').default],
-    rehypePlugins: [],
-  },
+  // options: {
+  //   remarkPlugins: [require('mdx-mermaid').default],
+  //   rehypePlugins: [],
+  // },
   // scripts: [
   //       'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js',
   //       'static/init.js',
@@ -115,6 +115,12 @@ module.exports = withBundleAnalyzer({
         'react-dom/test-utils': 'preact/test-utils',
         'react-dom': 'preact/compat',
       });
+
+      config.entry = {
+        myCustomScript1: 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js',
+        myCustomScript2: './static/init.js',
+      };
+
     }
 
     return config;
