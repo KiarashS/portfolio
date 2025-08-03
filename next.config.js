@@ -1,5 +1,18 @@
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
+  // options: {
+  //   remarkPlugins: [require('mdx-mermaid').default],
+  //   rehypePlugins: [],
+  // },
+  scripts: [
+        'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js',
+        '/init.js',
+    ],
+    markdownPlugins: [ (md) => {
+        md.renderer.rules.fence_custom.mermaid = (tokens, idx, options, env, instance) => {
+            return `<div class="mermaid">${tokens[idx].content}</div>`;
+        };
+    }],
 });
 
 // You might need to insert additional domains in script-src if you are using external services
