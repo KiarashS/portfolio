@@ -36,6 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <GeistProviderWithTheme>
         <LayoutWrapper>
           <Component {...pageProps} />
+          <Script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js" strategy="afterInteractive" />
         </LayoutWrapper>
       </GeistProviderWithTheme>
     </ThemeProvider>
