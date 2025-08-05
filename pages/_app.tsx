@@ -14,6 +14,7 @@ import '@fontsource/open-sans/800.css';
 import { ThemeProvider, useTheme } from 'next-themes';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import Script from 'next/script';
 
 import Analytics from '@/components/analytics';
 import { ClientReload } from '@/components/ClientReload';
