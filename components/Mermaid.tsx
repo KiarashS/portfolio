@@ -1,20 +1,20 @@
-// // components/Mermaid.tsx
-// 'use client';
+// components/Mermaid.tsx
+'use client';
 
-// import { useEffect, useRef } from 'react';
-// import mermaid from 'mermaid';
+import { useEffect, useRef } from 'react';
+import mermaid from 'mermaid';
 
-// interface MermaidProps {
-//   code: string;
-// }
+interface MermaidProps {
+  code: string;
+}
 
-// export default function Mermaid({ code }: MermaidProps) {
-//   const ref = useRef<HTMLDivElement>(null);
+export default function Mermaid({ code }: MermaidProps) {
+  const ref = useRef<HTMLDivElement>(null);
 
-//   useEffect(() => {
-//     mermaid.initialize({ startOnLoad: true });
-//     mermaid.contentLoaded();
-//   }, [code]);
+  useEffect(() => {
+    mermaid.initialize({ startOnLoad: true });
+    mermaid.contentLoaded();
+  }, [code]);
 
-//   return <div className="mermaid" ref={ref}>{code}</div>;
-// }
+  return <div className="mermaid" ref={ref}>{code}</div>;
+}
