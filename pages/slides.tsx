@@ -15,7 +15,7 @@ function Slides(): React.ReactElement {
       />
       <div className='fade-in divide-y-2 divide-gray-100 dark:divide-gray-800'>
         <Header title='Slides'
-                subtitle="Some helpful slides to easily learn and review them" />
+                subtitle="Here are some useful talks and slides to help you learn and review with ease" />
         <div className='container py-12 px-6'>
           {/* <p> */}
           <ul className="list-disc">
