@@ -18,6 +18,10 @@ function Slides(): React.ReactElement {
                 subtitle="Here are some useful talks and slides to help you learn and review with ease" />
         <div className='container py-12 px-6'>
           {/* <p> */}
+          <div className='p-2 bg-indigo-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex' role='alert'>
+            <span className='flex rounded-full bg-indigo-500 uppercase px-2 py-1 text-xs font-bold mr-3'>News</span>
+            <span className='font-semibold mr-2 text-left flex-auto'>Please check out <a href='https://directory.kiarashs.ir/' target='_blank'>my directory</a> for awesome links and files also!</span>
+          </div>
           <ul className="list-disc">
             <li className='mb-2'><a href='https://go.kiarashs.ir/ai-med' target='_blank' rel='noreferrer' className='font-medium text-blue-600 dark:text-blue-500 hover:text-blue-800'>AI in Medicine</a></li>
             <li className='mb-2'><a href='https://go.kiarashs.ir/regex' target='_blank' rel='noreferrer' className='font-medium text-blue-600 dark:text-blue-500 hover:text-blue-800'>Regular Expression (regex or regexp)</a></li>
