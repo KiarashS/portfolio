@@ -1,5 +1,5 @@
 ---
-title: 'Brain Data Analysis: Computational Pathways to Understanding the Human Mind'
+title: 'Brain Data Analysis'
 date: '2025-09-25'
 tags: ['neuroscience', 'image analysis', 'deep learning']
 draft: false
@@ -55,11 +55,11 @@ Raw brain signals are rarely analyzable in their original form. Preprocessing en
   - *Principal Component Analysis (PCA):* Projects data into orthogonal components.  
   - *t-SNE & UMAP:* Reveal clusters in high-dimensional neural data.  
 
-Mathematically, PCA reduces a dataset \( X \in \mathbb{R}^{n \times p} \) into lower-dimensional space:  
+Mathematically, PCA reduces a dataset $X \in \mathbb{R}^{n \times p}$ into lower-dimensional space:  
 
-\[
+$$
 Z = XW, \quad W = \text{argmax}_{W} \, \text{Var}(XW)
-\]
+$$
 
 ---
 
