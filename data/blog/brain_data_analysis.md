@@ -8,7 +8,7 @@ images: ['https://github.com/KiarashS/BlogFiles/blob/master/Images/09-25-2025-Br
 authors: ['default']
 ---
 
-# 🧠 Brain Data Analysis: Computational Pathways to Understanding the Human Mind
+# Brain Data Analysis: Computational Pathways to Understanding the Human Mind
 
 ## Introduction
 
