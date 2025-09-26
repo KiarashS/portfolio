@@ -1,6 +1,6 @@
 ---
 title: 'Brain Data Analysis'
-date: '2025-08-25'
+date: '2025-09-25'
 tags: ['neuroscience', 'image analysis', 'deep learning']
 draft: false
 summary: "Brain data analysis is the process of extracting meaningful patterns and insights from neurological data, such as fMRI or EEG recordings, to understand brain structure, function, and cognitive processes."
