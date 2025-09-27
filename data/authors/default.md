@@ -19,6 +19,6 @@ I am not only a highly self-motivated, self-taught, creative, hard-working, and 
 
 If I am not developing codes, I am somewhere else, thinking about novel research ideas. Also, my free time is dedicated to hiking, camping, cooking, cycling, reading, swimming, and listening to music. These works are my daily schedules, so feel free to ask for anything related.
 
-I am so interested in data science, big data, artificial intelligence in medicine, and natural language processing to improve quality of life.
+I am so interested in machine/deep learning, computer vision, image/signal analysis, large language models, multimodal learning, natural language processing, and data analysis to improve quality of life.
 
 To continue reading, please visit [profile.kiarashs.ir](https://profile.kiarashs.ir "Kiarash Soleimanzadeh").
