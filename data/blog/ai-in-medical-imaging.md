@@ -1,7 +1,7 @@
 ---
 title: 'AI in Medical Imaging — A Comprehensive Guide'
 date: '2025-09-27'
-tags: ['medical imaging', 'deep learning']
+tags: ['medical imaging', 'image analysis', 'deep learning']
 draft: false
 summary: "Artificial Intelligence (AI) is revolutionizing the field of diagnostic imaging in medicine. This technology, which combines advanced algorithms and machine/deep learning, has made significant strides in interpreting and utilizing medical images like X-rays, MRIs, and CT scans."
 images: ['https://blogfiles.kiarashs.ir/Images/09-29-2025-medical%20imaging.jpeg']

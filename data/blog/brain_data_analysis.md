@@ -1,7 +1,7 @@
 ---
 title: 'Brain Data Analysis'
 date: '2025-09-25'
-tags: ['neuroscience', 'image analysis', 'deep learning']
+tags: ['neuroscience', 'medical imaging', 'image analysis', 'deep learning']
 draft: false
 summary: "Brain data analysis is the process of extracting meaningful patterns and insights from neurological data, such as fMRI or EEG recordings, to understand brain structure, function, and cognitive processes."
 images: ['https://github.com/KiarashS/BlogFiles/blob/master/Images/09-25-2025-Brain%20Data%20Analysis.png?raw=true']
