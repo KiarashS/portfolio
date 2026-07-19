@@ -20,16 +20,17 @@ function Banner(props: BannerProps): React.ReactElement {
       <p className='mt-2 mb-3 text-lg lg:my-4 lg:text-2xl'>
         {frontMatter.occupation}
       </p>
-      {/* <div className='my-4'>
+      <div className='my-2'>
         <iframe
           src='/static/kiarash-signature.html'
           title='Signature'
           scrolling='no'
           width='100%'
           height='120'
-          style={{ transform: 'rotate(-7deg)', border: 'none' }}
+          style={{ border: 'none' }}
         />
-      </div> */}
+      </div>
+      {/* transform: 'rotate(-7deg)', */}
       <p className='font-light mb-2 lg:text-xl'>
         Technical articles in my professional life,
         <Link className='ml-2 mr-2 font-normal text-black' href='/blog'>
