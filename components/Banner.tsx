@@ -15,14 +15,15 @@ function Banner(props: BannerProps): React.ReactElement {
   return (
     <div className='fade-in banner flex flex-1 flex-col justify-center px-6 py-10 dark:text-white lg:px-10'>
       <h1 className='text-3xl font-bold dark:text-white lg:text-5xl'>
-        Hi, I am <span style={{ width: '46%' }}><iframe
+        Hi, I am <span style={{ width: '46%', display: 'inline-block', height: '50px' }}><iframe
           src='/static/kiarash-signature.html'
           title='Signature'
           scrolling='no'
           width='100%'
           height='120'
           style={{ border: 'none' }}
-        /></span>{/*<span className='name-gradient'>{frontMatter.shortname}</span> */}
+        /></span>
+        {/*<span className='name-gradient'>{frontMatter.shortname}</span> */}
       </h1>
       <p className='mt-2 mb-3 text-lg lg:my-4 lg:text-2xl'>
         {frontMatter.occupation}
