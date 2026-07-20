@@ -15,7 +15,7 @@ function Banner(props: BannerProps): React.ReactElement {
   return (
     <div className='fade-in banner flex flex-1 flex-col justify-center px-6 py-10 dark:text-white lg:px-10'>
       <h1 className='text-3xl dark:text-white lg:text-5xl'>{/* font-bold  */}
-        Hi, I am <span style={{ width: '190px', display: 'inline-block', height: '53px', marginLeft: '-9px', transform: 'rotate(-3deg)' }}><iframe
+        Hi, I am <span style={{ width: '200px', display: 'inline-block', height: '55px', marginLeft: '-9px', transform: 'rotate(-3deg)' }}><iframe
           src='/static/kiarash-signature.html'
           title='Signature'
           scrolling='no'
