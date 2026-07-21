@@ -21,8 +21,7 @@ function Banner(props: BannerProps): React.ReactElement {
           scrolling='no'
           width='100%'
           height='120'
-          allowTransparency={true}
-          sandbox='allow-scripts'
+          className='dark:bg-[#171717]'
           style={{ border: 'none' }}
         /></span>
         {/*<span className='name-gradient'>{frontMatter.shortname}</span> */}
