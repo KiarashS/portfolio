@@ -21,12 +21,33 @@
 </div>
 
 <style>
-  .kiarash-signature { display: inline-block; width: 320px; max-width: 100%; }
+  .kiarash-signature {
+    display: inline-block; width: 320px; max-width: 100%;
+    --ks-ink: #1a2b4a;
+    --ks-bg: transparent;
+  }
   .kiarash-signature svg { width: 100%; height: auto; overflow: visible; display: block; }
+  .kiarash-signature { background-color: var(--ks-bg); }
+  .ks-glyph { fill: var(--ks-ink); stroke: var(--ks-ink); }
+  .ks-flourish { stroke: var(--ks-ink); }
+
+  /* Automatic: follows the OS/browser preference, unless a manual choice below overrides it */
   @media (prefers-color-scheme: dark) {
-      .kiarash-signature { background-color: rgba(23, 23, 23, 1); }
-      .ks-glyph { fill: rgba(255, 255, 255, 1); stroke: rgba(255, 255, 255, 1); }
-      .ks-flourish { stroke: rgba(255, 255, 255, 1); }
+    .kiarash-signature:not([data-theme="light"]) {
+      --ks-ink: rgba(255, 255, 255, 1);
+      --ks-bg: rgba(23, 23, 23, 1);
+    }
+  }
+
+  /* Manual: set by the page's own light/dark toggle, wins regardless of OS preference.
+     See the script below for how to drive this from a button on kiarashs.ir. */
+  .kiarash-signature[data-theme="dark"] {
+    --ks-ink: rgba(255, 255, 255, 1);
+    --ks-bg: rgba(23, 23, 23, 1);
+  }
+  .kiarash-signature[data-theme="light"] {
+    --ks-ink: #1a2b4a;
+    --ks-bg: transparent;
   }
 </style>
 
@@ -40,6 +61,66 @@
   var clips = [].slice.call(wrap.querySelectorAll('clipPath > rect'));
   var flourish = wrap.querySelector('.ks-flourish');
   var ease = function (e) { return e < 0.5 ? 2*e*e : 1 - Math.pow(-2*e+2, 2)/2; };
+
+  // --- Light/dark theme switching -------------------------------------
+  // 'dark' / 'light' forces that look regardless of OS preference;
+  // anything else (e.g. 'auto') clears the override and falls back to
+  // the @media (prefers-color-scheme) rule in the <style> above.
+  function setTheme(theme) {
+    if (theme === 'dark' || theme === 'light') {
+      wrap.setAttribute('data-theme', theme);
+    } else {
+      wrap.removeAttribute('data-theme');
+    }
+  }
+
+  // 1) Direct call. Works whenever this script shares a window with the
+  //    toggle button (fragment injected straight into the page's own DOM).
+  //    From kiarashs.ir: window.kiarashSignatureSetTheme('dark' | 'light' | 'auto')
+  window.kiarashSignatureSetTheme = setTheme;
+
+  // 2) postMessage. Works from anywhere, including a cross-origin iframe.
+  //    From the parent page:
+  //    iframeEl.contentWindow.postMessage({ kiarashSignatureTheme: 'dark' }, '*')
+  window.addEventListener('message', function (ev) {
+    var msg = ev && ev.data;
+    if (msg && typeof msg === 'object' && 'kiarashSignatureTheme' in msg) {
+      setTheme(msg.kiarashSignatureTheme);
+    }
+  });
+
+  // 3) Auto-follow the parent page's <html>/<body> class or data-theme
+  //    attribute, for a same-origin iframe embed (e.g.
+  //    <iframe src="/static/kiarash-signature.html">) so the existing
+  //    toggle button on kiarashs.ir works with zero changes on its end,
+  //    as long as it flips a "dark"/"light" class or data-theme attribute.
+  //    Silently does nothing if that guess doesn't match, or if the
+  //    frame is cross-origin - the @media rule remains the fallback.
+  function readThemeFrom(node) {
+    if (!node) return null;
+    if (node.classList) {
+      if (node.classList.contains('dark')) return 'dark';
+      if (node.classList.contains('light')) return 'light';
+    }
+    var attr = node.getAttribute && node.getAttribute('data-theme');
+    return (attr === 'dark' || attr === 'light') ? attr : null;
+  }
+  try {
+    if (window.parent && window.parent !== window && window.parent.document) {
+      var pDoc = window.parent.document;
+      var syncFromParent = function () {
+        var found = readThemeFrom(pDoc.documentElement) || readThemeFrom(pDoc.body);
+        setTheme(found); // pass null through too, so "auto" on the parent clears our override
+      };
+      syncFromParent();
+      var themeObserver = new MutationObserver(syncFromParent);
+      themeObserver.observe(pDoc.documentElement, { attributes: true, attributeFilter: ['class', 'data-theme'] });
+      if (pDoc.body) themeObserver.observe(pDoc.body, { attributes: true, attributeFilter: ['class', 'data-theme'] });
+    }
+  } catch (e) {
+    // Cross-origin parent: ignore, @media (prefers-color-scheme) still applies.
+  }
+  // ---------------------------------------------------------------------
 
   function reset() {
     clips.forEach(function (r) { r.setAttribute('width', 0); });
