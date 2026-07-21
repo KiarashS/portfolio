@@ -21,6 +21,15 @@
 </div>
 
 <style>
+  /* JS-independent baseline for the <iframe src="kiarash-signature.html"> case: strip this
+     document's own default white canvas so the iframe is transparent even if the script
+     below never runs (blocked by a CSP, or an iframe sandbox="..." missing allow-scripts).
+     Deliberately bare-element, lowest-possible specificity, so if this fragment is ever
+     instead injected directly into an existing page, that page's own (near-certainly more
+     specific) background rules still win over this and nothing here overrides them. */
+  html, body { background-color: transparent; }
+  body { margin: 0; }
+
   .kiarash-signature {
     display: inline-block; width: 320px; max-width: 100%;
     --ks-ink: #1a2b4a;
