@@ -11,7 +11,7 @@ const siteMetadata = {
   siteLogo: '/static/images/logo.png',
   image: '/static/avatar.jpg',
   socialBanner: '/static/banner.png',
-  email: 'kiarash.s@hotmail.com',
+  email: 'kiarash.soleimanzade@gmail.com',
   github: 'https://github.com/KiarashS',
   twitter: 'https://twitter.com/ItIsKiarash',
   facebook: 'https://facebook.com',

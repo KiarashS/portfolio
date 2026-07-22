@@ -25,7 +25,7 @@ export const contact: Contact = {
     linkedin: 'https://go.kiarashs.ir/linkedin',
     twitter: 'https://go.kiarashs.ir/twitter',
     youtube: 'https://www.youtube.com/c/KiarashS',
-    email: 'mailto:kiarash.s@hotmail.com',
+    email: 'mailto:kiarash.soleimanzade@gmail.com',
     buymeacoffee: 'https://www.buymeacoffee.com/_kiarash_',
   },
 };
