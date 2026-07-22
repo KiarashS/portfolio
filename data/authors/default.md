@@ -5,7 +5,7 @@ avatar: https://avatars.githubusercontent.com/u/1054134?v=4
 occupation: A curious mind with a love for discovery
 company: A day without learning is a lost day.
 resume: https://go.kiarashs.ir/cv
-email: kiarash.s@hotmail.com
+email: &#107;&#105;&#97;&#114;&#97;&#115;&#104;&#46;&#115;&#111;&#108;&#101;&#105;&#109;&#97;&#110;&#122;&#97;&#100;&#101;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;
 twitter: https://go.kiarashs.ir/twitter
 linkedin: https://go.kiarashs.ir/linkedin
 github: https://go.kiarashs.ir/github
