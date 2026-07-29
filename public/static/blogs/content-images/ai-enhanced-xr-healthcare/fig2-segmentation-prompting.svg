@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <rect width="900" height="500" fill="#FFFFFF"/>
+
+  <text x="30" y="34" font-size="17" font-weight="700" fill="#14303A">Why prompting changes what a headset is for</text>
+  <text x="30" y="56" font-size="12.5" fill="#5F7A85">Segmentation became a conversation rather than a batch job. That is an interaction problem.</text>
+
+  <!-- LEFT -->
+  <rect x="30" y="80" width="405" height="272" rx="8" fill="#F7FAFA" stroke="#C9DCDF"/>
+  <text x="50" y="106" font-size="13" font-weight="700" fill="#14303A">Slice-wise, 2D backbone</text>
+  <text x="50" y="126" font-size="11" fill="#5F7A85">A 2D model applied down a volume. Prompts repeat per</text>
+  <text x="50" y="142" font-size="11" fill="#5F7A85">slice, and consistency between slices is not guaranteed.</text>
+
+  <g stroke="#9BB6BC" fill="#FFFFFF">
+    <rect x="56" y="166" width="66" height="84" rx="3"/>
+    <rect x="70" y="178" width="66" height="84" rx="3"/>
+    <rect x="84" y="190" width="66" height="84" rx="3"/>
+    <rect x="98" y="202" width="66" height="84" rx="3"/>
+  </g>
+  <circle cx="92" cy="210" r="4" fill="#C2721F"/>
+  <circle cx="106" cy="222" r="4" fill="#C2721F"/>
+  <circle cx="120" cy="234" r="4" fill="#C2721F"/>
+  <circle cx="134" cy="246" r="4" fill="#C2721F"/>
+  <text x="60" y="306" font-size="11" fill="#C2721F" font-weight="600">one prompt per slice</text>
+
+  <rect x="196" y="166" width="222" height="120" rx="6" fill="#FFFFFF" stroke="#C9DCDF"/>
+  <text x="212" y="190" font-size="12" font-weight="700" fill="#14303A">MedSAM</text>
+  <text x="212" y="212" font-size="11" fill="#5F7A85">1,570,263 image&#8211;mask pairs</text>
+  <text x="212" y="232" font-size="11" fill="#5F7A85">10 imaging modalities</text>
+  <text x="212" y="252" font-size="11" fill="#5F7A85">more than 30 cancer types</text>
+  <text x="212" y="274" font-size="10" fill="#9BB6BC">Ma et al., Nat Commun 2024</text>
+
+  <text x="50" y="334" font-size="11" fill="#5F7A85" font-style="italic">Cheap to adopt. Expensive to prompt.</text>
+
+  <!-- RIGHT -->
+  <rect x="465" y="80" width="405" height="272" rx="8" fill="#F0F7F7" stroke="#A9CBCF"/>
+  <text x="485" y="106" font-size="13" font-weight="700" fill="#14303A">Natively volumetric</text>
+  <text x="485" y="126" font-size="11" fill="#5F7A85">The model reasons over the volume, so a few points placed</text>
+  <text x="485" y="142" font-size="11" fill="#5F7A85">anywhere inside it can define the whole structure.</text>
+
+  <path d="M494 206 L546 184 L598 206 L598 258 L546 280 L494 258 Z" fill="#FFFFFF" stroke="#0F7A85" stroke-width="1.6"/>
+  <path d="M494 206 L546 228 L598 206" fill="none" stroke="#0F7A85" stroke-width="1.2" opacity="0.55"/>
+  <path d="M546 228 L546 280" fill="none" stroke="#0F7A85" stroke-width="1.2" opacity="0.55"/>
+  <circle cx="540" cy="232" r="5" fill="#C2721F"/>
+  <circle cx="562" cy="248" r="5" fill="#C2721F"/>
+  <text x="494" y="306" font-size="11" fill="#C2721F" font-weight="600">a few points, whole structure</text>
+
+  <rect x="632" y="166" width="222" height="120" rx="6" fill="#FFFFFF" stroke="#A9CBCF"/>
+  <text x="648" y="190" font-size="12" font-weight="700" fill="#14303A">SAM-Med3D</text>
+  <text x="648" y="212" font-size="11" fill="#5F7A85">more than 131,000 3D masks</text>
+  <text x="648" y="232" font-size="11" fill="#5F7A85">247 categories</text>
+  <text x="648" y="252" font-size="11" fill="#5F7A85">10 to 100&#215; fewer prompt points</text>
+  <text x="648" y="274" font-size="10" fill="#9BB6BC">Wang et al., arXiv:2310.15161</text>
+
+  <text x="485" y="334" font-size="11" fill="#5F7A85" font-style="italic">Fewer prompts, but each is placed in three dimensions.</text>
+
+  <!-- BOTTOM -->
+  <rect x="30" y="372" width="840" height="86" rx="8" fill="#14303A"/>
+  <text x="52" y="400" font-size="13" font-weight="700" fill="#FFFFFF">Where the headset earns its place</text>
+  <text x="52" y="422" font-size="11.5" fill="#BFD9DA">Placing a point inside a volume is the task a mouse is worst at and a tracked hand is best at.</text>
+  <text x="52" y="442" font-size="11.5" fill="#BFD9DA">SAMIRA closes the loop with speech: name a structure, and refine the returned mask in place.</text>
+
+  <text x="30" y="486" font-size="10.5" fill="#9BB6BC">Training-scale figures as reported by the respective authors. Geometry is illustrative.</text>
+</svg>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 510" width="900" height="510" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <rect width="900" height="510" fill="#FFFFFF"/>
+
+  <text x="30" y="34" font-size="17" font-weight="700" fill="#14303A">Two dials that decide how much say the model gets</text>
+  <text x="30" y="56" font-size="12.5" fill="#5F7A85">Their compound is what Johnson and colleagues call <tspan font-style="italic">interface-driven social prominence</tspan>.</text>
+  <text x="30" y="74" font-size="12.5" fill="#5F7A85">Neither dial has anything to do with model accuracy.</text>
+
+  <!-- plot -->
+  <rect x="92" y="96" width="452" height="316" fill="#F7FAFA" stroke="#C9DCDF"/>
+  <line x1="92" y1="201" x2="544" y2="201" stroke="#DFEAEC"/>
+  <line x1="92" y1="307" x2="544" y2="307" stroke="#DFEAEC"/>
+  <line x1="243" y1="96" x2="243" y2="412" stroke="#DFEAEC"/>
+  <line x1="394" y1="96" x2="394" y2="412" stroke="#DFEAEC"/>
+
+  <text x="318" y="444" font-size="12.5" font-weight="600" fill="#14303A" text-anchor="middle">Degree of user control</text>
+  <text x="98" y="430" font-size="11" fill="#7E979E">none</text>
+  <text x="538" y="430" font-size="11" fill="#7E979E" text-anchor="end">full</text>
+  <text x="0" y="0" font-size="12.5" font-weight="600" fill="#14303A" text-anchor="middle" transform="translate(64,254) rotate(-90)">Presence in the shared space</text>
+  <text x="0" y="0" font-size="11" fill="#7E979E" text-anchor="middle" transform="translate(82,120) rotate(-90)">high</text>
+  <text x="0" y="0" font-size="11" fill="#7E979E" text-anchor="middle" transform="translate(82,392) rotate(-90)">absent</text>
+
+  <path d="M296 240 C256 230, 214 204, 188 168" stroke="#C2721F" stroke-width="2" stroke-dasharray="5 4" fill="none" marker-end="url(#adrift)"/>
+  <text x="0" y="0" font-size="11" fill="#C2721F" font-style="italic" text-anchor="middle" transform="translate(232,192) rotate(-32)">observed drift</text>
+
+  <circle cx="170" cy="150" r="14" fill="#0F7A85"/>
+  <text x="194" y="147" font-size="13" font-weight="700" fill="#14303A">Roundtable</text>
+  <text x="194" y="164" font-size="11" fill="#5F7A85">at the table, speaks unprompted</text>
+
+  <circle cx="312" cy="252" r="14" fill="#0F7A85" opacity="0.75"/>
+  <text x="336" y="249" font-size="13" font-weight="700" fill="#14303A">Peripheral</text>
+  <text x="336" y="266" font-size="11" fill="#5F7A85">outer circle, invited in</text>
+
+  <circle cx="462" cy="356" r="14" fill="#0F7A85" opacity="0.5"/>
+  <text x="440" y="353" font-size="13" font-weight="700" fill="#14303A" text-anchor="end">Breakout</text>
+  <text x="440" y="370" font-size="11" fill="#5F7A85" text-anchor="end">private, one to one</text>
+
+  <!-- findings -->
+  <rect x="580" y="96" width="290" height="316" rx="8" fill="#FFFFFF" stroke="#C9DCDF"/>
+  <text x="600" y="122" font-size="13" font-weight="700" fill="#14303A">What the study found</text>
+  <rect x="600" y="136" width="250" height="1" fill="#DFEAEC"/>
+
+  <text x="600" y="162" font-size="12" font-weight="600" fill="#0F7A85">Shared presence cut both ways</text>
+  <text x="600" y="182" font-size="11" fill="#5F7A85">One sceptical member could trigger</text>
+  <text x="600" y="198" font-size="11" fill="#5F7A85">group-wide scrutiny. But politeness</text>
+  <text x="600" y="214" font-size="11" fill="#5F7A85">also gave the agent more openings.</text>
+
+  <text x="600" y="244" font-size="12" font-weight="600" fill="#C2721F">Control has a social cost</text>
+  <text x="600" y="264" font-size="11" fill="#5F7A85">Peripheral dyads invited the agent in</text>
+  <text x="600" y="280" font-size="11" fill="#5F7A85">early and left it there. Moving it out</text>
+  <text x="600" y="296" font-size="11" fill="#5F7A85">meant negotiating with a colleague,</text>
+  <text x="600" y="312" font-size="11" fill="#5F7A85">so nobody bothered.</text>
+
+  <text x="600" y="342" font-size="12" font-weight="600" fill="#14303A">Privacy hid the influence</text>
+  <text x="600" y="362" font-size="11" fill="#5F7A85">In Breakout, persuasion went</text>
+  <text x="600" y="378" font-size="11" fill="#5F7A85">unnoticed because it arrived</text>
+  <text x="600" y="394" font-size="11" fill="#5F7A85">disguised as validation.</text>
+
+  <text x="30" y="472" font-size="10.5" fill="#9BB6BC">After Johnson, Huang, Nguyen, Nam and Nebeling, CHI 2026. Positions are schematic.</text>
+  <text x="30" y="490" font-size="10.5" fill="#9BB6BC">The three modes bundled both dials, which the authors note prevents separating their effects.</text>
+
+  <defs>
+    <marker id="adrift" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#C2721F"/></marker>
+  </defs>
+</svg>

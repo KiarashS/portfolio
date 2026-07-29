@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 510" width="900" height="510" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <rect width="900" height="510" fill="#FFFFFF"/>
+
+  <text x="30" y="34" font-size="17" font-weight="700" fill="#14303A">Two clocks, one headset</text>
+  <text x="30" y="56" font-size="12.5" fill="#5F7A85">Everything the AI does sits on the slow track. Everything the eye notices sits on the fast one.</text>
+
+  <!-- FAST TRACK -->
+  <rect x="30" y="80" width="840" height="136" rx="8" fill="#EAF2F3" stroke="#C9DCDF"/>
+  <text x="48" y="106" font-size="12.5" font-weight="700" fill="#0F7A85">FAST TRACK &#183; hard real time</text>
+  <text x="48" y="126" font-size="11.5" fill="#5F7A85">Head pose to displayed photon. Miss the deadline and the user feels it in the inner ear.</text>
+
+  <rect x="48" y="144" width="146" height="52" rx="6" fill="#FFFFFF" stroke="#0F7A85" stroke-width="1.5"/>
+  <text x="121" y="167" font-size="12.5" font-weight="600" fill="#14303A" text-anchor="middle">Pose tracking</text>
+  <text x="121" y="184" font-size="11" fill="#5F7A85" text-anchor="middle">IMU, cameras, depth</text>
+
+  <path d="M200 170 L226 170" stroke="#0F7A85" stroke-width="1.8" marker-end="url(#at)"/>
+
+  <rect x="232" y="144" width="146" height="52" rx="6" fill="#FFFFFF" stroke="#0F7A85" stroke-width="1.5"/>
+  <text x="305" y="167" font-size="12.5" font-weight="600" fill="#14303A" text-anchor="middle">Passthrough</text>
+  <text x="305" y="184" font-size="11" fill="#5F7A85" text-anchor="middle">camera to display</text>
+
+  <path d="M384 170 L410 170" stroke="#0F7A85" stroke-width="1.8" marker-end="url(#at)"/>
+
+  <rect x="416" y="144" width="146" height="52" rx="6" fill="#FFFFFF" stroke="#0F7A85" stroke-width="1.5"/>
+  <text x="489" y="167" font-size="12.5" font-weight="600" fill="#14303A" text-anchor="middle">Reprojection</text>
+  <text x="489" y="184" font-size="11" fill="#5F7A85" text-anchor="middle">late-stage warp</text>
+
+  <path d="M568 170 L594 170" stroke="#0F7A85" stroke-width="1.8" marker-end="url(#at)"/>
+
+  <rect x="600" y="144" width="146" height="52" rx="6" fill="#FFFFFF" stroke="#0F7A85" stroke-width="1.5"/>
+  <text x="673" y="167" font-size="12.5" font-weight="600" fill="#14303A" text-anchor="middle">Render</text>
+  <text x="673" y="184" font-size="11" fill="#5F7A85" text-anchor="middle">stereo composite</text>
+
+  <text x="762" y="164" font-size="11" font-weight="600" fill="#0F7A85">Apple reports</text>
+  <text x="762" y="180" font-size="11" font-weight="600" fill="#0F7A85">~12 ms on AVP</text>
+
+  <!-- GAP annotation -->
+  <path d="M673 200 L673 232 L489 232 L489 268" stroke="#9BB6BC" stroke-width="1.4" stroke-dasharray="4 4" fill="none" marker-end="url(#ag)"/>
+  <text x="500" y="228" font-size="11" fill="#7E979E" font-style="italic">the only coupling that matters: a stable pose to hang results on</text>
+
+  <!-- SLOW TRACK -->
+  <rect x="30" y="272" width="840" height="152" rx="8" fill="#FDF3E7" stroke="#EBD3B4"/>
+  <text x="48" y="298" font-size="12.5" font-weight="700" fill="#C2721F">SLOW TRACK &#183; asynchronous</text>
+  <text x="48" y="318" font-size="11.5" fill="#5F7A85">Runs off the render loop, on device or offloaded. Latency here costs patience, not comfort,</text>
+  <text x="48" y="334" font-size="11.5" fill="#5F7A85">provided the result is anchored to a pose the fast track already knows.</text>
+
+  <rect x="48" y="348" width="184" height="62" rx="6" fill="#FFFFFF" stroke="#C2721F" stroke-width="1.5"/>
+  <text x="140" y="370" font-size="12.5" font-weight="600" fill="#14303A" text-anchor="middle">Perception</text>
+  <text x="140" y="386" font-size="10.5" fill="#5F7A85" text-anchor="middle">segmentation, detection,</text>
+  <text x="140" y="400" font-size="10.5" fill="#5F7A85" text-anchor="middle">OCR, scene understanding</text>
+
+  <path d="M238 379 L264 379" stroke="#C2721F" stroke-width="1.8" marker-end="url(#ao)"/>
+
+  <rect x="270" y="348" width="184" height="62" rx="6" fill="#FFFFFF" stroke="#C2721F" stroke-width="1.5"/>
+  <text x="362" y="370" font-size="12.5" font-weight="600" fill="#14303A" text-anchor="middle">Reasoning</text>
+  <text x="362" y="386" font-size="10.5" fill="#5F7A85" text-anchor="middle">LLM / VLM, retrieval,</text>
+  <text x="362" y="400" font-size="10.5" fill="#5F7A85" text-anchor="middle">turn-taking policy</text>
+
+  <path d="M460 379 L486 379" stroke="#C2721F" stroke-width="1.8" marker-end="url(#ao)"/>
+
+  <rect x="492" y="348" width="184" height="62" rx="6" fill="#FFFFFF" stroke="#C2721F" stroke-width="1.5"/>
+  <text x="584" y="370" font-size="12.5" font-weight="600" fill="#14303A" text-anchor="middle">Grounding</text>
+  <text x="584" y="386" font-size="10.5" fill="#5F7A85" text-anchor="middle">bind output to a pose,</text>
+  <text x="584" y="400" font-size="10.5" fill="#5F7A85" text-anchor="middle">an organ, or a speaker</text>
+
+  <path d="M682 379 L708 379" stroke="#C2721F" stroke-width="1.8" marker-end="url(#ao)"/>
+
+  <rect x="714" y="348" width="138" height="62" rx="6" fill="#FFFFFF" stroke="#C2721F" stroke-width="1.5"/>
+  <text x="783" y="370" font-size="12.5" font-weight="600" fill="#14303A" text-anchor="middle">Presentation</text>
+  <text x="783" y="386" font-size="10.5" fill="#5F7A85" text-anchor="middle">overlay, speech,</text>
+  <text x="783" y="400" font-size="10.5" fill="#5F7A85" text-anchor="middle">abstention</text>
+
+  <text x="30" y="454" font-size="12" fill="#5F7A85">A segmentation mask that arrives 400 ms late is usable. A mask rendered against a stale head pose is not.</text>
+  <text x="30" y="474" font-size="12" fill="#5F7A85">Most reported failures of &#8220;AI in XR&#8221; are really failures to keep these two tracks apart.</text>
+  <text x="30" y="498" font-size="10.5" fill="#9BB6BC">Passthrough latency as reported by Apple for Vision Pro. Stage decomposition is schematic.</text>
+
+  <defs>
+    <marker id="at" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#0F7A85"/></marker>
+    <marker id="ao" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#C2721F"/></marker>
+    <marker id="ag" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#9BB6BC"/></marker>
+  </defs>
+</svg>

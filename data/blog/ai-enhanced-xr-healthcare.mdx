@@ -1,0 +1,171 @@
+---
+title: "AI-enhanced extended reality in healthcare: the capability is here, the evidence isn't"
+date: '2026-07-29'
+tags: ['virtual reality', 'artificial intelligence', 'machine learning', 'healthcare']
+draft: false
+summary: "Recent AI advances have transformed mixed-reality headsets, but their clinical value remains largely untested."
+images: ['https://raw.githubusercontent.com/KiarashS/BlogFiles/master/Images/07-30-2026-20260730000911887.png?raw=true']
+authors: ['default']
+---
+
+In 2021, a system called ARTEMIS placed a remote surgeon's hands, tracked and rendered in 3D, into a trainee's field of view during cadaveric trauma procedures at Naval Medical Center San Diego. Danilo Gasques, Janet Johnson, Tommy Sharkey and Nadir Weibel published it at CHI, and a randomised feasibility study of mixed-reality surgical mentoring for combat casualty care appeared in *Surgery* the following year. That remains close to the high-water mark for clinical evaluation of collaborative mixed reality. It is five years old.
+
+What has moved since is not the headsets. It is what the software inside them can perceive and say. Three capabilities arrived more or less at once: segmentation models that generalise across imaging modalities without retraining, vision-language models that can describe a scene the wearer is looking at, and speech agents fast enough to hold a turn in a live conversation. Each of them changes what a headset is for. None of them has been evaluated in a clinical team with the rigour that ARTEMIS got.
+
+This post is about the gap between those two sentences.
+
+## The architecture question comes first
+
+Most write-ups of AI in XR treat latency as a footnote. It is the design constraint that determines everything else.
+
+A headset runs two clocks. One is the render loop, where head pose must reach displayed photons fast enough that the vestibular system does not notice the lag. Apple reports around 12 ms for passthrough on Vision Pro. The other clock governs anything that has to think: segmenting a volume, querying a language model, deciding whether to speak. That work takes hundreds of milliseconds at best, and on a remote server it takes whatever the network gives you.
+
+![Two-track architecture of an AI-enhanced XR clinical system](/static/blogs/content-images/ai-enhanced-xr-healthcare/fig1-two-track-architecture.svg)
+
+*Figure 1. The fast track is a hard real-time deadline. The slow track is not, provided its output is anchored to a pose the fast track already knows.*
+
+The practical consequence is narrow and useful. A segmentation mask that arrives 400 ms after the clinician asked for it is fine. The same mask composited against a stale head pose is nauseating. Systems fail not because the model is slow but because someone put a model call inside the render loop, or failed to re-anchor its output when the head moved. Sofia Chepkoech, Josiah Malila and Joyce Mwangama, reviewing surgical telementoring for low-resource settings in the *Journal of Robotic Surgery* in 2025, put the bottleneck squarely on the network rather than the interface: latency, bandwidth and video resolution, in that order.
+
+Anyone proposing AI-enhanced XR for a clinical setting should be able to draw this diagram for their own system and say which box sits on which clock.
+
+## Segmentation stopped being a batch job
+
+The change worth paying attention to in medical imaging is not accuracy. It is that segmentation became interactive.
+
+Jun Ma and colleagues trained MedSAM on 1,570,263 image–mask pairs spanning ten imaging modalities and more than thirty cancer types, and published it in *Nature Communications* in 2024. It takes prompts: a point, a box, a rough gesture at the thing you mean. Haoyu Wang and colleagues went further with SAM-Med3D, which reasons over the volume natively rather than slice by slice, reporting training on more than 131,000 3D masks across 247 categories and requiring one to two orders of magnitude fewer prompt points than a 2D model fine-tuned for the same job.
+
+![Prompt-driven segmentation, 2D versus volumetric](/static/blogs/content-images/ai-enhanced-xr-healthcare/fig2-segmentation-prompting.svg)
+
+*Figure 2. Fewer prompts is the headline. Where those prompts have to be placed is the part that concerns interface designers.*
+
+Here is why that matters for XR specifically. A prompt-driven model needs a human to indicate a location inside a three-dimensional structure. On a workstation, that means scrolling to a slice, clicking, checking the orthogonal views, and scrolling again. It is the task a mouse is worst at. A tracked hand in a volumetric display is the obvious instrument, and until models became promptable there was no reason to reach for one.
+
+SAMIRA, published in *Virtual Reality* in 2025, closes the loop: a conversational agent in a medical VR scene that localises and segments a named structure from speech, renders it true to scale, and accepts a few point prompts to refine the result. It is a single-user system. The two-user version, where a radiologist and a surgeon prompt the same volume and have to reconcile what comes back, has not been built or studied.
+
+## Language models are in the headset without an architecture
+
+Xiaoyi Tang, Xingyu Situ, Yuyang Cui, Xinyu Wu and Yuxuan Huang surveyed the field at CHI 2025, analysing 135 papers on integrating large language models into extended reality and organising the space into seven dimensions, arranged around augmenting spatial, situational, social and self awareness. The survey's most useful finding is negative: after 135 papers there is no settled architecture. People are putting language models into headsets in a great many incompatible ways.
+
+Evaluation is following, unevenly. Work published in 2025 under the names LoXR and AIvaluateXR has begun benchmarking on-device inference on XR hardware, and a paper titled *Evil Vizier* documented vulnerabilities specific to LLM-integrated XR systems. I have not been able to verify DOIs for all three, so treat them as leads rather than settled references.
+
+The clinical version of this problem has a sharper edge than the consumer one. A language model that describes a scene incorrectly in a living room is an annoyance. In a procedure it is a hazard, and abstention becomes a design requirement rather than a refinement. A system that says nothing when it cannot ground a referent is more useful than one that always answers, and almost nobody builds the first kind.
+
+## Remote guidance is the part that works
+
+The collaborative strand of this literature is older and better evidenced than the AI strand, and it produced a result that keeps being rediscovered.
+
+Johnson and colleagues built UnMapped for CHI 2023, giving a remote expert a spatially stable recreation of their own workspace blended with a live 3D view of the novice's environment. It improved performance and communication efficiency and reduced the expert's task load. The insight is that fidelity was not the bottleneck. Stability was. An expert who can rely on things staying where they were spends less effort re-orienting and more on the task.
+
+An earlier study, Project Mali at CHI 2021, examined the narrower problem of referencing: how collaborators establish what "that one" means in a shared mixed-reality space. HoloCPR, from PervasiveHealth 2018, took the same lineage into time-critical emergency response. This is a coherent body of work with real findings, and most of it predates the current generation of AI.
+
+Adding a model to that loop changes the question rather than extending it. The remote expert is no longer the only source of guidance. So who does the novice believe?
+
+## When the model becomes a participant
+
+The most interesting recent result in this area is not about healthcare at all.
+
+At CHI 2026, Johnson, Ruijie Sophia Huang, Khoa Nguyen, Ji Young Nam and Michael Nebeling reported a study of eighteen dyads working with a generative AI agent during video calls. They introduce a construct they call interface-driven social prominence, built from two dials a designer controls: how present the agent is in the shared space, and how much control users have over its participation. They instantiated three combinations. Roundtable seats the agent at the table with equal visual weight and lets it speak unprompted. Peripheral places it on an outer circle where it can only raise a hand until invited in. Breakout removes it from the shared space entirely and gives each person a private channel to it.
+
+![The social prominence design space](/static/blogs/content-images/ai-enhanced-xr-healthcare/fig3-social-prominence.svg)
+
+*Figure 3. Three points in a two-dimensional design space, and what happened at each.*
+
+Three findings deserve attention from anyone building clinical systems.
+
+Shared presence cut both ways. When the agent was visible to everyone, a single sceptical participant could trigger group-wide scrutiny of its suggestion, which is the behaviour you want. But social norms worked in the other direction too. Participants treated the agent as a third colleague, and politeness gave it more openings than it had earned.
+
+Control turned out to have a social cost. Peripheral gave dyads an explicit mechanism to push the agent out, and they mostly declined to use it. Inviting the agent in was easy and early; moving it back out required negotiating with a colleague, and nobody thought it worth the friction. The controls existed and went unused. No improvement to the underlying model fixes that.
+
+Privacy hid influence rather than containing it. In Breakout, where each person consulted the agent alone, persuasion went unnoticed because it arrived disguised as validation. People used the agent to reinforce positions they already held and did not register that their position had shifted.
+
+The authors are explicit that the three modes bundled both dials together, so the study cannot separate the effect of presence from the effect of control. They name that as future work, along with larger groups, multiple agents, and evaluation frameworks that can measure influence within a social structure.
+
+Their CSCW 2025 study, with twenty-five professionals across six teams, points the same direction from the other end. Asked what they wanted from a collaborative AI agent, participants described something present in the shared space but not equal in it, and subordinate in the team hierarchy. The paper's forward claim is that mixed reality can act as a modulator through which an agent's influence on a team is regulated, using spatial position and interaction cost as the controls. Nobody has built that yet. The prototype in the study simulated the agent's timing by hand.
+
+## The measurement problem is the real bottleneck
+
+Suppose you build the thing. How would you know it worked?
+
+The human–AI reliance literature has a standard framing: cross whether the model was right against whether the person followed it, and read off four cells. Following correct advice and rejecting incorrect advice are both appropriate. The two off-diagonal cells are the failures.
+
+![The reliance matrix and its group-level gap](/static/blogs/content-images/ai-enhanced-xr-healthcare/fig4-reliance-matrix.svg)
+
+*Figure 4. Manipulating whether the agent is correct is what makes the distinction measurable at all.*
+
+Two things are wrong with applying this to clinical XR as it stands.
+
+First, if you do not manipulate the model's correctness by condition, the four cells collapse into a single agreement rate, and agreement rate rises both when the model improves and when the team stops thinking. Those are opposite outcomes with identical measurements.
+
+Second, every instrument in common use — agreement rate, switch fraction, weight of advice — describes one person making one decision. A team adds quantities none of them reach: who prompted the model and who deferred, whether a claim was examined or absorbed, how often an initial group rejection gets quietly reversed later in the discussion, and influence that never surfaces as visible agreement at all. Johnson's CHI 2026 paper names the absence directly. As far as I can establish, the instrument does not exist.
+
+The same weakness runs through the field's safety measures. Reviewing cybersickness instruments for immersive environments in the *Journal of Clinical Medicine* in 2026, Fernández-Cañas and colleagues assessed nine tools under COSMIN and GRADE criteria and found only two, CSQ-VR and VRNQ, warranting a Grade A recommendation. Studies that invent a bespoke discomfort scale are not comparable with each other, and many do.
+
+## Privacy became a rendering problem
+
+One more strand deserves mention because it is usually filed under compliance and belongs under design.
+
+Shwetha Rajaram, Macarena Peralta, Johnson and Nebeling mapped the design space of privacy-driven adaptation for augmented reality at CHI 2025, eliciting 177 proposals from AR researchers and distilling 62 techniques across seven sensing modalities: speech recognition, audio capture, spatial mapping, 3D reconstruction, object detection, gesture recognition and eye tracking. They organise the space by permission model, meaning full, partial or no access to each capability, crossed with who controls the adaptation.
+
+The interesting strategy in that catalogue is the third one: generating AR content to support multi-user interactions that individual users' privacy permissions would otherwise block. In a clinical setting that is not hypothetical. A patient's imaging, a colleague's face, a bystander in a corridor and a whiteboard with other patients' names are all in the same camera frame, governed by different rules. A scoping review in *JMIR XR and Spatial Computing* in 2024 catalogued the cybersecurity and privacy issues specific to XR healthcare applications, including immersive manipulation and biometric data capture. The Rajaram design space is the closest thing the field has to a constructive answer, and it flags multi-user settings as open.
+
+## What the evidence supports today
+
+![Evidence maturity map](/static/blogs/content-images/ai-enhanced-xr-healthcare/fig5-evidence-map.svg)
+
+*Figure 5. Sorted by how much weight each claim will bear.*
+
+A reasonable summary of the state of play: mixed-reality telementoring has been demonstrated in real procedures, spatial stability matters more than visual fidelity for shared representations, and segmentation foundation models generalise well enough to be useful without retraining. How an AI agent should behave inside a group is genuinely contested, with the same study showing it both increases scrutiny and increases deference. And group-level appropriate reliance, multi-party floor management and comparable cybersickness measurement are not so much unsolved as unmeasured.
+
+Multi-party interaction deserves a specific note, because it is often treated as an engineering detail. Koji Inoue and colleagues benchmarked addressee recognition in multi-party dialogue at IWSDS 2025 and found GPT-4o performing only marginally above chance at identifying who a turn was addressed to, and below chance at predicting who would speak next. In their corpus only about a fifth of turns name their addressee explicitly. A dyad hides this problem completely, because there is only one other person it could be. A four-person ward round does not.
+
+## What would move this
+
+Four experiments would do more for the field than another feasibility demonstration.
+
+Build a multi-party agent that knows when to stay quiet, and report its floor-management policy as a result rather than an implementation detail. The dyad case is solved and the group case is not.
+
+Manipulate the agent's correctness in any study of clinical reliance. Without it, the headline number is uninterpretable. This costs nothing but experimental discipline.
+
+Report a latency budget from a real network trace alongside the user-study results, and say which stages sit on the render loop. Telementoring's constraints are network constraints, and papers routinely omit the measurement.
+
+Run one study with practising clinicians on a task from their actual workflow. Multidisciplinary team meetings are the obvious candidate: a 2025 review in *iScience* found AI recommendations agreeing with tumour board decisions commonly between 70 and 90 percent across cancers, with human review still central. The accuracy question is roughly answered. What happens to a board's deliberation when the model is in the room, rather than in the pre-read, is not.
+
+The devices are good enough. The models are good enough. What is missing is the willingness to measure the thing that actually matters, which is whether the team ends up making better decisions, and whether it still owns them.
+
+---
+
+## References
+
+Chepkoech, S., Malila, J., & Mwangama, J. (2025). Telementoring for surgical training in low-resource settings. *Journal of Robotic Surgery*, 19:525. https://doi.org/10.1007/s11701-025-02703-9
+
+Fernández-Cañas, et al. (2026). Cybersickness evaluation in immersive virtual environments. *Journal of Clinical Medicine*. https://doi.org/10.3390/jcm15010046
+
+Gasques, D., Johnson, J. G., Sharkey, T., et al., & Weibel, N. (2021). ARTEMIS: A collaborative mixed-reality system for immersive surgical telementoring. *CHI 2021*.
+
+Inoue, K., Lala, D., Elmers, M., Ochi, K., & Kawahara, T. (2025). An LLM benchmark for addressee recognition in multi-modal multi-party dialogue. *IWSDS 2025*. arXiv:2501.16643
+
+Johnson, J. G., Gasques, D., Sharkey, T., Schmitz, E., & Weibel, N. (2021). Do you really need to know where "that" is? Enhancing support for referencing in collaborative mixed reality environments. *CHI 2021*.
+
+Johnson, J. G., Gasques Rodrigues, D., Gubbala, M., & Weibel, N. (2018). HoloCPR: Designing and evaluating a mixed reality interface for time-critical emergencies. *PervasiveHealth 2018*.
+
+Johnson, J. G., Huang, R. S., Nguyen, K., Nam, J. Y., & Nebeling, M. (2026). "I felt bad after we ignored her": Understanding how interface-driven social prominence shapes group discussions with GenAI. *CHI 2026*. https://doi.org/10.1145/3772318.3791881
+
+Johnson, J. G., Peralta, M., Kaur, M., Huang, R. S., Zhao, S., Guan, R., Rajaram, S., & Nebeling, M. (2025). Exploring collaborative GenAI agents in synchronous group settings. *CSCW 2025*. https://doi.org/10.1145/3757595
+
+Johnson, J. G., Sharkey, T., Butarbutar, I., Xiong, D., Huang, R., Sy, L., & Weibel, N. (2023). UnMapped: Leveraging experts' situated experiences to ease remote guidance in collaborative mixed reality. *CHI 2023*.
+
+Ma, J., et al. (2024). Segment anything in medical images. *Nature Communications*. https://doi.org/10.1038/s41467-024-44824-z
+
+Rajaram, S., Peralta, M., Johnson, J. G., & Nebeling, M. (2025). Exploring the design space of privacy-driven adaptation techniques for future augmented reality interfaces. *CHI 2025*. https://doi.org/10.1145/3706598.3713320
+
+SAMIRA: a conversational AI agent for segmentation and visualisation in medical virtual reality. (2025). *Virtual Reality*.
+
+Tadlock, M. D., et al. (2022). Mixed reality surgical mentoring of combat casualty care: a randomized feasibility study. *Surgery*.
+
+Tang, X., Situ, X., Cui, Y., Wu, X., & Huang, Y. (2025). LLM integration in extended reality. *CHI 2025*. https://doi.org/10.1145/3706598.3714224
+
+Wang, H., et al. (2023). SAM-Med3D. arXiv:2310.15161
+
+Cybersecurity and privacy issues in extended reality health care applications: scoping review. (2024). *JMIR XR and Spatial Computing*. https://xr.jmir.org/2024/1/e59409
+
+*Author lists are given as verified. Where an entry shows "et al." early, the full list was not confirmed at the time of writing. LoXR, AIvaluateXR and Evil Vizier are referenced in the text by title only, as their identifiers could not be verified.*

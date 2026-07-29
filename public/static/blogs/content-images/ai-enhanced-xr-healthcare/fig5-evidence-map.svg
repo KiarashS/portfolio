@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500" font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <rect width="900" height="500" fill="#FFFFFF"/>
+
+  <text x="30" y="34" font-size="17" font-weight="700" fill="#14303A">What the evidence actually supports</text>
+  <text x="30" y="56" font-size="13" fill="#5F7A85">Sorted by how much weight each claim will bear, not by how often it appears in a press release.</text>
+
+  <!-- col 1 -->
+  <rect x="30" y="82" width="270" height="352" rx="8" fill="#E8F3F1" stroke="#A9CBCF"/>
+  <circle cx="52" cy="110" r="6" fill="#0F7A85"/>
+  <text x="68" y="115" font-size="13.5" font-weight="700" fill="#0F5257">Demonstrated</text>
+  <text x="50" y="136" font-size="11" fill="#5F7A85" font-style="italic">systems built, studies run</text>
+
+  <text x="50" y="166" font-size="11.5" font-weight="600" fill="#14303A">Mixed-reality telementoring works</text>
+  <text x="50" y="184" font-size="11.5" fill="#5F7A85">ARTEMIS reached cadaveric trauma</text>
+  <text x="50" y="200" font-size="11.5" fill="#5F7A85">procedures with Naval Medical Center</text>
+  <text x="50" y="216" font-size="11.5" fill="#5F7A85">San Diego; a randomised feasibility</text>
+  <text x="50" y="232" font-size="11.5" fill="#5F7A85">study followed in <tspan font-style="italic">Surgery</tspan>, 2022.</text>
+
+  <text x="50" y="264" font-size="11.5" font-weight="600" fill="#14303A">Representation beats resolution</text>
+  <text x="50" y="282" font-size="11.5" fill="#5F7A85">UnMapped gave the remote expert a</text>
+  <text x="50" y="298" font-size="11.5" fill="#5F7A85">stable recreation of their own space</text>
+  <text x="50" y="314" font-size="11.5" fill="#5F7A85">and cut expert task load.</text>
+
+  <text x="50" y="346" font-size="11.5" font-weight="600" fill="#14303A">Foundation models generalise</text>
+  <text x="50" y="364" font-size="11.5" fill="#5F7A85">MedSAM across ten modalities;</text>
+  <text x="50" y="380" font-size="11.5" fill="#5F7A85">SAM-Med3D natively volumetric.</text>
+
+  <text x="50" y="412" font-size="11.5" font-weight="600" fill="#14303A">Passthrough is good enough</text>
+
+  <!-- col 2 -->
+  <rect x="315" y="82" width="270" height="352" rx="8" fill="#FDF3E7" stroke="#EBD3B4"/>
+  <circle cx="337" cy="110" r="6" fill="#C2721F"/>
+  <text x="353" y="115" font-size="13.5" font-weight="700" fill="#9C5514">Contested</text>
+  <text x="335" y="136" font-size="11" fill="#5F7A85" font-style="italic">results exist, they disagree</text>
+
+  <text x="335" y="166" font-size="11.5" font-weight="600" fill="#14303A">How an agent should behave in a group</text>
+  <text x="335" y="184" font-size="11.5" fill="#5F7A85">Presence invites scrutiny and invites</text>
+  <text x="335" y="200" font-size="11.5" fill="#5F7A85">deference. Both, in the same study.</text>
+
+  <text x="335" y="232" font-size="11.5" font-weight="600" fill="#14303A">How much realism is needed</text>
+  <text x="335" y="250" font-size="11.5" fill="#5F7A85">Higher fidelity is not reliably better</text>
+  <text x="335" y="266" font-size="11.5" fill="#5F7A85">for shared representations of a space.</text>
+
+  <text x="335" y="298" font-size="11.5" font-weight="600" fill="#14303A">Where the LLM should live</text>
+  <text x="335" y="316" font-size="11.5" fill="#5F7A85">135 papers surveyed at CHI 2025 and</text>
+  <text x="335" y="332" font-size="11.5" fill="#5F7A85">no settled architecture for integrating</text>
+  <text x="335" y="348" font-size="11.5" fill="#5F7A85">language models into XR.</text>
+
+  <text x="335" y="380" font-size="11.5" font-weight="600" fill="#14303A">What clinicians will accept</text>
+  <text x="335" y="398" font-size="11.5" fill="#5F7A85">Wanted: present in the space, but</text>
+  <text x="335" y="414" font-size="11.5" fill="#5F7A85">not equal in it.</text>
+
+  <!-- col 3 -->
+  <rect x="600" y="82" width="270" height="352" rx="8" fill="#14303A"/>
+  <circle cx="622" cy="110" r="6" fill="#7FD1C4"/>
+  <text x="638" y="115" font-size="13.5" font-weight="700" fill="#FFFFFF">Unmeasured</text>
+  <text x="620" y="136" font-size="11" fill="#8FAAB0" font-style="italic">no accepted way to ask</text>
+
+  <text x="620" y="166" font-size="11.5" font-weight="600" fill="#7FD1C4">Group-level appropriate reliance</text>
+  <text x="620" y="184" font-size="11.5" fill="#BFD9DA">Every instrument in use describes an</text>
+  <text x="620" y="200" font-size="11.5" fill="#BFD9DA">individual making one decision.</text>
+
+  <text x="620" y="232" font-size="11.5" font-weight="600" fill="#7FD1C4">Multi-party floor management</text>
+  <text x="620" y="250" font-size="11.5" fill="#BFD9DA">On triadic dialogue, GPT-4o sits barely</text>
+  <text x="620" y="266" font-size="11.5" fill="#BFD9DA">above chance at addressee recognition</text>
+  <text x="620" y="282" font-size="11.5" fill="#BFD9DA">and below chance at next-speaker.</text>
+
+  <text x="620" y="314" font-size="11.5" font-weight="600" fill="#7FD1C4">Cybersickness, comparably</text>
+  <text x="620" y="332" font-size="11.5" fill="#BFD9DA">Of nine instruments reviewed under</text>
+  <text x="620" y="348" font-size="11.5" fill="#BFD9DA">COSMIN and GRADE, only CSQ-VR and</text>
+  <text x="620" y="364" font-size="11.5" fill="#BFD9DA">VRNQ reached a Grade A recommendation.</text>
+
+  <text x="620" y="396" font-size="11.5" font-weight="600" fill="#7FD1C4">Whether any of it survives a clinic</text>
+
+  <text x="30" y="468" font-size="10.5" fill="#9BB6BC">Placement reflects the strength of published evidence as of mid-2026, not the strength of the underlying idea. Sources listed at the end of the post.</text>
+</svg>
