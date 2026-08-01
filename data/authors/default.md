@@ -13,10 +13,10 @@ googlescholar: https://go.kiarashs.ir/scholar
 profile: https://profile.kiarashs.ir
 ---
 
-I am incredibly interested in machine/deep learning, computer vision, AI for medicine/healthcare, medical image/signal analysis, explainable (XAI), virtual reality, large language models, multimodal learning, natural language processing, and data analytics to improve quality of life.
+I am incredibly interested in machine/deep learning, computer vision, AI for medicine/healthcare, medical image/signal analysis, explainable AI (XAI), virtual reality, large language models, multimodal learning, natural language processing, and data analytics to improve quality of life.
 
-I have several years of professional working experience specializing in the software industry at leading companies as a team leader, senior software engineer, and software architect, which gives me a strong engineering foundation for turning research ideas into working systems.
+I have several years of professional working experience in the software industry at leading companies, where I have worked as a team leader, senior software engineer, and software architect, which gives me a strong engineering foundation for turning research ideas into working systems.
 
-If I am not developing code, I am somewhere else, thinking about novel research ideas. Also, my free time is dedicated to playing tennis, hiking, camping, cooking, cycling, reading, swimming, and listening to music. These works are my daily schedules, so feel free to ask for anything related.
+If I’m not developing code, I’m somewhere else, thinking about novel research ideas. Also, my free time is dedicated to playing tennis, hiking, camping, cooking, cycling, reading, swimming, and listening to music. These are my daily activities, so feel free to ask about anything related.
 
 To continue reading, please visit [profile.kiarashs.ir](https://profile.kiarashs.ir "Kiarash Soleimanzadeh").
