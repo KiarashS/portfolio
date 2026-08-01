@@ -13,7 +13,7 @@ googlescholar: https://go.kiarashs.ir/scholar
 profile: https://profile.kiarashs.ir
 ---
 
-I am incredibly interested in machine/deep learning, computer vision, AI for medicine/healthcare, medical image/signal analysis, explainable AI (XAI), virtual reality, large language models, multimodal learning, natural language processing, and data analytics to improve quality of life.
+I am incredibly interested in machine/deep learning, computer vision, AI for medicine/healthcare, medical image/signal analysis, explainable AI (XAI), virtual reality, generative AI, large language models, multimodal learning, natural language processing, and data analytics to improve quality of life.
 
 I have several years of professional working experience in the software industry at leading companies, where I have worked as a team leader, senior software engineer, and software architect, which gives me a strong engineering foundation for turning research ideas into working systems.
 
