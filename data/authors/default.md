@@ -17,6 +17,6 @@ I am incredibly interested in machine/deep learning, computer vision, AI for med
 
 I have several years of professional working experience in the software industry at leading companies, where I have worked as a team leader, senior software engineer, and software architect, which gives me a strong engineering foundation for turning research ideas into working systems.
 
-If I’m not developing code, I’m somewhere else, thinking about novel research ideas. Also, my free time is dedicated to playing tennis, hiking, camping, cooking, cycling, reading, swimming, and listening to music. These are my daily activities, so feel free to ask about anything related.
+If I’m not developing code, I’m somewhere else, thinking about novel research ideas. Also, my free time is dedicated to playing tennis, hiking, camping, cooking, gaming, collecting watches, cycling, reading, swimming, and listening to music. These are my daily activities, so feel free to ask about anything related.
 
 To continue reading, please visit [profile.kiarashs.ir](https://profile.kiarashs.ir "Kiarash Soleimanzadeh").
