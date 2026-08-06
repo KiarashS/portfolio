@@ -23,7 +23,7 @@ The two winners describe the same four items and rest on the same 56 receipts. O
 
 Every tutorial on market basket analysis runs the same three steps. Pick a minimum support, run Apriori, sort the rules by confidence. I ran that pipeline on a real dataset and then took apart every step, counting what each one costs and what it throws away. The numbers in this piece all come from code executed against the data, and where a result contradicts what the textbooks promise, I have said so.
 
-## 01 The receipts
+## The receipts
 
 The Groceries dataset ships with the R package arules. Its documentation describes it as 30 days of point-of-sale data from one local grocery outlet, with products rolled up to 169 categories. I parsed the CSV mirror in Python and checked my totals against the published ones: 9,835 baskets, 169 items, 43,367 item instances, density 0.02609146. All matched, including the top five item counts.
 
@@ -45,7 +45,7 @@ The shape of the data decides almost everything downstream. Whole milk appears i
 | P(other vegetables) | 0.1935 | second, 1,903 baskets |
 | P(liquor) | 0.0111 | 109 baskets, and it matters later |
 
-## 02 The one knob everybody turns
+## The one knob everybody turns
 
 Minimum support is usually the only parameter a tutorial touches, and every value in the plausible range looks equally defensible written down. They are not equally defensible. Moving from 5% to 0.1% support multiplies the frequent itemsets by 435 and the rules by nearly five thousand.
 
@@ -75,7 +75,7 @@ The threshold also controls how deep the patterns go, and the depth arrives sudd
 
 Both implementations returned identical itemset counts at every threshold, which is the check that the comparison is measuring speed and not correctness.
 
-## 03 Where Apriori spends the time
+## Where Apriori spends the time
 
 Apriori generates candidates of size k by joining pairs of frequent (k−1)-itemsets that share their first k−2 items, discards any candidate with an infrequent subset, then makes a pass over the database to count what remains. To see the cost directly I wrote the textbook version and instrumented it, rather than trusting a library that vectorises the counting away. It reproduces the library's frequent itemset counts exactly, so the accounting below describes the same search.
 
@@ -104,7 +104,7 @@ Drop to 0.1% and the picture stretches without changing shape. The join at level
 | 6 | 47 | 17 | 30 | 10 | 33.3% |
 | Total | 101,349 | 24,923 | 76,595 | 13,492 | 17.6% |
 
-## 04 What the FP-tree buys
+## What the FP-tree buys
 
 FP-Growth replaces candidate generation with a data structure. It reads the database twice: once to count single items, once to insert each basket, with its items sorted by descending global frequency, into a prefix tree. Baskets sharing a prefix share nodes. After that the database is never touched again, and the mining runs recursively over conditional trees built from the node links.
 
@@ -123,7 +123,7 @@ Building that tree is not free, and the benchmark in table 2 shows where the bil
 
 Two caveats on that number. It compares two implementations in one library on a single vCPU, not the algorithms in the abstract, and a C implementation of either would move the crossover. And 9,835 baskets is small; the gap widens with the database because Apriori's cost scales with passes over the data while FP-Growth's tree, once built, does not.
 
-## 05 Confidence is a popularity ranking in disguise
+## Confidence is a popularity ranking in disguise
 
 Set minimum support to 0.5% and minimum confidence to 0.25, and the search returns 673 rules. Of those, 221 have `{whole milk}` as their consequent and 178 have `{other vegetables}`. Two items out of 169 account for 59% of the output.
 
@@ -155,7 +155,7 @@ Fig 4 makes the structure literal. The red points are one ray, the flattest one 
 
 Seven of the eight highest-confidence rules end in whole milk. The lift ranking finds `{herbs} → {root vegetables}`, a rule that covers 69 baskets and never comes close to the confidence top hundred.
 
-## 06 Five measures, five blind spots
+## Five measures, five blind spots
 
 Take one rule and read it through every standard measure. `{butter, yogurt} → {whole milk}` holds in 92 baskets; butter and yogurt appear together in 144; whole milk appears in 2,513. Each measure below is computed from those three counts and the database size.
 
@@ -172,7 +172,7 @@ Take one rule and read it through every standard measure. `{butter, yogurt} → 
 
 Leverage is the one that gets least attention and behaves best across a mixed set of rules. It is an absolute deviation from independence rather than a ratio, so a rule cannot score highly on a handful of baskets. Its top of the list on this data is `{root vegetables} → {other vegetables}` at 0.0263, covering 466 baskets, followed by the whole milk and other vegetables pair at 0.0254 across 736. Those are the two pairs that actually move volume in this shop.
 
-## 07 Lift breaks in the other direction
+## Lift breaks in the other direction
 
 Push support down to 0.1% and lift finds the patterns confidence never will. The strongest is `{bottled beer, red/blush wine} → {liquor}` at lift 35.7. Liquor is in 109 baskets, beer and wine appear together in 48, and 19 of those 48 also contain liquor. As a piece of retail intelligence this is worth more than every milk rule in table 4 combined.
 
@@ -184,7 +184,7 @@ The obvious response is a significance test, so I ran one: a one-sided Fisher ex
 
 The rule that runs the opposite way is `{sausage} → {whole milk}`: 294 baskets, confidence 0.318, Fisher p of 4×10⁻⁶, and a lift of 1.25. Statistically real, commercially empty. Sausage buyers buy milk at almost exactly the rate everyone else does.
 
-## 08 Closed itemsets do nothing here
+## Closed itemsets do nothing here
 
 The standard cure for output volume is to mine closed itemsets instead of all frequent ones. An itemset is closed when no superset has the same support, so the closed sets carry all the support information with none of the duplication. Textbooks introduce this as a general reduction. On Groceries it is not a reduction at all.
 
@@ -215,7 +215,7 @@ Maximal itemsets do compress Groceries, down to 58% of the frequent sets at 0.1%
 
 Pruning redundant rules helps about as little. Dropping every rule whose antecedent has a strict subset achieving equal or higher confidence for the same consequent removed 27 of the 673 rules at 0.5% support. Four percent. The 673 rules are not mostly duplicates of each other; they are mostly small variations that each cover a slightly different set of baskets, and no syntactic rule collapses them.
 
-## 09 What I would run instead
+## What I would run instead
 
 None of the above says the technique is broken. It says the default pipeline hides its own failure modes, and four changes fix most of it.
 
@@ -234,8 +234,14 @@ Python 3.12 with pandas 3.0.2, numpy 2.4.4, scipy 1.17.1 and mlxtend 0.25.0, on 
 
 ### Data
 
-Groceries, distributed with the R package arules and provided by Michael Hahsler, Kurt Hornik and Thomas Reutterer (2006). Read from the CSV mirror at raw.githubusercontent.com/stedy/Machine-Learning-with-R-datasets. Mushroom, originally from the UCI Machine Learning Repository, read from the same mirror and encoded as attribute=value items.
+Groceries, distributed with the R package arules and provided by Michael Hahsler, Kurt Hornik and Thomas Reutterer (2006). Read from the CSV mirror at [https://github.com/stedy/Machine-Learning-with-R-datasets](https://github.com/stedy/Machine-Learning-with-R-datasets). Mushroom, originally from the UCI Machine Learning Repository, read from the same mirror and encoded as attribute=value items.
 
 ### Papers referred to
 
-Agrawal, Imieliński and Swami, "Mining association rules between sets of items in large databases", SIGMOD 1993. Agrawal and Srikant, "Fast algorithms for mining association rules", VLDB 1994. Han, Pei and Yin, "Mining frequent patterns without candidate generation", SIGMOD 2000. Brin, Motwani, Ullman and Tsur, "Dynamic itemset counting and implication rules for market basket data", SIGMOD 1997. Pasquier, Bastide, Taouil and Lakhal, "Discovering frequent closed itemsets for association rules", ICDT 1999. Benjamini and Hochberg, "Controlling the false discovery rate", JRSS-B 1995. Webb, "Discovering significant patterns", Machine Learning 2007.
+1. Agrawal, Imieliński and Swami, "Mining association rules between sets of items in large databases", SIGMOD 1993.
+2. Agrawal and Srikant, "Fast algorithms for mining association rules", VLDB 1994.
+3. Han, Pei and Yin, "Mining frequent patterns without candidate generation", SIGMOD 2000.
+4. Brin, Motwani, Ullman and Tsur, "Dynamic itemset counting and implication rules for market basket data", SIGMOD 1997.
+5. Pasquier, Bastide, Taouil and Lakhal, "Discovering frequent closed itemsets for association rules", ICDT 1999.
+6. Benjamini and Hochberg, "Controlling the false discovery rate", JRSS-B 1995.
+7. Webb, "Discovering significant patterns", Machine Learning 2007.
