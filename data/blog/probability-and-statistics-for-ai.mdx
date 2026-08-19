@@ -142,8 +142,8 @@ $$
 and the Berry-Esseen theorem bounds the error of the approximation by $C\rho/(\sigma^3\sqrt{n})$ with $\rho = E|X-\mu|^3$, so skewed summands converge more slowly. The delta method extends this to smooth functions: if $\sqrt{n}(\hat\theta - \theta) \to \mathcal{N}(0,\sigma^2)$ then $\sqrt{n}(g(\hat\theta) - g(\theta)) \to \mathcal{N}(0, g'(\theta)^2\sigma^2)$, which is how you get a standard error for a ratio, an F1 score, or a log-odds.
 
 <div class="flex justify-center items-center">
-  <figure>
-    <img src="/static/blogs/content-images/probability-statistics-ai/clt-and-failure.svg" alt="Left: histograms of the standardised sample mean of exponential variables for n equal to 1, 3, 10 and 50, approaching a standard normal. Right: four running-mean trajectories of Cauchy samples on a log axis, failing to settle." />
+  <figure class="text-center">
+    <img class="my-0 mx-auto" src="/static/blogs/content-images/probability-statistics-ai/clt-and-failure.svg" alt="Left: histograms of the standardised sample mean of exponential variables for n equal to 1, 3, 10 and 50, approaching a standard normal. Right: four running-mean trajectories of Cauchy samples on a log axis, failing to settle." />
     <figcaption class="text-center">Figure 1. Left: exponential summands with skewness 2 need roughly fifty terms before the normal approximation is close in the tails. Right: Cauchy variables have no mean, so the running average never converges no matter how many samples are drawn.</figcaption>
   </figure>
 </div>
@@ -159,8 +159,8 @@ Intuition built in two or three dimensions is not merely imprecise in a thousand
 Concentration of measure: for $x \sim \mathcal{N}(0, I_d)$, $\|x\|$ concentrates sharply around $\sqrt{d}$ with fluctuations of order one, independent of $d$. The mass of a high-dimensional Gaussian is not near the mode; it is on a thin shell. This is why interpolating between two latent codes along a straight line passes through a low-density region, and why spherical interpolation is the standard fix.
 
 <div class="flex justify-center items-center">
-  <figure>
-    <img src="/static/blogs/content-images/probability-statistics-ai/high-dimensional-geometry.svg" alt="Left: histograms of the norm of a Gaussian vector divided by the square root of dimension, becoming sharply peaked as dimension grows. Right: log-log plot of relative contrast between farthest and nearest neighbour, falling with dimension." />
+  <figure class="text-center">
+    <img class="my-0 mx-auto" src="/static/blogs/content-images/probability-statistics-ai/high-dimensional-geometry.svg" alt="Left: histograms of the norm of a Gaussian vector divided by the square root of dimension, becoming sharply peaked as dimension grows. Right: log-log plot of relative contrast between farthest and nearest neighbour, falling with dimension." />
     <figcaption class="text-center">Figure 2. Left: the shell. Right: with 500 Gaussian points, the relative gap between the farthest and nearest neighbour falls from about 2000 in one dimension to 0.13 in a thousand. Nearest-neighbour search loses meaning as the contrast vanishes.</figcaption>
   </figure>
 </div>
@@ -170,8 +170,8 @@ The right panel is the curse of dimensionality stated precisely. When all pairwi
 Random matrices. For an $n \times p$ matrix with i.i.d. entries of variance one, the eigenvalues of $\frac{1}{n}X^{\top}X$ follow the Marchenko-Pastur law with support $[(1-\sqrt{\lambda})^2, (1+\sqrt{\lambda})^2]$ for $\lambda = p/n$. This is why a sample covariance from $n \approx p$ samples is badly conditioned even when the truth is the identity, why shrinkage estimators help, and why the double descent peak appears exactly at $p = n$: the smallest eigenvalue touches zero there.
 
 <div class="flex justify-center items-center">
-  <figure>
-    <img src="/static/blogs/content-images/probability-statistics-ai/random-matrix-and-jl.svg" alt="Left: histograms of sample covariance eigenvalues against the Marchenko-Pastur density for two aspect ratios. Right: log-log plot of worst-case pairwise distance distortion against random projection dimension." />
+  <figure class="text-center">
+    <img class="my-0 mx-auto" src="/static/blogs/content-images/probability-statistics-ai/random-matrix-and-jl.svg" alt="Left: histograms of sample covariance eigenvalues against the Marchenko-Pastur density for two aspect ratios. Right: log-log plot of worst-case pairwise distance distortion against random projection dimension." />
     <figcaption class="text-center">Figure 3. Left: the empirical spectrum matches the law closely at both aspect ratios; at p/n = 0.9 the smallest eigenvalues crowd near zero. Right: random projection of 400 points from 2000 dimensions keeps every pairwise distance to within 9% at k = 1000 and 100% at k = 10.</figcaption>
   </figure>
 </div>
@@ -202,8 +202,8 @@ $$
 staying unbiased for any $q$ covering the support while the variance depends entirely on the choice.
 
 <div class="flex justify-center items-center">
-  <figure>
-    <img src="/static/blogs/content-images/probability-statistics-ai/monte-carlo-importance-sampling.svg" alt="Left: log-log plot of relative RMSE against sample size for naive Monte Carlo and importance sampling estimating a Gaussian tail probability. Right: effective sample size fraction collapsing as the proposal mean shifts." />
+  <figure class="text-center">
+    <img class="my-0 mx-auto" src="/static/blogs/content-images/probability-statistics-ai/monte-carlo-importance-sampling.svg" alt="Left: log-log plot of relative RMSE against sample size for naive Monte Carlo and importance sampling estimating a Gaussian tail probability. Right: effective sample size fraction collapsing as the proposal mean shifts." />
     <figcaption class="text-center">Figure 4. Estimating P(X greater than 3) for a standard normal. A proposal centred at 3 reaches the same accuracy with roughly 200 times fewer draws. The right panel shows the effective sample size of those same weights, which collapses as the proposal moves off the target.</figcaption>
   </figure>
 </div>
@@ -239,8 +239,8 @@ $$
 For a Gaussian, $g = \mu_\theta + \sigma_\theta \epsilon$. This is the reparameterization trick of Kingma and Welling (2013) and Rezende, Mohamed and Wierstra (2014).
 
 <div class="flex justify-center items-center">
-  <figure>
-    <img src="/static/blogs/content-images/probability-statistics-ai/gradient-estimator-variance.svg" alt="Two log-log panels comparing variance of score-function and pathwise gradient estimators against samples per estimate, with and without a baseline." />
+  <figure class="text-center">
+    <img class="my-0 mx-auto" src="/static/blogs/content-images/probability-statistics-ai/gradient-estimator-variance.svg" alt="Two log-log panels comparing variance of score-function and pathwise gradient estimators against samples per estimate, with and without a baseline." />
     <figcaption class="text-center">Figure 5. Both estimators are unbiased for the same gradient. At one sample the score-function variance is 19.3 against 4.0 for the pathwise estimator, and the best constant baseline only reaches 11.7.</figcaption>
   </figure>
 </div>
@@ -266,8 +266,8 @@ $$
 which is far tighter for rare events: a task where the model is right 99% of the time has $\sigma^2 \approx 0.01$, not $0.25$. McDiarmid generalizes Hoeffding to any function of independent variables with bounded differences, and is the workhorse behind uniform convergence. The modern packaging is sub-Gaussian and sub-exponential tail conditions, which cover unbounded variables and compose cleanly; Vershynin (2018) and Boucheron, Lugosi and Massart (2013) are the references.
 
 <div class="flex justify-center items-center">
-  <figure>
-    <img src="/static/blogs/content-images/probability-statistics-ai/hoeffding-bound.svg" alt="Left: semi-log comparison of Hoeffding bound, exact binomial tail and simulation for 500 Bernoulli trials. Right: log-log plot of required sample size against interval half-width." />
+  <figure class="text-center">
+    <img class="my-0 mx-auto" src="/static/blogs/content-images/probability-statistics-ai/hoeffding-bound.svg" alt="Left: semi-log comparison of Hoeffding bound, exact binomial tail and simulation for 500 Bernoulli trials. Right: log-log plot of required sample size against interval half-width." />
     <figcaption class="text-center">Figure 6. The Hoeffding bound holds everywhere and is loose by about an order of magnitude in the tail. On the right, the sample size it demands: 18,444 examples for a one-percentage-point interval at 95% confidence.</figcaption>
   </figure>
 </div>
@@ -307,8 +307,8 @@ Robustness is the other half. The mean has an influence function that is unbound
 The bootstrap (Efron, 1979) estimates the sampling distribution of any statistic by resampling the data with replacement and recomputing. It needs no formula for the standard error, which is why it is the right default for BLEU, F1, AUC, calibration error, or any metric that is not a plain average.
 
 <div class="flex justify-center items-center">
-  <figure>
-    <img src="/static/blogs/content-images/probability-statistics-ai/bootstrap-coverage.svg" alt="Left: histogram of bootstrap replicates of a lognormal sample mean, visibly skewed. Right: realised coverage of 95% intervals against sample size for the normal approximation and the percentile bootstrap, both below nominal." />
+  <figure class="text-center">
+    <img class="my-0 mx-auto" src="/static/blogs/content-images/probability-statistics-ai/bootstrap-coverage.svg" alt="Left: histogram of bootstrap replicates of a lognormal sample mean, visibly skewed. Right: realised coverage of 95% intervals against sample size for the normal approximation and the percentile bootstrap, both below nominal." />
     <figcaption class="text-center">Figure 7. Lognormal data, where the sample mean is strongly skewed. At n = 10 both the normal-approximation and percentile-bootstrap intervals cover about 82% of the time rather than 95%, and both are still at 94% by n = 1000.</figcaption>
   </figure>
 </div>
@@ -352,8 +352,8 @@ $$
 Forward KL, which maximum likelihood minimizes, is infinite wherever $p$ has mass and $q$ has none, so the fit must cover everything. Reverse KL, which the ELBO minimizes, is infinite wherever $q$ has mass and $p$ has none, so the fit retreats to well-supported regions.
 
 <div class="flex justify-center items-center">
-  <figure>
-    <img src="/static/blogs/content-images/probability-statistics-ai/kl-asymmetry.svg" alt="Two panels showing a bimodal target density in grey with a single fitted Gaussian: the forward-KL fit spans both modes, the reverse-KL fit sits on one." />
+  <figure class="text-center">
+    <img class="my-0 mx-auto" src="/static/blogs/content-images/probability-statistics-ai/kl-asymmetry.svg" alt="Two panels showing a bimodal target density in grey with a single fitted Gaussian: the forward-KL fit spans both modes, the reverse-KL fit sits on one." />
     <figcaption class="text-center">Figure 8. One Gaussian fitted to a bimodal target. Forward KL gives moment matching at mean 0.08 and standard deviation 2.86, placing most of its mass where the target has almost none. Reverse KL collapses onto the right mode at mean 2.60, standard deviation 0.75.</figcaption>
   </figure>
 </div>
@@ -403,8 +403,8 @@ Adding a prior to the likelihood gives the MAP estimate, $\arg\max_\theta[\log p
 The posterior is the full object, and in conjugate families it is arithmetic.
 
 <div class="flex justify-center items-center">
-  <figure>
-    <img src="/static/blogs/content-images/probability-statistics-ai/posterior-contraction.svg" alt="Left: Beta posteriors after 0, 5, 25, 100 and 1000 Bernoulli observations, contracting around the truth. Right: log-log plot of posterior standard deviation against sample size tracking the Fisher rate." />
+  <figure class="text-center">
+    <img class="my-0 mx-auto" src="/static/blogs/content-images/probability-statistics-ai/posterior-contraction.svg" alt="Left: Beta posteriors after 0, 5, 25, 100 and 1000 Bernoulli observations, contracting around the truth. Right: log-log plot of posterior standard deviation against sample size tracking the Fisher rate." />
     <figcaption class="text-center">Figure 9. A Beta(2,2) prior updated by Bernoulli data with true parameter 0.3. Posterior standard deviation tracks the square root of the inverse Fisher information almost exactly once n exceeds a few dozen.</figcaption>
   </figure>
 </div>
@@ -432,8 +432,8 @@ Mixture models, factor analysis, probabilistic PCA, topic models, and hidden Mar
 Expectation maximization alternates between computing the posterior over $z$ and maximizing the expected complete-data log likelihood (Dempster, Laird and Rubin, 1977). It is coordinate ascent on the same bound that variational inference maximizes, with the E step exact, and each iteration cannot decrease the likelihood.
 
 <div class="flex justify-center items-center">
-  <figure>
-    <img src="/static/blogs/content-images/probability-statistics-ai/em-mixture.svg" alt="Left: mean log likelihood against EM iteration for twelve random initialisations, all monotone, converging to several different values. Right: data histogram with best-run and worst-run fitted mixture densities." />
+  <figure class="text-center">
+    <img class="my-0 mx-auto" src="/static/blogs/content-images/probability-statistics-ai/em-mixture.svg" alt="Left: mean log likelihood against EM iteration for twelve random initialisations, all monotone, converging to several different values. Right: data histogram with best-run and worst-run fitted mixture densities." />
     <figcaption class="text-center">Figure 10. EM on a two-component Gaussian mixture, 1500 points, twelve random starts. Every trajectory increases monotonically, and they converge to six distinct optima; the worst run has collapsed to a single broad component.</figcaption>
   </figure>
 </div>
@@ -463,8 +463,8 @@ $$
 which satisfies detailed balance and leaves $p$ invariant while needing $p$ only up to a constant. Gibbs sampling is the special case that samples each coordinate from its full conditional and always accepts.
 
 <div class="flex justify-center items-center">
-  <figure>
-    <img src="/static/blogs/content-images/probability-statistics-ai/mcmc-mixing.svg" alt="Three panels: trace plots of the narrow direction of a correlated Gaussian under random-walk Metropolis at step sizes 0.05 and 3.0, and autocorrelation curves for three step sizes." />
+  <figure class="text-center">
+    <img class="my-0 mx-auto" src="/static/blogs/content-images/probability-statistics-ai/mcmc-mixing.svg" alt="Three panels: trace plots of the narrow direction of a correlated Gaussian under random-walk Metropolis at step sizes 0.05 and 3.0, and autocorrelation curves for three step sizes." />
     <figcaption class="text-center">Figure 11. Random-walk Metropolis on a two-dimensional Gaussian with correlation 0.97, 20,000 iterations. Effective sample size along the narrow direction is 200 at step size 0.05, 3,287 at 0.4, and 708 at 3.0, with acceptance rates 0.91, 0.45 and 0.04.</figcaption>
   </figure>
 </div>
@@ -492,8 +492,8 @@ x_t = \sqrt{\bar\alpha_t}\,x_0 + \sqrt{1-\bar\alpha_t}\,\epsilon .
 $$
 
 <div class="flex justify-center items-center">
-  <figure>
-    <img src="/static/blogs/content-images/probability-statistics-ai/diffusion-forward.svg" alt="Left: densities of a bimodal distribution at diffusion steps 0, 200, 500, 800 and 999 converging to a standard normal. Right: semi-log plot of signal-to-noise ratio against step for a linear beta schedule." />
+  <figure class="text-center">
+    <img class="my-0 mx-auto" src="/static/blogs/content-images/probability-statistics-ai/diffusion-forward.svg" alt="Left: densities of a bimodal distribution at diffusion steps 0, 200, 500, 800 and 999 converging to a standard normal. Right: semi-log plot of signal-to-noise ratio against step for a linear beta schedule." />
     <figcaption class="text-center">Figure 12. A bimodal data distribution under the DDPM forward process, linear beta schedule, T = 1000. The signal-to-noise ratio crosses one at step 259 and reaches 4 times 10 to the minus 5 at the final step, where the marginal is indistinguishable from a standard normal.</figcaption>
   </figure>
 </div>
@@ -523,8 +523,8 @@ $$
 It is a theorem for squared loss and only that; the extensions to 0-1 loss are several and inequivalent.
 
 <div class="flex justify-center items-center">
-  <figure>
-    <img src="/static/blogs/content-images/probability-statistics-ai/bias-variance.svg" alt="Left: squared bias, variance and total error against polynomial degree. Right: overlaid fits of degree 1, 4 and 10 to noisy sine samples." />
+  <figure class="text-center">
+    <img class="my-0 mx-auto" src="/static/blogs/content-images/probability-statistics-ai/bias-variance.svg" alt="Left: squared bias, variance and total error against polynomial degree. Right: overlaid fits of degree 1, 4 and 10 to noisy sine samples." />
     <figcaption class="text-center">Figure 13. Polynomial regression on 25 noisy points, 800 resampled datasets. Squared bias falls from 0.15 at degree 1 to below 0.0001 at degree 5; variance then takes over, reaching 72 by degree 10.</figcaption>
   </figure>
 </div>
@@ -532,8 +532,8 @@ It is a theorem for squared loss and only that; the extensions to 0-1 loss are s
 That picture is correct and incomplete. Belkin, Hsu, Ma and Mandal (PNAS 2019) and Nakkiran and coauthors (2019) documented that test error peaks where the model can just barely interpolate, then falls again.
 
 <div class="flex justify-center items-center">
-  <figure>
-    <img src="/static/blogs/content-images/probability-statistics-ai/double-descent.svg" alt="Log-log plot of test MSE against number of random ReLU features, with a sharp peak at the interpolation threshold for minimum-norm least squares and a flat curve for ridge." />
+  <figure class="text-center">
+    <img class="my-0 mx-auto" src="/static/blogs/content-images/probability-statistics-ai/double-descent.svg" alt="Log-log plot of test MSE against number of random ReLU features, with a sharp peak at the interpolation threshold for minimum-norm least squares and a flat curve for ridge." />
     <figcaption class="text-center">Figure 14. Minimum-norm least squares on random ReLU features, 120 training points. Test MSE peaks at 14.7 where features equal samples, then falls to 0.32 by 3,000 features, below its own underparameterized value. Ridge with a fixed positive penalty shows no peak.</figcaption>
   </figure>
 </div>
@@ -587,8 +587,8 @@ $$
 Lai and Robbins (1985) proved that any consistent algorithm has regret at least $\Omega(\log T)$ with a constant given by the KL divergence between arm distributions, so logarithmic regret is optimal and the constant is information-theoretic.
 
 <div class="flex justify-center items-center">
-  <figure>
-    <img src="/static/blogs/content-images/probability-statistics-ai/bandit-regret.svg" alt="Cumulative regret against round for epsilon-greedy, UCB1 and Thompson sampling on a ten-armed Bernoulli bandit." />
+  <figure class="text-center">
+    <img class="my-0 mx-auto" src="/static/blogs/content-images/probability-statistics-ai/bandit-regret.svg" alt="Cumulative regret against round for epsilon-greedy, UCB1 and Thompson sampling on a ten-armed Bernoulli bandit." />
     <figcaption class="text-center">Figure 15. Ten-armed Bernoulli bandit, mean of 200 runs. After 20,000 rounds the cumulative regret is 501 for epsilon-greedy with a fixed 0.1 exploration rate, 610 for UCB1 with its standard constant, and 142 for Thompson sampling.</figcaption>
   </figure>
 </div>
@@ -654,8 +654,8 @@ $$
 $$
 
 <div class="flex justify-center items-center">
-  <figure>
-    <img src="/static/blogs/content-images/probability-statistics-ai/calibration.svg" alt="Left: reliability diagram with raw softmax below the diagonal and temperature-scaled predictions close to it. Right: log-log plot of measured ECE of a perfectly calibrated model falling with evaluation set size." />
+  <figure class="text-center">
+    <img class="my-0 mx-auto" src="/static/blogs/content-images/probability-statistics-ai/calibration.svg" alt="Left: reliability diagram with raw softmax below the diagonal and temperature-scaled predictions close to it. Right: log-log plot of measured ECE of a perfectly calibrated model falling with evaluation set size." />
     <figcaption class="text-center">Figure 16. Left: a deliberately overconfident ten-class model at ECE 0.048, corrected to 0.008 by a single temperature fitted on held-out data. Right: a perfectly calibrated model scored against itself measures 0.12 at 100 examples and still 0.007 at 30,000.</figcaption>
   </figure>
 </div>
@@ -677,8 +677,8 @@ $$
 and predict $C(x) = \{y : s(x,y)\le \hat q\}$. Then $P(Y_{n+1}\in C(X_{n+1})) \ge 1-\alpha$, with an upper bound of $1-\alpha+1/(n+1)$. The ceiling correction is not decoration: the ordinary empirical quantile undercovers.
 
 <div class="flex justify-center items-center">
-  <figure>
-    <img src="/static/blogs/content-images/probability-statistics-ai/conformal-coverage.svg" alt="Left: histogram of realised coverage across 3,000 calibration draws with a Beta density overlaid. Right: Beta densities of realised coverage for calibration sizes 50, 200 and 1000." />
+  <figure class="text-center">
+    <img class="my-0 mx-auto" src="/static/blogs/content-images/probability-statistics-ai/conformal-coverage.svg" alt="Left: histogram of realised coverage across 3,000 calibration draws with a Beta density overlaid. Right: Beta densities of realised coverage for calibration sizes 50, 200 and 1000." />
     <figcaption class="text-center">Figure 17. Realised coverage of a 90% split-conformal set over 3,000 independent calibration draws: mean 0.9007, standard deviation 0.022. The distribution is Beta, not a point mass.</figcaption>
   </figure>
 </div>
@@ -690,8 +690,8 @@ The guarantee is marginal in two senses, and Figure 17 shows the first. Coverage
 ROC curves plot true positive rate against false positive rate, and AUC is the probability that a random positive scores above a random negative. Both are invariant to class prevalence, which is sometimes the point and often the problem.
 
 <div class="flex justify-center items-center">
-  <figure>
-    <img src="/static/blogs/content-images/probability-statistics-ai/roc-versus-pr.svg" alt="Left: two nearly overlapping ROC curves with similar AUC. Right: precision-recall curves for the same two models, dramatically different." />
+  <figure class="text-center">
+    <img class="my-0 mx-auto" src="/static/blogs/content-images/probability-statistics-ai/roc-versus-pr.svg" alt="Left: two nearly overlapping ROC curves with similar AUC. Right: precision-recall curves for the same two models, dramatically different." />
     <figcaption class="text-center">Figure 18. Two detectors at a 1% positive rate. AUC differs by four points, 0.921 against 0.884. Average precision differs by a factor of four, 0.276 against 0.070, and at 50% recall the precisions are 19% and 7%.</figcaption>
   </figure>
 </div>
@@ -707,8 +707,8 @@ Training and deployment distributions differ, and the flavour determines the fix
 Under covariate shift the target risk is estimable by importance weighting, $E_{p_{\text{te}}}[\ell] = E_{p_{\text{tr}}}[w(x)\ell]$ with $w = p_{\text{te}}/p_{\text{tr}}$, which is Part II's machinery again with the same failure mode.
 
 <div class="flex justify-center items-center">
-  <figure>
-    <img src="/static/blogs/content-images/probability-statistics-ai/covariate-shift.svg" alt="Left: semi-log plot of relative RMSE of an importance-weighted risk estimate against the size of the mean shift. Right: effective sample size fraction collapsing over the same range." />
+  <figure class="text-center">
+    <img class="my-0 mx-auto" src="/static/blogs/content-images/probability-statistics-ai/covariate-shift.svg" alt="Left: semi-log plot of relative RMSE of an importance-weighted risk estimate against the size of the mean shift. Right: effective sample size fraction collapsing over the same range." />
     <figcaption class="text-center">Figure 19. Estimating target-domain risk from 4,000 source examples. Relative RMSE is 1.8% with no shift, 7.9% at a one-unit shift, and 73% at 2.5 units, where the effective sample size has fallen to 1.3% of the nominal.</figcaption>
   </figure>
 </div>
@@ -724,8 +724,8 @@ The Neyman-Pearson framework fixes a null, a test statistic, and a rejection reg
 A reported accuracy carries at least three variance sources: the finite test set, the seed (initialization, data order, augmentation), and the hyperparameter search. Bouthillier and fifteen coauthors (MLSys 2021) measured all three across five tasks and found seed and hyperparameter variance comparable to test-set variance rather than negligible beside it. They also report that an estimator randomizing over more sources approximates the ideal comparison better, at a 51-fold reduction in compute, than one that fixes everything and varies only the test set.
 
 <div class="flex justify-center items-center">
-  <figure>
-    <img src="/static/blogs/content-images/probability-statistics-ai/benchmark-noise.svg" alt="Left: probability of detecting a true half-point accuracy gap against seeds per method. Right: five runs per method with overlapping 95% intervals on the means." />
+  <figure class="text-center">
+    <img class="my-0 mx-auto" src="/static/blogs/content-images/probability-statistics-ai/benchmark-noise.svg" alt="Left: probability of detecting a true half-point accuracy gap against seeds per method. Right: five runs per method with overlapping 95% intervals on the means." />
     <figcaption class="text-center">Figure 20. A true gap of 0.5 accuracy points against a seed standard deviation of 0.6 points. Five seeds per method detects it at the 5% level 22% of the time, ten seeds 44%, twenty-five seeds 83%.</figcaption>
   </figure>
 </div>
@@ -743,8 +743,8 @@ One newer tool deserves adoption. Peeking at a fixed-$\alpha$ test invalidates i
 Decoding is repeated sampling from a categorical distribution that has been deliberately distorted. Temperature rescales logits, $p_i \propto \exp(z_i/T)$, a monotone transformation that changes spread without changing order. Top-$k$ truncates to the $k$ most likely tokens; nucleus sampling truncates to the smallest set exceeding mass $p$ (Holtzman, Buys, Du, Forbes and Choi, 2019), adapting the cutoff to how peaked the position is.
 
 <div class="flex justify-center items-center">
-  <figure>
-    <img src="/static/blogs/content-images/probability-statistics-ai/sampling-temperature.svg" alt="Left: entropy in bits and top-token probability against temperature. Right: log-scale plot of tokens retained against nucleus mass for three Zipf exponents." />
+  <figure class="text-center">
+    <img class="my-0 mx-auto" src="/static/blogs/content-images/probability-statistics-ai/sampling-temperature.svg" alt="Left: entropy in bits and top-token probability against temperature. Right: log-scale plot of tokens retained against nucleus mass for three Zipf exponents." />
     <figcaption class="text-center">Figure 21. Synthetic Zipf laws over a 50,000-token vocabulary. At exponent 1.1 a nucleus of 0.9 keeps 7,293 tokens; at exponent 2.0 it keeps six. Nothing here is measured from a real model.</figcaption>
   </figure>
 </div>
@@ -760,8 +760,8 @@ $$
 as used by Chen and coauthors (2021). The plug-in alternative $1-(1-c/n)^k$ is biased downward, badly.
 
 <div class="flex justify-center items-center">
-  <figure>
-    <img src="/static/blogs/content-images/probability-statistics-ai/llm-estimators.svg" alt="Left: plug-in and unbiased pass@10 estimates against samples per problem, with the plug-in converging from below. Right: expected reward of best-of-n against its KL divergence from the base policy." />
+  <figure class="text-center">
+    <img class="my-0 mx-auto" src="/static/blogs/content-images/probability-statistics-ai/llm-estimators.svg" alt="Left: plug-in and unbiased pass@10 estimates against samples per problem, with the plug-in converging from below. Right: expected reward of best-of-n against its KL divergence from the base policy." />
     <figcaption class="text-center">Figure 22. Left: with a true per-sample success rate of 0.25, true pass@10 is 0.944; at n = 10 the plug-in estimator returns 0.840 and the unbiased one 0.944. Right: best-of-n against a standard Gaussian reward, where the KL cost is exactly log n minus (n-1)/n.</figcaption>
   </figure>
 </div>
@@ -783,8 +783,8 @@ $$
 The Gaussian mechanism achieves it by adding noise with $\sigma \ge \Delta_2\sqrt{2\ln(1.25/\delta)}/\epsilon$, where $\Delta_2$ is the $L_2$ sensitivity of the query.
 
 <div class="flex justify-center items-center">
-  <figure>
-    <img src="/static/blogs/content-images/probability-statistics-ai/differential-privacy.svg" alt="Left: log-log plot of required noise scale against privacy budget for the Gaussian mechanism. Right: ratio of privacy noise to sampling noise against budget for three dataset sizes." />
+  <figure class="text-center">
+    <img class="my-0 mx-auto" src="/static/blogs/content-images/probability-statistics-ai/differential-privacy.svg" alt="Left: log-log plot of required noise scale against privacy budget for the Gaussian mechanism. Right: ratio of privacy noise to sampling noise against budget for three dataset sizes." />
     <figcaption class="text-center">Figure 23. At epsilon 1 and delta 10 to the minus 5, the Gaussian mechanism needs noise of about 5 times the query sensitivity. For a mean over 10,000 records, that privacy noise is a tenth of the sampling noise already present.</figcaption>
   </figure>
 </div>
